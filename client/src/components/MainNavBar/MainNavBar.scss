@@ -1,0 +1,45 @@
+  
+.mainnavbar {
+    font-family: 'Raleway';
+      font-weight: bolder;
+    .nav-link {
+        margin-right: 10px;
+    }
+    .navbartext
+    {
+      color: #e38454 !important;
+      padding: 10px 20px !important;
+      transition: ease-in-out .3s;
+      &:hover {   
+       color: #4c483f !important;   
+      }      
+    }
+    .navbardonate
+    {
+       color: #4c483f !important; 
+       background-color: #e38454;
+       border-radius: 50px;
+       padding: 10px 20px !important;
+       border: 1px solid #e38454;
+       transition: ease-in-out .3s;
+       &:hover {   
+           background-color: transparent;
+           
+       }
+    }  
+    
+
+    .navbar {
+        padding-top: 0;
+      }
+      .navbarlogo 
+      {padding: 15px 16px 15px 16px;
+          position: relative;
+          top: 0;
+
+          background-color: rgba(217, 226, 197,0.5);
+          width: fit-content;
+          height: fit-content;
+      }
+    
+}
