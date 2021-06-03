@@ -23,6 +23,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.MuiFormControl-root {
+  width: 100% !important;
+}
 
 .App-link {
   color: #61dafb;
