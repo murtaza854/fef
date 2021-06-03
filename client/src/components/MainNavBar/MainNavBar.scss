@@ -2,6 +2,8 @@
 .mainnavbar {
     font-family: 'Raleway';
       font-weight: bolder;
+      position: absolute;
+      width: 100%;
     .nav-link {
         margin-right: 10px;
     }
@@ -36,7 +38,7 @@
       {padding: 15px 16px 15px 16px;
           position: relative;
           top: 0;
-
+          margin-right: auto;
           background-color: rgba(217, 226, 197,0.5);
           width: fit-content;
           height: fit-content;

@@ -8,7 +8,7 @@ function MainNavBar(props) {
     return (
         <div className="mainnavbar">
         <Navbar bg="transparent" expand="lg" className = "navbar">
-  <Navbar.Brand href="#home" 
+  <Navbar.Brand href="/" 
         className = "navbarlogo"><img
         alt=""
         src={logo}
