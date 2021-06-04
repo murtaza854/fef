@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "murtaza",
+    "password": "password123",
+    "database": "fef",
+    "host": "localhost",
+    "port": "3305",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "Omzig123_MFS",
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "Omzig123_MFS",
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
