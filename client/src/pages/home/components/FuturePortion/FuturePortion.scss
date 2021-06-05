@@ -1,0 +1,57 @@
+.test {
+    width: auto;
+    height: fit-content;
+    padding: 50px;
+    background-image: url('../../assets/client/crumpled-white-paperboard.jpg');
+    background-size: auto auto;
+    // background-position: 100px 0px; 
+    .rowicons {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .col-md-3 {
+        padding-right: 0;
+        padding-left: 45px;
+    }
+}
+.head {
+    font-family: 'Raleway';
+    font-weight: 800;
+    color: #4c483f;
+    font-size: 3.1em;
+}
+.basichead{
+    font-family: 'Raleway';
+    font-weight: 800;
+    font-size: 1.5em;
+}
+.info {
+    width: 310px;
+    font-weight: 500;
+    
+}
+
+.donate
+    {
+        // margin-left: 15%;
+        // margin-top: 10%;
+        margin: auto;
+        margin-top: 20px;
+        color: #4c483f ; 
+        background-color: #e38454;
+        border-radius: 50px;
+        padding: 10px 20px;
+        border: 1px solid #e38454;
+        font-weight: 800;
+        font-size: 1.4rem;
+        transition: ease-in-out .3s;
+        width: fit-content;
+        &:hover {   
+           background-color: transparent;
+        }
+    }
+
+
+.crumbledinfo {
+    width: 100px;
+}

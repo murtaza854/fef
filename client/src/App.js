@@ -85,7 +85,7 @@ function App(props) {
             render={({ match: { url } }) => (
               <>
                 <Route path={`${url}/`} exact>
-                <MainNavBar></MainNavBar>
+                {/* <MainNavBar></MainNavBar> */}
                 <Home></Home>
                 </Route>
               </>
