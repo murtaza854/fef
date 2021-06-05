@@ -5,15 +5,18 @@ const Sequelize = require('sequelize');
 const app = express();
 const port = 4000;
 
+app.use(cookieParser());
+app.use(cors({
+  credentials: true,
+  origin: ['http://localhost:3000', 'http://localhost:4000']
+}));
+
 const userRoutes = require('./routes/user');
 
-app.use(cookieParser());
-app.use(cors());
 
-
-const sequelize = new Sequelize('fef', 'root', 'Omzig123_MFS', {
+const sequelize = new Sequelize('fef', 'root', '', {
   host: 'localhost',
-  port: 3305,
+  port: 3306,
   dialect: 'mysql',
 
   pool: {

@@ -14,6 +14,9 @@ import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BlockIcon from '@material-ui/icons/Block';
 import BusinessIcon from '@material-ui/icons/Business';
 
+import Switch from "@material-ui/core/Switch";
+
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -92,6 +95,17 @@ export default function AdminLayout(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const openMenu = Boolean(anchorEl);
 
+  const handleThemeChange = async () => {
+    props.setDarkState(!props.darkState);
+    await fetch('http://localhost:4000/api/set-darktheme', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      credentials: 'include',
+      withCredentials: true,
+      body: JSON.stringify({darkState:props.darkState})
+    }); 
+  };
+
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -108,135 +122,150 @@ export default function AdminLayout(props) {
     setOpenDrawer(false);
   };
 
+  const handleLogout = async e => {
+    // console.log(123);
+    e.preventDefault();
+    await fetch('http://localhost:4000/api/admin/logout', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      credentials: 'include',
+      withCredentials: true,
+    });
+    props.setToken(false);
+  }
+
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: openDrawer,
-        })}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            className={clsx(classes.menuButton, {
-              [classes.hide]: openDrawer,
-            })}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title} noWrap>
-            Fortify Education Foundation Admin
-          </Typography>
-                <IconButton
-                    aria-label="account of current user"
-                    aria-controls="menu-appbar"
-                    aria-haspopup="true"
-                    onClick={handleMenu}
-                    color="inherit"
-                >
-                    <MoreIcon />
-                </IconButton>
-                <Menu
-                    // className={classes.root}
-                    id="menu-appbar"
-                    anchorEl={anchorEl}
-                    anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                    }}
-                    open={openMenu}
-                    onClose={handleClose}
-                >
-                    <MenuItem>
-                        <ListItemIcon className={classes.listItemIcon}>
-                            <WebIcon fontSize="small" />
-                        </ListItemIcon>
-                        <Typography variant="body2">Go to website</Typography>
-                    </MenuItem>
-                    <MenuItem>
-                        <ListItemIcon className={classes.listItemIcon}>
-                            <LockIcon fontSize="small" />
-                        </ListItemIcon>
-                        <Typography variant="body2">Change password</Typography>
-                    </MenuItem>
-                    <MenuItem>
-                        <ListItemIcon className={classes.listItemIcon}>
-                            <ExitToAppIcon fontSize="small" />
-                        </ListItemIcon>
-                        <Typography variant="body2">Logout</Typography>
-                    </MenuItem>
-                </Menu>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        variant="permanent"
-        className={clsx(classes.drawer, {
-          [classes.drawerOpen]: openDrawer,
-          [classes.drawerClose]: !openDrawer,
-        })}
-        classes={{
-          paper: clsx({
+    // <ThemeProvider theme={darkTheme}>
+      <div className={classes.root}>
+        <CssBaseline />
+        <AppBar
+          position="fixed"
+          className={clsx(classes.appBar, {
+            [classes.appBarShift]: openDrawer,
+          })}
+        >
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              className={clsx(classes.menuButton, {
+                [classes.hide]: openDrawer,
+              })}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title} noWrap>
+              Fortify Education Foundation Admin
+            </Typography>
+                  <Switch checked={props.darkState} onChange={handleThemeChange} />
+                  <IconButton
+                      aria-label="account of current user"
+                      aria-controls="menu-appbar"
+                      aria-haspopup="true"
+                      onClick={handleMenu}
+                      color="inherit"
+                  >
+                      <MoreIcon />
+                  </IconButton>
+                  <Menu
+                      // className={classes.root}
+                      id="menu-appbar"
+                      anchorEl={anchorEl}
+                      anchorOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                      }}
+                      keepMounted
+                      transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                      }}
+                      open={openMenu}
+                      onClose={handleClose}
+                  >
+                      <MenuItem>
+                          <ListItemIcon className={classes.listItemIcon}>
+                              <WebIcon fontSize="small" />
+                          </ListItemIcon>
+                          <Typography variant="body2">Go to website</Typography>
+                      </MenuItem>
+                      <MenuItem>
+                          <ListItemIcon className={classes.listItemIcon}>
+                              <LockIcon fontSize="small" />
+                          </ListItemIcon>
+                          <Typography variant="body2">Change password</Typography>
+                      </MenuItem>
+                      <MenuItem onClick={handleLogout}>
+                          <ListItemIcon className={classes.listItemIcon}>
+                              <ExitToAppIcon fontSize="small" />
+                          </ListItemIcon>
+                          <Typography variant="body2">Logout</Typography>
+                      </MenuItem>
+                  </Menu>
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          variant="permanent"
+          className={clsx(classes.drawer, {
             [classes.drawerOpen]: openDrawer,
             [classes.drawerClose]: !openDrawer,
-          }),
-        }}
-      >
-        <div className={classes.toolbar}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-            <ListItem button key='Dashboard'>
-                <ListItemIcon className={classes.listItemIcon}><DashboardIcon /></ListItemIcon>
-                <ListItemText primary='Dashboard'/>
-            </ListItem>
-            <ListItem button key='Users'>
-                <ListItemIcon className={classes.listItemIcon}><SupervisorAccountIcon /></ListItemIcon>
-                <ListItemText primary='Users'/>
-            </ListItem>
-            <ListItem button key='Permission Groups'>
-                <ListItemIcon className={classes.listItemIcon}><BlockIcon /></ListItemIcon>
-                <ListItemText primary='Permission Groups'/>
-            </ListItem>
-            <ListItem button key='Organizations'>
-                <ListItemIcon className={classes.listItemIcon}><BusinessIcon /></ListItemIcon>
-                <ListItemText primary='Organizations'/>
-            </ListItem>
-        </List>
-        <Divider />
-        {/* <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
-      </Drawer>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-      </main>
-    </div>
+          })}
+          classes={{
+            paper: clsx({
+              [classes.drawerOpen]: openDrawer,
+              [classes.drawerClose]: !openDrawer,
+            }),
+          }}
+        >
+          <div className={classes.toolbar}>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            </IconButton>
+          </div>
+          <Divider />
+          <List>
+              <ListItem button key='Dashboard'>
+                  <ListItemIcon className={classes.listItemIcon}><DashboardIcon /></ListItemIcon>
+                  <ListItemText primary='Dashboard'/>
+              </ListItem>
+              <ListItem button key='Users'>
+                  <ListItemIcon className={classes.listItemIcon}><SupervisorAccountIcon /></ListItemIcon>
+                  <ListItemText primary='Users'/>
+              </ListItem>
+              <ListItem button key='Permission Groups'>
+                  <ListItemIcon className={classes.listItemIcon}><BlockIcon /></ListItemIcon>
+                  <ListItemText primary='Permission Groups'/>
+              </ListItem>
+              <ListItem button key='Organizations'>
+                  <ListItemIcon className={classes.listItemIcon}><BusinessIcon /></ListItemIcon>
+                  <ListItemText primary='Organizations'/>
+              </ListItem>
+          </List>
+          <Divider />
+          {/* <List>
+            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+          <Divider />
+          <List>
+            {['All mail', 'Trash', 'Spam'].map((text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List> */}
+        </Drawer>
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+        </main>
+      </div>
+    // </ThemeProvider>
   );
 }

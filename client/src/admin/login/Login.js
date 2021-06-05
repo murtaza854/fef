@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Card, IconButton, CardContent, Button, CardMedia, InputAdornment, InputLabel , Input, FormControl } from '@material-ui/core';
 import { Email, Visibility, VisibilityOff, Lock } from '@material-ui/icons';
 import PropTypes from 'prop-types';
-import loginUser from '../../serverRequests/loginUser';
+import loginUser from '../../serverRequests/logInUser';
 
 function Login(props) {
     document.title = props.title
@@ -26,7 +26,8 @@ function Login(props) {
             email,
           password
         });
-        // props.setToken(token);
+        console.log(token);
+        props.setToken(token.loggedIn);
       }
 
     return (
