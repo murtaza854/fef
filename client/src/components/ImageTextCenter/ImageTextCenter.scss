@@ -1,29 +1,22 @@
-.imagebw {
-    width: 100%;
-}
-
-
 .imgcontainers {
-    position: relative;
-    text-align: center;
+  position: relative;
+  text-align: center;
+  .imagebw {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: ease-in-out .3s;
+    cursor: pointer;
   }
-
   .centeredimg {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-weight: bold;
-    font-size: 2.4em;
-
+    cursor: pointer;
   }
-
-  .orangec {
-    color: #e3aa58;
-}
-.darkorangec {
-    color: #e38454;
-}
-.greenc {
-    color: #a8ce4c;
+  &:hover {
+    .imagebw {
+      filter: grayscale(50%);
+    }
+  }
 }

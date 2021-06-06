@@ -1,8 +1,8 @@
 import React from 'react';
 import "./ThreeImages.scss"
-import assembly from '../../../../assets/client/Assembly.jpg';
+import assembly from '../../../../assets/background1.jpg';
 import eating from '../../../../assets/client/Eating.jpg';
-import st_class from '../../../../assets/client/Class.jpg';
+import st_class from '../../../../assets/admin/background2.jpg';
 import {ImageTextCenter} from '../../../../components'
 import { Col, Container, Row } from 'react-bootstrap';
 function ThreeImages(props) {
@@ -11,13 +11,13 @@ function ThreeImages(props) {
             <Container fluid>
                 <Row>
                     <Col>
-                    <ImageTextCenter img = {assembly} msg = "Donate in Support Fund" color = "orange"/>
+                    <ImageTextCenter img={assembly} first="Donate in" second="Support Fund" color="#e3aa58"/>
                     </Col>
                     <Col>
-                    <ImageTextCenter img = {st_class} msg = "Support a Classroom" color = "darkorange"/>
+                    <ImageTextCenter img={st_class} first="Support a" second="Classroom" color="#e38454"/>
                     </Col>
                     <Col>
-                    <ImageTextCenter img = {eating} msg = "Support a Child's Meal" color = "green"/>
+                    <ImageTextCenter img={eating} first="Support a Child's" second="Meal" color="#a8ce4c"/>
                     </Col>
                     
                 </Row>

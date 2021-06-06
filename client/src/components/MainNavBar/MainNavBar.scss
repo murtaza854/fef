@@ -3,6 +3,7 @@
     font-family: 'Raleway';
       font-weight: bolder;
       position: absolute;
+      z-index: 999;
       width: 100%;
     .nav-link {
         margin-right: 10px;
@@ -26,7 +27,9 @@
        transition: ease-in-out .3s;
        &:hover {   
            background-color: transparent;
-           
+       }
+       &:active, &:focus {
+           background-color: #f1b99d;
        }
     }  
     
@@ -38,6 +41,7 @@
       {padding: 15px 16px 15px 16px;
           position: relative;
           top: 0;
+          left: 50px;
           margin-right: auto;
           background-color: rgba(217, 226, 197,0.5);
           width: fit-content;

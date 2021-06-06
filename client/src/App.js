@@ -52,17 +52,20 @@ function App(props) {
       const content = await response.json();
       setToken(content.loggedIn);
       // setDarkState(content.darkState);
-      const response1 = await fetch('http://localhost:4000/api/get-darktheme', {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'},
-        credentials: 'include',
-        withCredentials: true,
-      });
-      const content1 = await response1.json();
-      setDarkState(Boolean(content1.darktheme));
+      // const response1 = await fetch('http://localhost:4000/api/get-darktheme', {
+      //   method: 'GET',
+      //   headers: {'Content-Type': 'application/json'},
+      //   credentials: 'include',
+      //   withCredentials: true,
+      // });
+      // const content1 = await response1.json();
+      // console.log(Boolean(content1.darktheme))
+      // setDarkState(Boolean(content1.darktheme));
     })();
   });
+
   const pathArray = window.location.pathname.split('/');
+
   if (token === 'loading') return <div></div>;
   if (pathArray.length >= 2 && pathArray[1] === 'admin' && !token) {
     return (<Login setToken={setToken} title="Fortify Education Foundation: Admin Login" /> );
@@ -86,7 +89,7 @@ function App(props) {
             render={({ match: { url } }) => (
               <>
                 <Route path={`${url}/`} exact>
-                {/* <MainNavBar></MainNavBar> */}
+                <MainNavBar></MainNavBar>
                 <Home></Home>
                 </Route>
               </>

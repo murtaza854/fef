@@ -58,22 +58,24 @@ router.post('/admin/logout', (req, res) => {
 
 router.post('/set-darktheme', (req, res) => {
     // console.log(req.body);
-    // window.localStorage.setItem('darktheme', req.body.darkState);
-    res.cookie('darktheme', req.body.darkState, {maxAge: 10 * 365 * 24 * 60 * 60 * 1000})
-    res.send({darktheme: cookie});
+    // // window.localStorage.setItem('darktheme', req.body.darkState);
+    // res.cookie('darktheme', '', {maxAge: 0})
+    // res.cookie('darktheme', req.body.darkState, {maxAge: 10 * 365 * 24 * 60 * 60 * 1000})
+    // res.send({darktheme: req.body.darkState});
 });
 
 router.get('/get-darktheme', (req, res) => {
-    try {
-        const cookie = req.cookies['darktheme'];
-        if (!cookie) {
-            res.send({darktheme: false});
-        } else {
-            res.send({darktheme: cookie});
-        }
-    } catch (error) {
-        res.send({darktheme: false});
-    }
+    // try {
+    //     const cookie = req.cookies['darktheme'];
+    //     res.cookie('darktheme', '', {maxAge: 0})
+    //     if (!cookie) {
+    //         res.send({darktheme: false});
+    //     } else {
+    //         res.send({darktheme: cookie});
+    //     }
+    // } catch (error) {
+    //     res.send({darktheme: false});
+    // }
 });
 
 function generateAccessToken(id, email) {

@@ -5,9 +5,11 @@ import {Carousel,FuturePortion,MessageFounder,ThreeImages,InfoCard} from './comp
 function Home(props) {
     return (
         <div>
-            
+            {/* <Carousel/> */}
             <FuturePortion/>
+            <div className="margin-global-top"/>
             <MessageFounder/>
+            <div className="margin-global-top"/>
             <ThreeImages/>
             <InfoCard />
         </div>

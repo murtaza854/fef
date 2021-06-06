@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const Sequelize = require('sequelize');
+const dotenv = require('dotenv');
+dotenv.config();
 const app = express();
 const port = 4000;
 
@@ -14,7 +16,7 @@ app.use(cors({
 const userRoutes = require('./routes/user');
 
 
-const sequelize = new Sequelize('fef', 'root', '', {
+const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USERNAME, process.env.DATABASE_PASSWORD, {
   host: 'localhost',
   port: 3306,
   dialect: 'mysql',

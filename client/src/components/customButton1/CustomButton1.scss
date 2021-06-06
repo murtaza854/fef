@@ -1,0 +1,59 @@
+.CustomButton1 {
+    a {
+        border-radius: 50px;
+        width: fit-content;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1.4rem;
+        transition: ease-in-out .3s;
+        font-weight: 800;
+    }
+    .colored-btn {
+        color: #4c483f ;
+        background-color: #e38454;
+        border: 1px solid #e38454;
+        width: fit-content;
+        &:hover {   
+           background-color: transparent;
+        }
+        &:active, &:focus {
+            background-color: #f1b99d;
+        }
+    }
+    .transparent-btn {
+        border: 1px solid #000000;
+        color: #e38454;
+        &:hover {   
+           background-color: #000000;
+           color: #e38454;
+        }
+        &:active, &:focus {
+            background-color: #424242;
+        }
+    }
+    .center {
+        transform: translateX(-50%);
+        position: relative;
+        left: 50%;
+    }
+}
+
+// .donate
+//     {
+//         // margin-left: 15%;
+//         // margin-top: 10%;
+//         margin: auto;
+//         margin-top: 20px;
+//         color: #4c483f ; 
+//         background-color: #e38454;
+//         border-radius: 50px;
+//         padding: 10px 20px;
+//         border: 1px solid #e38454;
+//         font-weight: 800;
+//         font-size: 1.4rem;
+//         transition: ease-in-out .3s;
+//         width: fit-content;
+//         &:hover {   
+//            background-color: transparent;
+//         }
+//     }

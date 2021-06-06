@@ -5,69 +5,67 @@ import Col from 'react-bootstrap/Col'
 import {ReactComponent as Calendar} from '../../../../assets/client/calendar.svg'
 import {ReactComponent as Gallery} from '../../../../assets/client/gallery.svg';
 import {ReactComponent as Help} from '../../../../assets/client/help.svg';
+import { CustomButton1, Heading1 } from '../../../../components'
+import './FuturePortion.scss'
 
 function FuturePortion(props) {
     return (
-        <div className="test">
-                <Container>
-                    <Row>
-                        <Col md={6}>
-                        <div className="head">
-                            THEY ARE 
-                            <br/>
-                            THE FUTURE
-                        </div>
+        <div className="futurePortion">
+            <Container>
+                <Row>
+                    <Col md={6}>
+                        <Heading1 first="They are" second="the future" textTransform="uppercase" color="#4c483f"></Heading1>
                         <div className="info">
-                        In Pakistan 40.2% of children under five are currently stunted according to the National Nutrition Survey (a prevalence considered 'critical' by WHO's thresholds)
-                        <div className="donate">
-                        <div>Donate Now</div>
+                            <p className="content-read">
+                                In Pakistan 40.2% of children under five are currently stunted according to the National Nutrition Survey (a prevalence considered 'critical' by WHO's thresholds)
+                            </p>
+                            <CustomButton1 text="Donate Now" classes="btn colored-btn center"></CustomButton1>
                         </div>
-                            
-                        </div>
-                        
-                        </Col>
-                        <Col>
+                    </Col>
+                    <Col className="section2">
                         <Row>
                             <Col md = {3}>
-                            
-                        <Help  fill = "#e38454" width ="100" height = "100"
-                            />
+                                <Help  fill = "#e38454" width ="100" height = "100"/>
                             </Col>
                             <Col>
-                            <div className="basichead">
-                            GET INVOLVED
-                        </div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                <div className="basichead">
+                                    GET INVOLVED
+                                </div>
+                                <p className="content-read">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
                             </Col>
                         </Row>
                         <Row className="rowicons">
-                        <Col md = {3}>
-                        <Gallery  fill = "#a8ce4c" width ="100" height = "100"
-                            />
+                            <Col md = {3}>
+                                <Gallery  fill = "#a8ce4c" width ="100" height = "100"/>
                             </Col>
                             <Col>
-                            <div className="basichead">
-                            GALLERY
-                        </div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                <div className="basichead">
+                                    GALLERY
+                                </div>
+                                <p className="content-read">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
                             </Col>
                         </Row>
                         <Row>
-                        <Col md = {3}>
-                        <Calendar  fill = "#e3aa58" width ="100" height = "100"
-                            />
+                            <Col md = {3}>
+                                <Calendar  fill = "#e3aa58" width ="100" height = "100"/>
                             </Col>
                             <Col>
-                            <div className="basichead">
-                            NEWS & EVENTS
-                        </div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                <div className="basichead">
+                                    NEWS & EVENTS
+                                </div>
+                                <p className="content-read">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
                             </Col>
                         </Row>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     );
 }
 
