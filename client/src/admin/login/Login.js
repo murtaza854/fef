@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Card, IconButton, CardContent, Button, CardMedia, InputAdornment, InputLabel , Input, FormControl } from '@material-ui/core';
 import { Email, Visibility, VisibilityOff, Lock } from '@material-ui/icons';
 import PropTypes from 'prop-types';
-import loginUser from '../../serverRequests/logInUser';
+import loginUser from '../../serverRequests/loginUser';
 
 function Login(props) {
     document.title = props.title

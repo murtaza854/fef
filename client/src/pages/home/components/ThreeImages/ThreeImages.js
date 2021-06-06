@@ -1,36 +1,28 @@
 import React from 'react';
 import "./ThreeImages.scss"
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import assembly from '../../../../assets/client/Assembly.jpg';
 import eating from '../../../../assets/client/Eating.jpg';
 import st_class from '../../../../assets/client/Class.jpg';
-
+import {ImageTextCenter} from '../../../../components'
+import { Col, Container, Row } from 'react-bootstrap';
 function ThreeImages(props) {
     return (
-        <div>
+        <div className="threeimages">
             <Container fluid>
                 <Row>
-                    <Col className="zeropadding">
-                    <img src={assembly} className="imagebw"/>
-                    <div className='imgtext'>Donate in
-Support Fund</div>
+                    <Col>
+                    <ImageTextCenter img = {assembly} msg = "Donate in Support Fund" color = "orange"/>
+                    </Col>
+                    <Col>
+                    <ImageTextCenter img = {st_class} msg = "Support a Classroom" color = "darkorange"/>
+                    </Col>
+                    <Col>
+                    <ImageTextCenter img = {eating} msg = "Support a Child's Meal" color = "green"/>
                     </Col>
                     
-                    <Col className="zeropadding">
-                    <img src={st_class} className="imagebw"/>
-                    <div className='imgtext'>Support a
-Classroom</div>
-                    </Col>
-                    
-                    <Col className="zeropadding">
-                    <img src={eating} className="imagebw"/>
-                    <div className='imgtext'>Support a Child’s
-Meal</div>
-                    </Col>
                 </Row>
             </Container>
+            
         </div>
     );
 }

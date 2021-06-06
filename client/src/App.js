@@ -62,8 +62,9 @@ function App(props) {
       setDarkState(Boolean(content1.darktheme));
     })();
   });
+  const pathArray = window.location.pathname.split('/');
   if (token === 'loading') return <div></div>;
-  if (!token) {
+  if (pathArray.length >= 2 && pathArray[1] === 'admin' && !token) {
     return (<Login setToken={setToken} title="Fortify Education Foundation: Admin Login" /> );
   }
 
