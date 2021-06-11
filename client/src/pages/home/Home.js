@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.scss'
-import {Carousel,FuturePortion,MessageFounder,ThreeImages,InfoCard} from './components'
+import {Carousel,FuturePortion,MessageFounder,ThreeImages,InfoCard,InfoCard2, OngoingCampaigns} from './components'
 
 function Home(props) {
     return (
@@ -11,7 +11,7 @@ function Home(props) {
             <MessageFounder/>
             <div className="margin-global-top"/>
             <ThreeImages/>
-            <InfoCard />
+            <OngoingCampaigns/>
         </div>
     );
 }

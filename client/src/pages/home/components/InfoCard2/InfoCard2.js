@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
-import "./InfoCard.scss"
+import "./InfoCard2.scss"
 import st_class from  "../../../../assets/client/Class.jpg"
 import {CardImg,CustomButton1,SliderCard} from '../../../../components';
 function InfoCard(props) {
@@ -10,19 +10,14 @@ function InfoCard(props) {
   <Card.Body>
     <CardImg image = {st_class}/>
     <Card.Title className="cardTitle"><p className="title-card">Support a Classroom</p></Card.Title>
-    <SliderCard  amount = {40000} goal = {100000}/>
-    
-    <div class="row justify-content-between">
-    <div class="col-4">
-      <p className="content-bold">Raised </p>
-      <p className="content-bold">Rs. 40000 </p>
-    </div>
-    <div class="col-4">
-    <p className="content-bold">Left</p>
-      <p className="content-bold">Rs. 60000 </p>
-    </div>
-    </div>
-    {/* <CustomButton1 text = "READ MORE" classes = "colored-btn infocard"/> */}
+    <Card.Text>
+      <p className="content-read">Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor i
+ncididunt ut labore et dolore magna aliqua
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor</p>
+    </Card.Text>
+    <CustomButton1 text = "READ MORE" classes = "colored-btn infocard"/>
     
       </Card.Body>
 </Card>
