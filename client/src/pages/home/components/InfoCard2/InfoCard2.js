@@ -2,10 +2,10 @@ import React from 'react';
 import Card from 'react-bootstrap/Card'
 import "./InfoCard2.scss"
 import st_class from  "../../../../assets/client/Class.jpg"
-import {CardImg,CustomButton1,SliderCard} from '../../../../components';
-function InfoCard(props) {
+import { CardImg, CustomButton1 } from '../../../../components';
+function InfoCard2(props) {
     return (
-        <div className="cont">
+        <div className="cont2">
             <Card style={{width: '25rem'}}>
   <Card.Body>
     <CardImg image = {st_class}/>
@@ -25,4 +25,4 @@ adipiscing elit, sed do eiusmod tempor</p>
     );
 }
 
-export default InfoCard;
+export default InfoCard2;

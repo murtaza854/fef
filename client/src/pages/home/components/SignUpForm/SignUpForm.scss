@@ -1,0 +1,44 @@
+.signupform {
+    padding-left: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url('../../../../assets/client/crumpled-white-paperboard.jpg');
+    background-size: auto auto;
+    overflow-x: hidden;
+    input, textarea {
+        border: 3px solid #e38454 !important;
+        font-family: 'Jost', sans-serif !important;
+        font-weight: 300 !important;
+        // font-size: 25px !important;
+        background-color: transparent;
+        resize: none;
+        border-radius: 10px !important;
+        &:focus {
+            box-shadow: none !important;
+            background-color: transparent;
+        }
+    }
+    .react-tel-input {
+        .flag-dropdown.open {
+            z-index: 2;
+            background: transparent  !important;
+            border-radius: 10px 0 0 10px;
+        }
+        .flag-dropdown {
+            background-color: transparent !important;
+            border: 3px solid #e38454;
+            border-right: 0;
+            border-radius: 10px 0 0 10px;
+        }
+        .form-control {
+            background: transparent;
+        }
+        .selected-flag {
+            background: transparent !important;
+            border-radius: 10px 0 0 10px;
+        }
+    }
+    .react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
+        background-color: transparent;
+    }
+}

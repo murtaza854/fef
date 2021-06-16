@@ -11,10 +11,23 @@ import LockIcon from '@material-ui/icons/Lock';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
-import BlockIcon from '@material-ui/icons/Block';
-import BusinessIcon from '@material-ui/icons/Business';
-
+// import BlockIcon from '@material-ui/icons/Block';
+// import BusinessIcon from '@material-ui/icons/Business';
+import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import Switch from "@material-ui/core/Switch";
+import CategoryIcon from '@material-ui/icons/Category';
+import { EnhancedTable, AdminForm, DeleteConfirmation } from '../../admin'
+import {
+  // BrowserRouter as Router,
+  Switch as RouterSwitch,
+  Link,
+  Route,
+} from "react-router-dom";
+// import {
+//   TransitionGroup,
+//   CSSTransition
+// } from "react-transition-group";
 
 
 const drawerWidth = 240;
@@ -94,6 +107,8 @@ export default function AdminLayout(props) {
   const [openDrawer, setOpenDrawer] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const openMenu = Boolean(anchorEl);
+  let color = 'white';
+  if (!props.darkState) color = 'black';
 
   const handleThemeChange = async () => {
     // console.log(!props.darkState)
@@ -127,7 +142,7 @@ export default function AdminLayout(props) {
   const handleLogout = async e => {
     // console.log(123);
     e.preventDefault();
-    await fetch('http://localhost:4000/api/admin/logout', {
+    await fetch('http://localhost:4000/api/users/logout', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       credentials: 'include',
@@ -135,7 +150,6 @@ export default function AdminLayout(props) {
     });
     props.setToken(false);
   }
-
   return (
     // <ThemeProvider theme={darkTheme}>
       <div className={classes.root}>
@@ -228,22 +242,40 @@ export default function AdminLayout(props) {
           </div>
           <Divider />
           <List>
-              <ListItem button key='Dashboard'>
-                  <ListItemIcon className={classes.listItemIcon}><DashboardIcon /></ListItemIcon>
-                  <ListItemText primary='Dashboard'/>
-              </ListItem>
-              <ListItem button key='Users'>
-                  <ListItemIcon className={classes.listItemIcon}><SupervisorAccountIcon /></ListItemIcon>
-                  <ListItemText primary='Users'/>
-              </ListItem>
-              <ListItem button key='Permission Groups'>
+              <Link style={{color: color}} to={'/admin'}>
+                <ListItem button key='Dashboard'>
+                    <ListItemIcon className={classes.listItemIcon}><DashboardIcon /></ListItemIcon>
+                    <ListItemText primary='Dashboard'/>
+                </ListItem>
+              </Link>
+              <Link style={{color: color}} to={'/admin/users'}>
+                <ListItem button key='Users'>
+                    <ListItemIcon className={classes.listItemIcon}><SupervisorAccountIcon /></ListItemIcon>
+                    <ListItemText primary='Users'/>
+                </ListItem>
+              </Link>
+              {/* <ListItem button key='Permission Groups'>
                   <ListItemIcon className={classes.listItemIcon}><BlockIcon /></ListItemIcon>
                   <ListItemText primary='Permission Groups'/>
-              </ListItem>
-              <ListItem button key='Organizations'>
-                  <ListItemIcon className={classes.listItemIcon}><BusinessIcon /></ListItemIcon>
-                  <ListItemText primary='Organizations'/>
-              </ListItem>
+              </ListItem> */}
+              <Link style={{color: color}} to={'/admin/projects'}>
+                <ListItem button key='projects'>
+                    <ListItemIcon className={classes.listItemIcon}><AccountTreeIcon /></ListItemIcon>
+                    <ListItemText primary='Projects'/>
+                </ListItem>
+              </Link>
+              <Link style={{color: color}} to={'/admin/images'}>
+                <ListItem button key='gallery'>
+                    <ListItemIcon className={classes.listItemIcon}><PhotoLibraryIcon /></ListItemIcon>
+                    <ListItemText primary='Gallery'/>
+                </ListItem>
+              </Link>
+              <Link style={{color: color}} to={'/admin/image-category'}>
+                <ListItem button key='image-category'>
+                    <ListItemIcon className={classes.listItemIcon}><CategoryIcon /></ListItemIcon>
+                    <ListItemText primary='Image Category'/>
+                </ListItem>
+              </Link>
           </List>
           <Divider />
           {/* <List>
@@ -266,6 +298,22 @@ export default function AdminLayout(props) {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
+          {/* <Router> */}
+          {/* <TransitionGroup>
+            <CSSTransition
+              key={location.key}
+              classNames="fade"
+              timeout={300}
+            > */}
+              <RouterSwitch>
+                <Route path="/admin/:model/edit/:id" children={<AdminForm />} />
+                <Route path="/admin/:model/add" children={<AdminForm />} />
+                <Route path="/admin/:model/delete" children={<DeleteConfirmation />} />
+                <Route path="/admin/:model" children={<EnhancedTable />} />
+              </RouterSwitch>
+            {/* </CSSTransition>
+          </TransitionGroup> */}
+          {/* </Router> */}
         </main>
       </div>
     // </ThemeProvider>

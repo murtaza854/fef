@@ -46,7 +46,7 @@ function Login(props) {
                                 <FormControl>
                                     <InputLabel htmlFor="email-admin">Email</InputLabel>
                                     <Input
-                                        autoComplete="new-password"
+                                        // autoComplete="new-password"
                                         autoFocus
                                         type="email"
                                         value={email}
@@ -62,7 +62,7 @@ function Login(props) {
                                 <FormControl>
                                     <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                                     <Input
-                                        autoComplete="new-password"
+                                        // autoComplete="new-password"
                                         id="standard-adornment-password"
                                         type={showPassword ? 'text' : 'password'}
                                         value={password}

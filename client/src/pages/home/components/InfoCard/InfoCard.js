@@ -2,7 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card'
 import "./InfoCard.scss"
 import st_class from  "../../../../assets/client/Class.jpg"
-import {CardImg,CustomButton1,SliderCard} from '../../../../components';
+import { CardImg, SliderCard } from '../../../../components';
 function InfoCard(props) {
     return (
         <div className="cont">
@@ -12,12 +12,12 @@ function InfoCard(props) {
     <Card.Title className="cardTitle"><p className="title-card">Support a Classroom</p></Card.Title>
     <SliderCard  amount = {40000} goal = {100000}/>
     
-    <div class="row justify-content-between">
-    <div class="col-4">
+    <div className="row justify-content-between">
+    <div className="col-4">
       <p className="content-bold">Raised </p>
       <p className="content-bold">Rs. 40000 </p>
     </div>
-    <div class="col-4">
+    <div className="col-4">
     <p className="content-bold">Left</p>
       <p className="content-bold">Rs. 60000 </p>
     </div>

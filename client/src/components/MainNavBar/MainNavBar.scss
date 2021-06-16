@@ -10,15 +10,17 @@
     }
     .navbartext
     {
+      font-size: 1.3rem;
       color: #e38454 !important;
       padding: 10px 20px !important;
       transition: ease-in-out .3s;
       &:hover {   
-       color: #4c483f !important;   
+       color: #fff !important;   
       }      
     }
     .navbardonate
-    {
+    { font-size: 1.3rem;
+     
        color: #4c483f !important; 
        background-color: #e38454;
        border-radius: 50px;

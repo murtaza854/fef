@@ -10,5 +10,13 @@ module.exports = {
         .then(function(data) {
             return data;
         });
+    },
+    getAll() {
+        return Users.findAll(
+
+        )
+        .then(function(data) {
+            return data;
+        });
     }
 }

@@ -18,8 +18,8 @@ function MainNavBar(props) {
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto">
-      <Nav.Link href="#home" className="navbartext">Home</Nav.Link>
-      <Nav.Link href="#link" className="navbartext">About Us</Nav.Link>
+      <Nav.Link href="/" className="navbartext">Home</Nav.Link>
+      <Nav.Link href="/about" className="navbartext">About Us</Nav.Link>
       <Nav.Link href="#link" className="navbartext">Our Work</Nav.Link>
       <Nav.Link href="#link" className="navbartext">Our Network</Nav.Link>
       <Nav.Link href="#link" className="navbartext">Our Sponsors</Nav.Link>

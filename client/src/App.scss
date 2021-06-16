@@ -1,4 +1,5 @@
-
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
 @import "~bootstrap/scss/bootstrap";
 .App {
   text-align: center;
@@ -53,9 +54,27 @@ body {
 .margin-global-top {
   margin-top: 100px;
 }
+.padding-global-top-page-start {
+  padding-top: 200px;
+}
 
 .content-read {
   font-size: 0.9rem;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.global-padding-left {
+  padding-left: 200px !important;
+}
+.global-padding-right {
+  padding-right: 200px !important;
+}
+
+.global-margin-bottom {
+  margin-bottom: 60px;
 }
 
 .title-card {

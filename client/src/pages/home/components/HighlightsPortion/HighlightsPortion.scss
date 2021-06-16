@@ -1,0 +1,33 @@
+.HighlightsPortion {
+    background-color: #A8CE4C;
+    .lefthighlights {
+        padding: 50px 50px;
+        padding-right: 100px;
+    }
+    
+    .righthighlights {
+        padding: 0;
+    }
+    .sixtywidth {
+        // width: 85%;
+        // padding-right: 5%;
+        font-size: 1.2rem;
+        color: #4c483f;
+    }
+    
+    .big-info-text,.big-info-text2 {
+        color: #4c483f;
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-align: center;
+    }
+    .big-info-text {
+        font-size: 2.5rem;
+    }
+    
+    .youtube-video {
+        width: 100%;
+        height: 100%;
+    }
+}
+

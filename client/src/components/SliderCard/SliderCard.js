@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from '@material-ui/core/Slider';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 const PrettoSlider = withStyles({
     root: {
       color: '#52af77',

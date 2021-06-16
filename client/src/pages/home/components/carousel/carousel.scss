@@ -1,7 +1,69 @@
-.triangle-right {
-	width: 10;
-	height: 10;
-	border-top: 25px solid transparent;
-	border-left: 50px solid #555;
-	border-bottom: 25px solid transparent;
+// .triangle-right {
+// 	width: 10;
+// 	height: 10;
+// 	border-top: 25px solid transparent;
+// 	border-left: 50px solid #555;
+// 	border-bottom: 25px solid transparent;
+// }
+
+// .home-main {
+//     padding: 0 0;
+//     position: relative;
+//     background: rgba($color: #808080, $alpha: 0.5);
+//     overflow: hidden;
+//     height: 100vh;
+//     &::before {
+//       content: ' ';
+//     display: block;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 1;
+//     opacity: 0.5;
+//     background-image: url('/assets/client/DSC_1643.JPG');
+//     background-repeat: no-repeat;
+//     background-position: 50% 0;
+//     -ms-background-size: cover;
+//     -o-background-size: cover;
+//     -moz-background-size: cover;
+//     -webkit-background-size: cover;
+//     background-size: cover;
+//     }
+// }
+
+.home-main {
+    padding: 0;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    height: 100vh;
+    &::before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      // opacity: 0.3;
+      background-image: url('/assets/client/Main-Page_Background.png');
+      background-repeat: no-repeat;
+      background-position: 50% 0;
+      -ms-background-size: cover;
+      -o-background-size: cover;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+	.main-btn {
+		z-index: 9999;
+		width: fit-content;
+		height: inherit;
+    top: 80%;
+		position: relative;
+		margin: auto;
+	}
 }

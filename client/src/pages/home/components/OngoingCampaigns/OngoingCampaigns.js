@@ -1,9 +1,73 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { Heading2 } from '../../../../components';
-import './OngoingCampaigns.scss'
+import { InfoCard } from '../../components';
+import './OngoingCampaigns.scss';
+import Slider from "react-slick";
+
 function OngoingCampaigns(props) {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 8000,
+    autoplaySpeed: 0,
+    cssEase: 'linear',
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    autoplay: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    // responsive: [
+    //     {
+    //       breakpoint: 900,
+    //       settings: {
+    //         slidesToShow: 3,
+    //       }
+    //     },
+    //     {
+    //       breakpoint: 550,
+    //       settings: {
+    //         slidesToShow: 2,
+    //       }
+    //     },
+    //   ]
+  };
+
     return (
-        <div className="ongoingCampaigns">
+      <Container className="ongoingCampaigns" fluid>
+        <Heading2 first="Ongoing Campaigns"/>
+        {/* <InfoCard></InfoCard> */}
+        <Slider {...settings}>
+          <div>
+          <InfoCard></InfoCard>
+          </div>
+          <div>
+          <InfoCard></InfoCard>
+          </div>
+          <div>
+          <InfoCard></InfoCard>
+          </div>
+          <div>
+          <InfoCard></InfoCard>
+          </div>
+          <div>
+          <InfoCard></InfoCard>
+          </div>
+          <div>
+          <InfoCard></InfoCard>
+          </div>
+          <div>
+          <InfoCard></InfoCard>
+          </div>
+          <div>
+          <InfoCard></InfoCard>
+          </div>
+          <div>
+          <InfoCard></InfoCard>
+          </div>
+        </Slider>
+        
+        {/* <div className="ongoingCampaigns">
             
             <Heading2 first="Ongoing Campaigns"/>
             <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
@@ -121,7 +185,8 @@ function OngoingCampaigns(props) {
 
 </div>
 
-        </div>
+        </div> */}
+      </Container>
     );
 }
 

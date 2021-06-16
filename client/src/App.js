@@ -1,89 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.scss';
-import { Login, AdminLayout } from './admin'
+import { Admin } from './admin'
 import { MainNavBar } from './components'
-import { Home } from './pages'
+import { Home, About } from './pages'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import loggedIn from './serverRequests/loggedInUser';
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import {
   BrowserRouter as Router,
-  Switch,
+  // Switch,
   Route
 } from "react-router-dom";
 
 function App(props) {
-  const [token, setToken] = useState("loading");
-  const [darkState, setDarkState] = useState(false);
-  const palletType = darkState ? "dark" : "light";
-  const darkTheme = createMuiTheme({
-    palette: {
-      type: palletType,
-      primary: {
-        main: '#a8ce4c',
-      },
-      secondary: {
-        main: '#e38454',
-      },
-      background: {
-        default: '#ededed',
-      },
-      error: {
-        main: '#c31200',
-      },
-    },
-    typography: {
-      fontFamily: 'Raleway',
-    },
-  });
-  // useEffect(() => {
-  //   async () => {
-  //     const content = await loggedIn();
-  //     console.log(content);
-  //   }
-  // });
-  useEffect(() => {(
-    async () => {
-      const response = await fetch('http://localhost:4000/api/admin/loggedIn', {
-        headers: {'Content-Type': 'application/json'},
-        credentials: 'include',
-        withCredentials: true,
-      });
-      const content = await response.json();
-      setToken(content.loggedIn);
-      // setDarkState(content.darkState);
-      // const response1 = await fetch('http://localhost:4000/api/get-darktheme', {
-      //   method: 'GET',
-      //   headers: {'Content-Type': 'application/json'},
-      //   credentials: 'include',
-      //   withCredentials: true,
-      // });
-      // const content1 = await response1.json();
-      // console.log(Boolean(content1.darktheme))
-      // setDarkState(Boolean(content1.darktheme));
-    })();
-  });
-
-  const pathArray = window.location.pathname.split('/');
-
-  if (token === 'loading') return <div></div>;
-  if (pathArray.length >= 2 && pathArray[1] === 'admin' && !token) {
-    return (<Login setToken={setToken} title="Fortify Education Foundation: Admin Login" /> );
-  }
 
   return (
     <Router>
       <div>
-        <Switch>
+        {/* <Switch> */}
           <Route path="/admin">
-            <ThemeProvider theme={darkTheme}>
-              {!token ? (
-                <Login setToken={setToken} title="Fortify Education Foundation: Admin Login" />
-                ) : (
-                <AdminLayout darkState={darkState} setDarkState={setDarkState} setToken={setToken} title="Fortify Education Foundation: Dashboard" />
-              )}
-            </ThemeProvider>
+            <Admin></Admin>
           </Route>
+          <Route
+            path="/about"
+            render={({ match: { url } }) => (
+              <>
+                <Route path={`${url}/`} exact>
+                <MainNavBar></MainNavBar>
+                <About></About>
+                </Route>
+              </>
+            )}
+          />
           <Route
             path="/"
             render={({ match: { url } }) => (
@@ -95,7 +41,7 @@ function App(props) {
               </>
             )}
           />
-        </Switch>
+        {/* </Switch> */}
       </div>
     </Router>
   );

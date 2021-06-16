@@ -1,5 +1,7 @@
+import api from '../api';
+
 export default async function loginUser(credentials) {
-    return fetch('http://localhost:4000/api/admin/login', {
+    return fetch(`${api}/users/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

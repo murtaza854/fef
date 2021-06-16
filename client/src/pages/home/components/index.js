@@ -5,3 +5,6 @@ export {default as ThreeImages} from './ThreeImages/ThreeImages';
 export {default as InfoCard} from './InfoCard/InfoCard';
 export {default as InfoCard2} from './InfoCard2/InfoCard2';
 export {default as OngoingCampaigns} from './OngoingCampaigns/OngoingCampaigns';
+export {default as HighlightsPortion} from './HighlightsPortion/HighlightsPortion';
+export {default as LatestNews} from './LatestNews/LatestNews';
+export {default as SignUpForm} from './SignUpForm/SignUpForm';
