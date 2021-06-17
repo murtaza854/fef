@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation, useParams } from 'react-router-dom';
-import { Typography, Divider, makeStyles, ListItem, List, ListItemText, Button } from '@material-ui/core';
+import { Typography, Divider, makeStyles, Button } from '@material-ui/core';
 import { Col, Container, Row } from 'react-bootstrap';
-import api from '../../api';
+import { userDataObj, projectDataObj, imageCategoryObj, imagetDataObj } from '../../db'
+import TreeView from '@material-ui/lab/TreeView';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import TreeItem from '@material-ui/lab/TreeItem';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,8 +30,13 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 15,
         '&:hover': {
             background: 'black',
-         },
-      }
+        },
+    },
+    tree: {
+        flexGrow: 1,
+        paddingTop: 15,
+        paddingBottom: 15
+    },
 }));
 
 function DeleteConfirmation(props) {
@@ -35,6 +44,12 @@ function DeleteConfirmation(props) {
     let history = useHistory();
     const { model } = useParams();
     const classes = useStyles();
+
+    let deleteFetch = {};
+    if (model === 'users') deleteFetch = userDataObj;
+    else if (model === 'projects') deleteFetch = projectDataObj;
+    else if (model === 'image-category') deleteFetch = imageCategoryObj;
+    else if (model === 'images') deleteFetch = imagetDataObj;
 
     const [modelName, setModelName] = useState('');
     const [selected, setSelected] = useState([]);
@@ -51,7 +66,7 @@ function DeleteConfirmation(props) {
             setSelected(selected)
             let query = selected.join(',');
             if (query !== '') query = `?id=${query}`;
-            const response = await fetch(`${api}/image-category/getByIds${query}`, {
+            const response = await fetch(`${deleteFetch.deleteApi[0]}${query}`, {
                 headers: {'Content-Type': 'application/json'},
             });
             const content = await response.json();
@@ -67,7 +82,7 @@ function DeleteConfirmation(props) {
     }, [length]);
 
     const deleteConfirmed = async e => {
-        const response = await fetch(`${api}/image-category/delete`, {
+        const response = await fetch(`${deleteFetch.deleteApi[1]}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -94,7 +109,7 @@ function DeleteConfirmation(props) {
             <Row>
                 <Col>
                     <Typography>
-                        Are you sure you want to delete <b className={classes.highlight}>{length} {text}</b> of {modelName}?
+                        Are you sure you want to delete <b className={classes.highlight}>{length} {text}</b> and its dependencies (if any) of {modelName}?
                     </Typography>
                 </Col>
             </Row>
@@ -107,15 +122,25 @@ function DeleteConfirmation(props) {
             </Row>
             <Row className={classes.marginTopAll}>
                 <Col className={classes.demo}>
-                    <List>
-                        {items.map((value, index) => {
-                        return <ListItem key={index}>
-                                    <ListItemText
-                                        primary={`- ${value.name}`}
-                                    />
-                                </ListItem>
-                        })}
-                    </List>
+                <TreeView
+                    className={classes.tree}
+                    defaultCollapseIcon={<ExpandMoreIcon />}
+                    defaultExpandIcon={<ChevronRightIcon />}
+                    >
+                        {
+                            items.map((value, index) => {
+                                return <TreeItem key={index} nodeId={`${value.id}`} label={value.name}>
+                                    {
+                                        deleteFetch.ManyChild !== '' ? (
+                                        value[deleteFetch.ManyChild].map((childValue, childIndex) => {
+                                            return <TreeItem key={childIndex} nodeId={`${childValue.id}`} label={childValue.name} />
+                                        })
+                                        ) : null
+                                    }
+                                </TreeItem>
+                            })
+                        }
+                    </TreeView>
                 </Col>
             </Row>
             <Row>

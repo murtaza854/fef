@@ -1,4 +1,5 @@
 export { default as MainNavBar } from './MainNavBar/MainNavBar';
+export { default as Footer } from './footer/Footer';
 export { default as CustomButton1 } from './customButton1/CustomButton1';
 export { default as Heading1 } from './heading1/Heading1';
 export { default as Heading2 } from './heading2/Heading2';

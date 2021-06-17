@@ -12,7 +12,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import { userDataObj, projectDataObj, imageCategoryObj, imagetDataObj } from '../../db'
 import IconButton from '@material-ui/core/IconButton';
 import Collapse from '@material-ui/core/Collapse';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import CloseIcon from '@material-ui/icons/Close';
 import Alert from '@material-ui/lab/Alert';
 // import CheckCircleIcon from '@material-ui/icons/CheckCircle';
@@ -131,6 +131,11 @@ const useStyles = makeStyles((theme) => ({
     top: 20,
     width: 1,
   },
+  img: {
+    width: 200,
+    paddingTop: 15,
+    paddingBottom: 15
+  }
 }));
 
 let currentModel = '';
@@ -316,6 +321,12 @@ export default function EnhancedTable(props) {
                       tableRow.push(
                         <TableCell key={c} component="th" id={labelId} scope="row" padding="none">
                           {row[key]}
+                        </TableCell>
+                      );
+                    } else if (key === 'imagePath') {
+                      tableRow.push(
+                        <TableCell key={c} component="th" id={labelId} scope="row" padding="none">
+                          <img className={classes.img} src={row[key]} alt="Preview"></img>
                         </TableCell>
                       );
                     } else if (row[key] === undefined) {

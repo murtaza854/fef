@@ -28,18 +28,24 @@ const MenuProps = {
 };
 
 const createImageTableData = (data) => {
-    let { id, name } = data;
-    return { id, name };
+    const { id, name, imageCategory } = data;
+    console.log(imageCategory);
+    const imageCategoryName = imageCategory.name;
+    const imagePath = `/images/${name}`;
+    return { id, name, imageCategoryName, imagePath };
 }
 
 const imagetDataObj = {
     apiTable: `${api}/images/TableData`,
+    deleteApi: [`${api}/images/getByIds`, `${api}/images/delete`],
     createTableData : createImageTableData,
     headCells: [
         { id: 'id', numeric: false, disablePadding: true, label: 'ID' },
         { id: 'name', numeric: false, disablePadding: false, label: 'Name' },
+        { id: 'imageCategoryName', numeric: false, disablePadding: false, label: 'Image Category' },
         { id: 'imagePath', numeric: false, disablePadding: false, label: 'Image' },
-      ],
+    ],
+    ManyChild: '',
     checkboxSelection: 'id',
     editAllowed: false,
     modelName: 'Image',
@@ -78,7 +84,6 @@ const imagetDataObj = {
         };
         
         async function onSubmit(event) {
-            console.log(123)
             event.preventDefault();
             const formData = new FormData();
             formData.append(
@@ -89,7 +94,7 @@ const imagetDataObj = {
             xhr.onload = function (e) {
                 //your success code goes here
             }
-            xhr.open("POST", `http://localhost:4000/api/images/add`, true);
+            xhr.open("POST", `http://localhost:4000/api/images/add?category=${state.category}`, true);
             xhr.send(formData);
             // const response = await fetch(`http://localhost:4000/api/images/add`, {
             //     method: 'POST',

@@ -1,4 +1,5 @@
 const ImageCategory = require('../models').ImageCategory;
+const Image = require('../models').Image;
 
 module.exports = {
     create(params) {
@@ -11,13 +12,11 @@ module.exports = {
     },
     update(params) {
         const id = params.id;
-        console.log(params);
         updateValues = {
             name: params.name,
         }
         return ImageCategory.update(updateValues, { where: { id: id } }).then((result) => {
             // here your result is simply an array with number of affected rows
-            console.log(result);
             return result
         });
     },
@@ -27,24 +26,24 @@ module.exports = {
             return data;
         });
     },
-    getAllByIds(id, Op) {
+    getAllByIds(id) {
         const getIds = id.split(',');
         const result = getIds.map(function (x) { 
             return parseInt(x); 
         });
-        console.log(result);
-        console.log(Op);
         return ImageCategory.findAll({
             where: {
                 id: result
-            }
+            },
+            include: [
+                {model: Image, as: 'images'}
+            ],
         })
         .then(function(data) {
             return data;
         });
     },
     delete(ids) {
-        console.log(ids);
         return ImageCategory.destroy({ where: { id: ids }})
         .then(function (data) {
             return 'success';

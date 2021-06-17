@@ -11,7 +11,7 @@ router.get('/TableData', async (req, res) => {
 router.get('/getByIds', async (req, res) => {
     let id = '';
     if ('id' in req.query) id = req.query.id;
-    const imageCategories = await imageCategory.getAllByIds(id, Op);
+    const imageCategories = await imageCategory.getAllByIds(id);
     if (!imageCategories) res.json({data: []});
     else res.json({data: imageCategories});
 });

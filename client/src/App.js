@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { Admin } from './admin'
-import { MainNavBar } from './components'
+import { MainNavBar, Footer } from './components'
 import { Home, About, Work } from './pages'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -48,6 +48,7 @@ function App(props) {
                 <Route path={`${url}/`} exact>
                 <MainNavBar></MainNavBar>
                 <Home></Home>
+                <Footer></Footer>
                 </Route>
               </>
             )}

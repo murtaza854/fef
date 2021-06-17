@@ -18,11 +18,13 @@ const editObjCheck = (data, value, editObj) => {
 
 const imageCategoryObj = {
     apiTable: `${api}/image-category/TableData`,
+    deleteApi: [`${api}/image-category/getByIds`, `${api}/image-category/delete`],
     createTableData : createImageCategoryTableData,
     headCells: [
         { id: 'id', numeric: false, disablePadding: true, label: 'ID' },
         { id: 'name', numeric: false, disablePadding: true, label: 'Name' },
-      ],
+    ],
+    ManyChild: 'images',
     checkboxSelection: 'id',
     editAllowed: true,
     modelName: 'Image Category',

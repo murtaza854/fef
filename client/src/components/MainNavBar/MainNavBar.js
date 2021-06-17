@@ -21,8 +21,10 @@ function MainNavBar(props) {
       <Nav.Link href="/" className="navbartext">Home</Nav.Link>
       <Nav.Link href="/about" className="navbartext">About Us</Nav.Link>
       <Nav.Link href="/work" className="navbartext">Our Work</Nav.Link>
-      <Nav.Link href="#link" className="navbartext">Our Network</Nav.Link>
-      <Nav.Link href="#link" className="navbartext">Our Sponsors</Nav.Link>
+      <Nav.Link href="/network" className="navbartext">Our Network</Nav.Link>
+      <Nav.Link href="/gallery" className="navbartext">Gallery</Nav.Link>
+      <Nav.Link href="/news-events" className="navbartext">News and Events</Nav.Link>
+      <Nav.Link href="/contact-us" className="navbartext">Contact Us</Nav.Link>
       <Nav.Link href="#link" className="navbardonate">Donate Now</Nav.Link>
       
     </Nav>

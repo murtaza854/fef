@@ -12,6 +12,14 @@ const storage = multer.diskStorage({
   
 var upload = multer({storage: storage});
 
+router.get('/getByIds', async (req, res) => {
+  let id = '';
+  if ('id' in req.query) id = req.query.id;
+  const images = await imageController.getAllByIds(id);
+  if (!images) res.json({data: []});
+  else res.json({data: images});
+});
+
 router.get('/TableData', async (req, res) => {
   const images = await imageController.getAll();
   if (!images) res.json({data: []});
@@ -26,8 +34,7 @@ router.post('/add', upload.single('file'), async (req, res) => {
   return next(error);
   } else {
     const fileName = file.originalname;
-    console.log(req.query, file);
-    const data = await imageController.create(fileName);
+    const data = await imageController.create(fileName, req.query.category);
     if (!data) res.json({data: []});
     else res.json({data: data});
   }
