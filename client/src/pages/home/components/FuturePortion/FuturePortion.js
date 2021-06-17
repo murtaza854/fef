@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 import {ReactComponent as Calendar} from '../../../../assets/client/calendar.svg'
 import {ReactComponent as Gallery} from '../../../../assets/client/gallery.svg';
 import {ReactComponent as Help} from '../../../../assets/client/help.svg';
-import { CustomButton1, Heading1 } from '../../../../components'
+import { CustomButton1, Heading2 } from '../../../../components'
 import './FuturePortion.scss'
 
 function FuturePortion(props) {
@@ -14,7 +14,7 @@ function FuturePortion(props) {
             <Container>
                 <Row>
                     <Col md={6}>
-                        <Heading1 first="They are" second="the future" textTransform="uppercase" color="#4c483f"></Heading1>
+                        <Heading2 first="They are" second="the future" textTransform="uppercase" color="#4c483f"></Heading2>
                         <div className="info">
                             <p className="content-read">
                                 In Pakistan 40.2% of children under five are currently stunted according to the National Nutrition Survey (a prevalence considered 'critical' by WHO's thresholds)

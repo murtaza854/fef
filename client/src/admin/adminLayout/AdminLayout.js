@@ -11,6 +11,8 @@ import LockIcon from '@material-ui/icons/Lock';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 // import BlockIcon from '@material-ui/icons/Block';
 // import BusinessIcon from '@material-ui/icons/Business';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
@@ -274,6 +276,18 @@ export default function AdminLayout(props) {
                 <ListItem button key='image-category'>
                     <ListItemIcon className={classes.listItemIcon}><CategoryIcon /></ListItemIcon>
                     <ListItemText primary='Image Category'/>
+                </ListItem>
+              </Link>
+              <Link style={{color: color}} to={'/admin/donations'}>
+                <ListItem button key='donations'>
+                    <ListItemIcon className={classes.listItemIcon}><AttachMoneyIcon /></ListItemIcon>
+                    <ListItemText primary='Donations'/>
+                </ListItem>
+              </Link>
+              <Link style={{color: color}} to={'/admin/newsletter'}>
+                <ListItem button key='newsletter'>
+                    <ListItemIcon className={classes.listItemIcon}><AssignmentIcon /></ListItemIcon>
+                    <ListItemText primary='Newsletter'/>
                 </ListItem>
               </Link>
           </List>

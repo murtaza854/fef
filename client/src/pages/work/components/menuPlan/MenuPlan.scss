@@ -1,0 +1,29 @@
+.menuPlan{
+    #demobox {
+        // width: 5in;
+        background-color: #FCF6EE ;
+        padding: 10px ;
+        border: 1px solid #FCF6EE ;
+      }
+      .text-block {
+        bottom: 20px;
+        right: 20px;
+        background-color:transparent;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      img{
+          position:absolute;
+          width:100%; 
+        //   height:150;
+      }
+      .small-text{
+          font-size: 0.6rem;
+          color: black;
+      }
+      .Meduium-text{
+          font-size: '20.0pt';
+          font-style: inherit;
+      }   
+}

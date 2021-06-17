@@ -109,7 +109,7 @@ const imageCategoryObj = {
         };
 
         return (<form onSubmit={onSubmit} autoComplete="off">
-            <h2>Add a Image Category</h2>
+            {/* <h2>Add a Image Category</h2> */}
             <fieldset>
                 <legend>Category</legend>
                 <Form.Row>

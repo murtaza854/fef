@@ -11,7 +11,7 @@ function HighlightsPortion(props) {
             <Container fluid>
                 <Row>
                     <Col className="lefthighlights" md={6}>
-                    <Heading1 first="Highlights" />
+                    <Heading1 first="Highlights" color="#4c483f" />
                     <p className="content-read sixtywidth">Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit, sed do eiusmod tempor i
                         ncididunt ut labore et dolore magna aliqua

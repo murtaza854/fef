@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { Heading2 } from '../../../../components';
+import { Heading1 } from '../../../../components';
 import { InfoCard } from '../../components';
 import './OngoingCampaigns.scss';
 import Slider from "react-slick";
@@ -35,7 +35,9 @@ function OngoingCampaigns(props) {
 
     return (
       <Container className="ongoingCampaigns" fluid>
-        <Heading2 first="Ongoing Campaigns"/>
+        <div className="global-indented">
+          <Heading1 first="Ongoing Campaigns" color="#4c483f"/>
+        </div>
         {/* <InfoCard></InfoCard> */}
         <Slider {...settings}>
           <div>
@@ -69,7 +71,7 @@ function OngoingCampaigns(props) {
         
         {/* <div className="ongoingCampaigns">
             
-            <Heading2 first="Ongoing Campaigns"/>
+            <Heading1 first="Ongoing Campaigns"/>
             <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
   <div class="controls-top">
     <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>

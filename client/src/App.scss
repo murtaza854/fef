@@ -60,6 +60,13 @@ body {
 
 .content-read {
   font-size: 0.9rem;
+  color: black;
+}
+
+.content-read-heading {
+  font-size: 1.5rem;
+  color: #e3aa58;
+  font-weight: 600;
 }
 
 .text-justify {
@@ -67,14 +74,19 @@ body {
 }
 
 .global-padding-left {
-  padding-left: 200px !important;
+  padding-left: 100px !important;
 }
 .global-padding-right {
-  padding-right: 200px !important;
+  padding-right: 100px !important;
 }
 
 .global-margin-bottom {
   margin-bottom: 60px;
+}
+
+.global-indented {
+  padding-left: 100px;
+  padding-bottom: 20px;
 }
 
 .title-card {

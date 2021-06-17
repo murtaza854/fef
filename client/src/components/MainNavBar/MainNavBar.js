@@ -20,7 +20,7 @@ function MainNavBar(props) {
     <Nav className="ml-auto">
       <Nav.Link href="/" className="navbartext">Home</Nav.Link>
       <Nav.Link href="/about" className="navbartext">About Us</Nav.Link>
-      <Nav.Link href="#link" className="navbartext">Our Work</Nav.Link>
+      <Nav.Link href="/work" className="navbartext">Our Work</Nav.Link>
       <Nav.Link href="#link" className="navbartext">Our Network</Nav.Link>
       <Nav.Link href="#link" className="navbartext">Our Sponsors</Nav.Link>
       <Nav.Link href="#link" className="navbardonate">Donate Now</Nav.Link>

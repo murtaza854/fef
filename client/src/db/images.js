@@ -1,6 +1,7 @@
 import { FormControl, Button, makeStyles, Select, Input, MenuItem, InputLabel, FormHelperText } from '@material-ui/core';
 import { useState, useEffect } from 'react';
 import { Col, Form } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import api from '../api';
 // import Visibility from '@material-ui/icons/Visibility';
 // import VisibilityOff from '@material-ui/icons/VisibilityOff';
@@ -46,18 +47,18 @@ const imagetDataObj = {
     rightAllign: [],
     Form: function() {
         const classes = useStyles();
+        let history = useHistory();
 
-        const [state, setState] = useState({picturePreview: '', imgURl: '', helperText: 'Please select an Image Category', category: '', error: false});
+        const [state, setState] = useState({picturePreview: '', imgURl: '', category: ''});
         const [imageCategories, setImageCategories] = useState([]);
 
         const [isDisabled, setCanSubmit] = useState(true);
         const [pressedBtn, setPressedBtn] = useState(null);
 
         useEffect(() => {
-            let flag = true;
+            let flag = false;
             if (state.picturePreview === '') flag = true;
-            else if (state.error === true) flag = true;
-            else flag = false;
+            if (state.category === "" || state.category === undefined) flag = true;
             setCanSubmit(flag);
         }, [state]);
 
@@ -76,18 +77,27 @@ const imagetDataObj = {
             setState(prevState => ({ ...prevState, [name]: value }));
         };
         
-        const onSubmit = e => {
-            e.preventDefault();
+        async function onSubmit(event) {
+            console.log(123)
+            event.preventDefault();
             const formData = new FormData();
             formData.append(
                 "file",
                 state.picturePreview
             );
-            fetch('http://localhost:4000/api/images/add', {
-                method: 'POST',
-                body: formData,
-                
-            });
+            var xhr  = new XMLHttpRequest();
+            xhr.onload = function (e) {
+                //your success code goes here
+            }
+            xhr.open("POST", `http://localhost:4000/api/images/add`, true);
+            xhr.send(formData);
+            // const response = await fetch(`http://localhost:4000/api/images/add`, {
+            //     method: 'POST',
+            //     body: formData,
+            // });
+            // const content = await response.json();
+            // console.log(content);
+            history.push('/admin/images');
         };
         const onImageChange = event => {
             let reader = new FileReader();
@@ -104,7 +114,6 @@ const imagetDataObj = {
           };
 
         return (<form onSubmit={onSubmit}>
-            <h2>Add an Image</h2>
             <fieldset>
                 <legend>Image</legend>
                 <Form.Row>
@@ -143,16 +152,16 @@ const imagetDataObj = {
                             input={<Input />}
                             MenuProps={MenuProps}
                             >
-                            <MenuItem key={0}>
-                            None
+                            <MenuItem key={0} value="">
+                            -
                             </MenuItem>
                             {imageCategories.map((obj) => (
-                                <MenuItem key={obj.id} value={obj.name}>
+                                <MenuItem key={obj.id} value={obj.id}>
                                 {obj.name}
                                 </MenuItem>
                             ))}
                             </Select>
-                            <FormHelperText error={state.error} id="name-helper">{state.helperText}</FormHelperText>
+                            <FormHelperText error={state.error} id="name-helper">Please select an Image Category</FormHelperText>
                         </FormControl>
                     </Form.Group>
                 </Form.Row>

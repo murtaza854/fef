@@ -26,9 +26,10 @@ router.post('/add', upload.single('file'), async (req, res) => {
   return next(error);
   } else {
     const fileName = file.originalname;
+    console.log(req.query, file);
     const data = await imageController.create(fileName);
     if (!data) res.json({data: []});
-    else res.json({data: 'success'});
+    else res.json({data: data});
   }
 });
 

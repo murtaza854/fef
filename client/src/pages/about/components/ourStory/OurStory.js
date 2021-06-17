@@ -1,5 +1,5 @@
 import React from 'react';
-import { CustomButton1, Heading1, Heading2 } from '../../../../components'
+import { CustomButton1, Heading1, Heading3 } from '../../../../components'
 import { Col, Container, Row } from 'react-bootstrap';
 import './Ourstory.scss';
 import assembly from '../../../../assets/background1.jpg';
@@ -8,9 +8,9 @@ function OurStory(props) {
     return (
         <Container fluid className="OurStory">
             <Row>
-                <Col className="global-padding-left" md={6}>
+                <Col className="global-padding-left storytext" md={7}>
                     <Heading1 first="Our Story" color="#4c483f"></Heading1>
-                    <Heading2 first="The Beginning of Our Journey" color="#a8ce4c"></Heading2>
+                    <Heading3 first="The Beginning of Our Journey" color="#a8ce4c"></Heading3>
                     <p className="content-read text-justify">
                     It began with a casual reading of an old Harvard Business School’s case study
 on combatting hunger in classrooms in India. The combater: Akshay Patra Foundation.
@@ -32,7 +32,7 @@ on this journey that will, in time, take us to all the schools for disadvantaged
                     <p className="short-text">*Schools where no furniture exists and children sit on straw mats.</p>
                     <CustomButton1 text="JOIN OUR JOURNEY" classes="btn colored-btn center"></CustomButton1>
                 </Col>
-                <Col className="img-cont" md={6}>
+                <Col className="img-cont" md={5}>
                     <img src={assembly} alt='assembly'/>
                 </Col>
             </Row>

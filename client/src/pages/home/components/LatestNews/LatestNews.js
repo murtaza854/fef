@@ -1,6 +1,6 @@
 import React from 'react';
 import "./LatestNews.scss";
-import { Heading1} from '../../../../components';
+import { Heading1, SmallHeading } from '../../../../components';
 // import CardDeck from 'react-bootstrap/CardDeck';
 import {InfoCard2} from '../../components'
 import Container from 'react-bootstrap/Container';
@@ -9,8 +9,8 @@ import Col from 'react-bootstrap/Col';
 function LatestNews(props) {
     return (
         <div className="LatestNews">
-            <div className="indented">
-            <p className="content-read bigger-text"> What's New </p>
+            <div className="global-indented">
+            <SmallHeading text="What's New"></SmallHeading>
             <Heading1 first = "READ OUR LATEST NEWS" color = "#4C483F"/>
             </div>
             <div>

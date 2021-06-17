@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Admin } from './admin'
 import { MainNavBar } from './components'
-import { Home, About } from './pages'
+import { Home, About, Work } from './pages'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -19,6 +19,17 @@ function App(props) {
           <Route path="/admin">
             <Admin></Admin>
           </Route>
+          <Route
+            path="/work"
+            render={({ match: { url } }) => (
+              <>
+                <Route path={`${url}/`} exact>
+                <MainNavBar></MainNavBar>
+                <Work></Work>
+                </Route>
+              </>
+            )}
+          />
           <Route
             path="/about"
             render={({ match: { url } }) => (
