@@ -1,39 +1,38 @@
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
+const crypto = require("crypto");
 const userController = require('../controllers').user;
 dotenv.config();
 
 router.post('/login', async (req, res) => {
-    const user = await userController.findByEmail(req.body.email, null);
-    if (!user) {
+    let findUser = await userController.findByEmail(req.body.email, null);
+    if (!findUser) {
         return res.status(404).send({
             loggedIn: false
         })
+    } else {
+        const user = findUser.get({plain: true});
+        const salt = user.salt;
+        const userHash = user.password;
+        const password = req.body.password;
+        const hash = crypto.pbkdf2Sync(password, salt,  parseInt(process.env.ITERATIONS), 64, process.env.HASH_ALGORITHIM).toString(`hex`);
+        if (userHash !== hash) {
+            res.json({
+                loggedIn: false
+            });
+        } else {
+            const token = generateAccessToken(user.id, user.name, req.body.email, user.superuser);
+            res.status(200)
+            .cookie('token', token, {httpOnly: true, maxAge: 24 * 60 * 60 * 1000, sameSite: 'lax'})
+            .json({loggedIn: true, token: req.cookies['token']});
+        }
     }
-    if (user.dataValues.password !== req.body.password) {
-        res.send({
-            loggedIn: false
-        });
-    }
-    const token = generateAccessToken(user.dataValues.id, req.body.email);
-    // const token = jwt.sign({_id: user.dataValues.id}, "secret");
-    res.status(200)
-        .cookie('token', token, {httpOnly: true, maxAge: 24 * 60 * 60 * 1000, sameSite: 'lax'})
-        .json({loggedIn: true, token: req.cookies['token']});
-    
-        // console.log(req.cookies['token']);
-
-    // res.cookie('jwt', token, {
-    //     httpOnly: true,
-    //     maxAge: 24 * 60 * 60 * 1000 // 1 day
-    // });
 });
 
 router.get('/loggedIn', async (req, res) => {
     try {
         const cookie = req.cookies['token'];
-        // console.log(cookie);
 
         const claims = jwt.verify(cookie, process.env.TOKEN_SECRET);
         if (!claims) {
@@ -59,23 +58,13 @@ router.get('/TableData', async (req, res) => {
     const user = await userController.getAll();
     if (!user) res.json({data: []});
     else res.json({data: user});
-    // if (user.dataValues.password !== req.body.password) {
-    //     res.send({
-    //         loggedIn: false
-    //     });
-    // }
-    // const token = generateAccessToken(user.dataValues.id, req.body.email);
-    // // const token = jwt.sign({_id: user.dataValues.id}, "secret");
-    // res.status(200)
-    //     .cookie('token', token, {httpOnly: true})
-    //     .json({loggedIn: true, token: req.cookies['token']});
-    
-    //     // console.log(req.cookies['token']);
+});
 
-    // // res.cookie('jwt', token, {
-    // //     httpOnly: true,
-    // //     maxAge: 24 * 60 * 60 * 1000 // 1 day
-    // // });
+router.post('/add', async (req, res) => {
+    console.log(req.body);
+    const salt = crypto.randomBytes(64).toString('hex'); 
+    // hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, `sha512`).toString(`hex`);
+    res.json({data: 'user'});
 });
 
 router.post('/set-darktheme', (req, res) => {
@@ -100,8 +89,8 @@ router.get('/get-darktheme', (req, res) => {
     // }
 });
 
-function generateAccessToken(id, email) {
-    return jwt.sign({email: email, id:id}, process.env.TOKEN_SECRET, { expiresIn: '24h' });
+function generateAccessToken(id, name, email, superuser) {
+    return jwt.sign({id:id, name: name, email: email, superuser: superuser}, process.env.TOKEN_SECRET, { expiresIn: '24h' });
   }
 
 module.exports = router;

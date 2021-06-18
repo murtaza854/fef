@@ -72,7 +72,7 @@ function DeleteConfirmation(props) {
             const content = await response.json();
             setItems(content.data);
         })();
-    }, [location]);
+    }, [location, deleteFetch.deleteApi]);
 
     useEffect(() => {
         if (length > 1) {

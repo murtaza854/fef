@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Admin } from './admin'
 import { MainNavBar, Footer } from './components'
-import { Home, About, Work } from './pages'
+import { Home, About, Work, Gallery, News } from './pages'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -20,12 +20,37 @@ function App(props) {
             <Admin></Admin>
           </Route>
           <Route
+            path="/news-events"
+            render={({ match: { url } }) => (
+              <>
+                <Route path={`${url}/`} exact>
+                <MainNavBar></MainNavBar>
+                <News></News>
+                <Footer></Footer>
+                </Route>
+              </>
+            )}
+          />
+          <Route
+            path="/gallery"
+            render={({ match: { url } }) => (
+              <>
+                <Route path={`${url}/`} exact>
+                <MainNavBar></MainNavBar>
+                <Gallery></Gallery>
+                <Footer></Footer>
+                </Route>
+              </>
+            )}
+          />
+          <Route
             path="/work"
             render={({ match: { url } }) => (
               <>
                 <Route path={`${url}/`} exact>
                 <MainNavBar></MainNavBar>
                 <Work></Work>
+                <Footer></Footer>
                 </Route>
               </>
             )}
@@ -37,6 +62,7 @@ function App(props) {
                 <Route path={`${url}/`} exact>
                 <MainNavBar></MainNavBar>
                 <About></About>
+                <Footer></Footer>
                 </Route>
               </>
             )}

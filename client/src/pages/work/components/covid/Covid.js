@@ -2,7 +2,7 @@ import React from 'react';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container';
-import { Heading1, Heading2 } from '../../../../components';
+import { Heading2 } from '../../../../components';
 
 function Covid(props) {
     return (

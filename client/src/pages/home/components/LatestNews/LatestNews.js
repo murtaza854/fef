@@ -19,6 +19,7 @@ function LatestNews(props) {
                         <Col><InfoCard2/></Col>
                         <Col><InfoCard2/></Col>
                         <Col><InfoCard2/></Col>
+                        <Col><InfoCard2/></Col>
                     </Row>
                 </Container>
             {/* <CardDeck>

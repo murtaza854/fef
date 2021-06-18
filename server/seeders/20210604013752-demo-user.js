@@ -14,7 +14,15 @@ module.exports = {
    return queryInterface.bulkInsert('users', [{
      name: 'test',
      email: 'test@test.com',
+     contactNumber: '+921234444444',
+     organization: 'Test Organization',
+     role: 'Admin',
+     emailVerified: true,
+     adminApproved: false,
+     newsletter: false,
+     volunteer: false,
      password: 'test',
+     salt: 'test',
      createdAt: new Date(),
      updatedAt: new Date()
    }], {});
