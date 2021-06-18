@@ -11,21 +11,16 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-     return queryInterface.bulkInsert('users', [{
-      name: 'John',
-      email: 'John@test.com',
-      contactNumber: '+921234444444',
-      organization: 'Cool Organization',
-      role: 'User',
-      emailVerified: true,
-      adminApproved: false,
-      newsletter: false,
-      volunteer: false,
-      password: 'test',
-      salt: 'test',
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }], {});
+     return queryInterface.bulkInsert('donations', [
+      {
+        amount: 5000.7,
+        paymentMethod: 'Bank Transfer',
+        paid: true,
+        userID: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+     ], {});
   },
 
   down: async (queryInterface, Sequelize) => {

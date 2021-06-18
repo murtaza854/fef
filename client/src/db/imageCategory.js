@@ -27,6 +27,8 @@ const imageCategoryObj = {
     ManyChild: 'images',
     checkboxSelection: 'id',
     editAllowed: true,
+    deleteAllowed: true,
+    addAllowed: true,
     modelName: 'Image Category',
     ordering: 'id',
     rightAllign: [],

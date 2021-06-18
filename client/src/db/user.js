@@ -7,8 +7,8 @@ import api from '../api';
 import { useHistory } from 'react-router-dom';
 
 const createUserTableData = (data) => {
-    let { id, name, email, contactNumber, organization, volunteer, role, newsletter } = data;
-    return { id, name, email, contactNumber, organization, volunteer, role, newsletter };
+    let { id, name, email, contactNumber, organization, volunteer, role, newsletter, adminApproved } = data;
+    return { id, name, email, contactNumber, organization, volunteer, role, newsletter, adminApproved };
 }
 
 const objEmailCheck = (data, value) => {
@@ -19,7 +19,7 @@ const userDataObj = {
     apiTable: `${api}/users/TableData`,
     createTableData : createUserTableData,
     headCells: [
-        { id: 'id', numeric: false, disablePadding: true, label: 'ID' },
+        // { id: 'id', numeric: false, disablePadding: true, label: 'ID' },
         { id: 'name', numeric: false, disablePadding: true, label: 'Name' },
         { id: 'email', numeric: false, disablePadding: false, label: 'Email' },
         { id: 'contactNumber', numeric: false, disablePadding: false, label: 'Contact Number' },
@@ -27,10 +27,13 @@ const userDataObj = {
         { id: 'volunteer', numeric: false, disablePadding: false, label: 'Volunteer' },
         { id: 'role', numeric: false, disablePadding: false, label: 'Role' },
         { id: 'newsletter', numeric: false, disablePadding: false, label: 'Newsletter' },
+        { id: 'adminApproved', numeric: false, disablePadding: false, label: 'Admin Approved' },
       ],
       ManyChild: '',
       checkboxSelection: 'id',
       editAllowed: false,
+      deleteAllowed: true,
+      addAllowed: true,
       modelName: 'User',
       ordering: 'id',
       rightAllign: [],
@@ -44,7 +47,7 @@ const userDataObj = {
         const [confirmPasswordState, setConfirmPasswordState] = useState({confirmPassowrd: '', showPassword: false, helperText: 'Re-type password', error: false});
         const [organizationState, setOrganizationState] = useState({organization: '', helperText: 'Enter an organization name Ex. Dolmen Mall'});
         const [roleState, setRoleState] = useState({role: '', helperText: 'Please select a role', error: false});
-        const [checkboxes, setCheckboxes] = useState({volunteer: false, newsletter: false});
+        const [checkboxes, setCheckboxes] = useState({volunteer: false, newsletter: false, adminApproved: false});
 
         const [usersArray, setUsersArray] = useState([]);
         const [isDisabled, setCanSubmit] = useState(true);
@@ -135,12 +138,12 @@ const userDataObj = {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({name: nameState.name, email: emailState.email, contactNumber: contactNumberState.contactNumber, password: passwordState.password, organization: organizationState.organization, role: roleState.role, volunteer: checkboxes.volunteer, newsletter: checkboxes.newsletter}),
+                body: JSON.stringify({name: nameState.name, email: emailState.email, contactNumber: contactNumberState.contactNumber, password: passwordState.password, organization: organizationState.organization, role: roleState.role, volunteer: checkboxes.volunteer, newsletter: checkboxes.newsletter, adminApproved: checkboxes.adminApproved}),
             });
             const content = await response.json();
             console.log(content);
             if (pressedBtn === 1) {
-                // history.push('/admin/users');
+                history.push('/admin/users');
             }
             else {
                 setNameState({name: '', helperText: 'Enter a name Ex. John Doe', error: false});
@@ -168,6 +171,9 @@ const userDataObj = {
 
         const handleNewsletterCheckbox = () => {
             setCheckboxes(prevState => ({ ...prevState, newsletter: !checkboxes.newsletter }));
+        };
+        const handleAdminApprovedCheckbox = () => {
+            setCheckboxes(prevState => ({ ...prevState, adminApproved: !checkboxes.adminApproved }));
         };
     
         const handleMouseDownPassword = (event) => {
@@ -343,6 +349,14 @@ const userDataObj = {
                         <FormControlLabel
                             control={<Checkbox checked={checkboxes.newsletter} onChange={handleNewsletterCheckbox} name="newsletter" />}
                             label="Newsletter"
+                        />
+                    </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                    <Form.Group as={Col} md={6} controlId="adminApproved">
+                        <FormControlLabel
+                            control={<Checkbox checked={checkboxes.adminApproved} onChange={handleAdminApprovedCheckbox} name="adminApproved" />}
+                            label="Admin Approved"
                         />
                     </Form.Group>
                 </Form.Row>

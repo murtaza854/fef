@@ -48,6 +48,8 @@ const imagetDataObj = {
     ManyChild: '',
     checkboxSelection: 'id',
     editAllowed: false,
+    deleteAllowed: true,
+    addAllowed: true,
     modelName: 'Image',
     ordering: 'id',
     rightAllign: [],
@@ -94,7 +96,7 @@ const imagetDataObj = {
             xhr.onload = function (e) {
                 //your success code goes here
             }
-            xhr.open("POST", `http://localhost:4000/api/images/add?category=${state.category}`, true);
+            xhr.open("POST", `${api}/images/add?category=${state.category}`, true);
             xhr.send(formData);
             // const response = await fetch(`http://localhost:4000/api/images/add`, {
             //     method: 'POST',

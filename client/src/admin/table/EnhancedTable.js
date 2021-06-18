@@ -9,13 +9,13 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
-import { userDataObj, projectDataObj, imageCategoryObj, imagetDataObj } from '../../db'
+import { userDataObj, projectDataObj, imageCategoryObj, imagetDataObj, newsletterObj, donationObj } from '../../db'
 import IconButton from '@material-ui/core/IconButton';
 import Collapse from '@material-ui/core/Collapse';
 // import Button from '@material-ui/core/Button';
 import CloseIcon from '@material-ui/icons/Close';
 import Alert from '@material-ui/lab/Alert';
-// import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import CheckIcon from '@material-ui/icons/Check';
 import './Table.scss'
 
 import {
@@ -150,6 +150,8 @@ export default function EnhancedTable(props) {
   else if (model === 'projects') tableFetch = projectDataObj;
   else if (model === 'image-category') tableFetch = imageCategoryObj;
   else if (model === 'images') tableFetch = imagetDataObj;
+  else if (model === 'newsletter') tableFetch = newsletterObj;
+  else if (model === 'donations') tableFetch = donationObj;
 
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
@@ -280,6 +282,8 @@ export default function EnhancedTable(props) {
         <EnhancedTableToolbar
           modelName={tableFetch.modelName}
           editAllowed={tableFetch.editAllowed}
+          deleteAllowed={tableFetch.deleteAllowed}
+          addAllowed={tableFetch.addAllowed}
           selected={selected} />
         <TableContainer>
           <Table
@@ -317,7 +321,11 @@ export default function EnhancedTable(props) {
                   for (const key in row) {
                     let textCenter = '';
                     if (tableFetch.rightAllign.includes(key)) textCenter = 'text-right';
-                    if (key === 'name') {
+                    if (key === 'id') {
+                      tableRow.push(
+                        <TableCell style={{display: 'none'}} key={c}>{row[key]}</TableCell>
+                      );
+                    } else if (key === 'name') {
                       tableRow.push(
                         <TableCell key={c} component="th" id={labelId} scope="row" padding="none">
                           {row[key]}
@@ -329,9 +337,13 @@ export default function EnhancedTable(props) {
                           <img className={classes.img} src={row[key]} alt="Preview"></img>
                         </TableCell>
                       );
-                    } else if (row[key] === undefined) {
+                    } else if (row[key] === false || row[key] === '') {
                       tableRow.push(
-                        <TableCell key={c}><CloseIcon style={{ color: '#ff0000' }} /></TableCell>
+                        <TableCell key={c}><CloseIcon color="secondary" /></TableCell>
+                      );
+                    } else if (row[key] === true) {
+                      tableRow.push(
+                        <TableCell key={c}><CheckIcon color="primary" /></TableCell>
                       );
                     } else {
                       tableRow.push(

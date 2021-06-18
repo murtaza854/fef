@@ -19,6 +19,8 @@ const userRoutes = require('./routes/user');
 const projectRoutes = require('./routes/projects');
 const imageRoutes = require('./routes/images');
 const imageCategoryRoutes = require('./routes/imageCategory');
+const newsletterRoutes = require('./routes/newsletter');
+const donationRoutes = require('./routes/donation');
 
 
 const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USERNAME, process.env.DATABASE_PASSWORD, {
@@ -54,6 +56,8 @@ app.use('/api/users', userRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/images', imageRoutes);
 app.use('/api/image-category', imageCategoryRoutes);
+app.use('/api/newsletter', newsletterRoutes);
+app.use('/api/donation', donationRoutes);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

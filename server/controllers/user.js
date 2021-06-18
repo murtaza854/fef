@@ -31,9 +31,9 @@ module.exports = {
         });
     },
     getAll() {
-        return Users.findAll(
-
-        )
+        return Users.findAll({
+            attributes: ['id', 'name', 'email', 'contactNumber', 'organization', 'volunteer', 'role', 'newsletter', 'adminApproved']
+        })
         .then(function(data) {
             return data;
         });

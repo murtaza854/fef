@@ -19,7 +19,7 @@ import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import Switch from "@material-ui/core/Switch";
 import CategoryIcon from '@material-ui/icons/Category';
-import { EnhancedTable, AdminForm, DeleteConfirmation } from '../../admin'
+import { EnhancedTable, AdminForm, DeleteConfirmation, Newsletter } from '../../admin'
 import {
   // BrowserRouter as Router,
   Switch as RouterSwitch,
@@ -320,6 +320,7 @@ export default function AdminLayout(props) {
               timeout={300}
             > */}
               <RouterSwitch>
+              <Route path="/admin/newsletter/add" children={<Newsletter />} />
                 <Route path="/admin/:model/edit/:id" children={<AdminForm />} />
                 <Route path="/admin/:model/add" children={<AdminForm />} />
                 <Route path="/admin/:model/delete" children={<DeleteConfirmation />} />

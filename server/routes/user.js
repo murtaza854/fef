@@ -16,7 +16,7 @@ router.post('/login', async (req, res) => {
         const salt = user.salt;
         const userHash = user.password;
         const password = req.body.password;
-        const hash = crypto.pbkdf2Sync(password, salt,  parseInt(process.env.ITERATIONS), 64, process.env.HASH_ALGORITHIM).toString(`hex`);
+        const hash = crypto.pbkdf2Sync(password, salt,  parseInt(process.env.ITERATIONS), 64, process.env.HASH_ALGORITHM).toString(`hex`);
         if (userHash !== hash) {
             res.json({
                 loggedIn: false
@@ -62,9 +62,22 @@ router.get('/TableData', async (req, res) => {
 
 router.post('/add', async (req, res) => {
     console.log(req.body);
-    const salt = crypto.randomBytes(64).toString('hex'); 
-    // hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, `sha512`).toString(`hex`);
-    res.json({data: 'user'});
+    const name = req.body.name;
+    const email = req.body.email;
+    const contactNumber = req.body.contactNumber;
+    const organization = req.body.organization;
+    const role = req.body.role;
+    const emailVerified = false;
+    const adminApproved = req.body.adminApproved;
+    const newsletter = req.body.newsletter;
+    const volunteer = req.body.volunteer;
+    const password = req.body.password;
+    const salt = crypto.randomBytes(16).toString('hex');
+    const superuser = false;
+    const hash = crypto.pbkdf2Sync(password, salt,  parseInt(process.env.ITERATIONS), 64, process.env.HASH_ALGORITHM).toString(`hex`);
+    const data = await userController.create({name: name, email: email, contactNumber: contactNumber, organization: organization, role: role, emailVerified: emailVerified, adminApproved: adminApproved, newsletter: newsletter, volunteer: volunteer, password: hash, salt: salt, superuser: superuser})
+    if (!data) res.json({data: []});
+    else res.json({data: 'success'});
 });
 
 router.post('/set-darktheme', (req, res) => {

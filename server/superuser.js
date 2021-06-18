@@ -25,7 +25,7 @@ if (password !== confirmPassword) {
 };
 const salt = crypto.randomBytes(16).toString('hex');
 const superuser = true;
-const hash = crypto.pbkdf2Sync(password, salt,  parseInt(process.env.ITERATIONS), 64, process.env.HASH_ALGORITHIM).toString(`hex`);
+const hash = crypto.pbkdf2Sync(password, salt,  parseInt(process.env.ITERATIONS), 64, process.env.HASH_ALGORITHM).toString(`hex`);
 
 const user = Promise.resolve(userController.create({name: name, email: email, contactNumber: contactNumber, organization: organization, role: role, emailVerified: emailVerified, adminApproved: adminApproved, newsletter: newsletter, volunteer: volunteer, password: hash, salt: salt, superuser: superuser}));
 

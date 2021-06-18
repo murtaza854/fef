@@ -38,7 +38,7 @@ const useToolbarStyles = makeStyles((theme) => ({
 function EnhancedTableToolbar(props) {
     const { model } = useParams();
     const classes = useToolbarStyles();
-    const { selected, modelName, editAllowed } = props;
+    const { selected, modelName, editAllowed, deleteAllowed, addAllowed } = props;
     const history = useHistory();
     const numSelected = selected.length;
 
@@ -67,6 +67,7 @@ function EnhancedTableToolbar(props) {
   
         {numSelected > 0 ? (
           <div style={{display: 'flex'}}>
+          {deleteAllowed === true ? (
             <Link to={{
               pathname: `/admin/${model}/delete`,
               state: {selected: selected, modelName: modelName}
@@ -77,6 +78,7 @@ function EnhancedTableToolbar(props) {
                 </IconButton>
               </Tooltip>
             </Link>
+          ) : null}
             {numSelected === 1 && editAllowed ? (
               <Link to={`/admin/${model}/edit/${editID}`}>
                 <Tooltip title="Edit">
@@ -89,11 +91,15 @@ function EnhancedTableToolbar(props) {
           }
           </div>
         ) : (
-          <Tooltip onClick={handleRouteChange} title="Add">
-            <IconButton aria-label="Add button">
-              <AddIcon />
-            </IconButton>
-          </Tooltip>
+          <div>
+            {addAllowed === true ? (
+              <Tooltip onClick={handleRouteChange} title="Add">
+                <IconButton aria-label="Add button">
+                  <AddIcon />
+                </IconButton>
+              </Tooltip>
+            ) : null}
+          </div>
         )}
       </Toolbar>
     );

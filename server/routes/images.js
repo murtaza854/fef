@@ -4,7 +4,7 @@ const path = require("path");
 const imageController = require('../controllers').image;
 
 const storage = multer.diskStorage({
-  destination: '../client/public/images',
+  destination: '../client/public/newsletterImages',
   filename: (req, file, cb) => {
     cb(null, `${file.originalname}`);
   }
