@@ -74,22 +74,28 @@ body {
 }
 
 .global-padding-left {
-  padding-left: 100px !important;
+  padding-left: 6.25rem !important;
 }
 .global-padding-right {
-  padding-right: 100px !important;
+  padding-right: 6.25rem !important;
 }
 
 .global-margin-bottom {
-  margin-bottom: 60px;
+  margin-bottom: 3.75rem;
 }
 
 .global-indented {
-  padding-left: 100px;
-  padding-bottom: 20px;
+  padding-left: 6.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .title-card {
   font-weight: 800;
   font-size: 1.5rem;
 }
+
+@media (max-width: 61.99em) {
+  .global-padding-left {
+      padding-left: 2rem !important;
+    }
+  }

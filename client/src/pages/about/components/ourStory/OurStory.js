@@ -2,16 +2,22 @@ import React from 'react';
 import { CustomButton1, Heading1, Heading3 } from '../../../../components'
 import { Col, Container, Row } from 'react-bootstrap';
 import './Ourstory.scss';
-import assembly from '../../../../assets/background1.jpg';
+import assembly from '../../../../assets/Assembly_cropped.jpg';
+import { useEffect } from 'react';
 
 function OurStory(props) {
+    
+    useEffect(() => {
+        console.log("ghifjsd")
+        console.log(document.getElementById("OurStoryText").style);
+    })
     return (
         <Container fluid className="OurStory">
             <Row>
-                <Col className="global-padding-left storytext" md={7}>
-                    <Heading1 first="Our Story" color="#4c483f"></Heading1>
-                    <Heading3 first="The Beginning of Our Journey" color="#a8ce4c"></Heading3>
-                    <p className="content-read text-justify">
+                <Col className="global-padding-left storytext" md={7} id="OurStoryText">
+                    <Heading1 first="Our Story" color="#4c483f" ></Heading1>
+                    <Heading3 first="The Beginning of Our Journey" color="#a8ce4c" classes="ourjourney-heading"></Heading3>
+                    <p className="text-justify our-story">
                     It began with a casual reading of an old Harvard Business School’s case study
 on combatting hunger in classrooms in India. The combater: Akshay Patra Foundation.
 Their weapon: mid-day meals for children in schools. It triggered a thought chain
@@ -30,7 +36,7 @@ of people was reaffirmed; we got funds and we have friends who have gladly joine
 on this journey that will, in time, take us to all the schools for disadvantaged children.
                     </p>
                     <p className="short-text">*Schools where no furniture exists and children sit on straw mats.</p>
-                    <CustomButton1 text="JOIN OUR JOURNEY" classes="btn colored-btn center"></CustomButton1>
+                    <CustomButton1 text="JOIN OUR JOURNEY" classes="btn colored-btn center btn-margin"></CustomButton1>
                 </Col>
                 <Col className="img-cont" md={5}>
                     <img src={assembly} alt='assembly'/>

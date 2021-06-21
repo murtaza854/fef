@@ -1,16 +1,46 @@
 .OurStory {
+    color: black;
     // padding-bottom: 50px;
     .short-text {
         font-size: 0.6rem;
+        // height: fit-content;
     }
     img {
-        width: 100%;
+        width: 150%;
         filter: grayscale(100%);
+        overflow-x: hidden;
     }
     .img-cont {
         padding: 0;
     }
-    .storytext {
-        padding-right: 50px;
+    .container-fluid {
+        display: table;
     }
+    .storytext {
+        // padding-right: 0;
+        // width: 70ch;
+        // padding-right: 10rem;
+    }
+    .our-story {
+        max-width: 70ch;
+        padding-right: 1rem;
+        // padding-left: 1rem!important;
+    }
+    .btn-margin {
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    }
+    @media (max-width: 61.99em) {
+        .our-story {
+            padding-right: 0.5rem;
+            // padding-left: 1rem!important;
+        }
+    }
+    @media (max-width: 35.99em) {
+        .ourjourney-heading {
+            font-size: 2rem;
+        }
+    }
+    
+        
 }
