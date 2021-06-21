@@ -3,18 +3,17 @@ import { CustomButton1, Heading1, Heading3 } from '../../../../components'
 import { Col, Container, Row } from 'react-bootstrap';
 import './Ourstory.scss';
 import assembly from '../../../../assets/Assembly_cropped.jpg';
-import { useEffect } from 'react';
+import { useEffect,useRef,useLayoutEffect} from 'react';
 
 function OurStory(props) {
     
-    useEffect(() => {
-        console.log("ghifjsd")
-        console.log(document.getElementById("OurStoryText").style);
-    })
+    const ref = useRef(null);
+    const ref2 = useRef(null);
+    
     return (
-        <Container fluid className="OurStory">
+        <Container  fluid className="OurStory">
             <Row>
-                <Col className="global-padding-left storytext" md={7} id="OurStoryText">
+                <Col ref = {ref} className="global-padding-left storytext" md={7} id="OurStoryText">
                     <Heading1 first="Our Story" color="#4c483f" ></Heading1>
                     <Heading3 first="The Beginning of Our Journey" color="#a8ce4c" classes="ourjourney-heading"></Heading3>
                     <p className="text-justify our-story">
@@ -39,7 +38,7 @@ on this journey that will, in time, take us to all the schools for disadvantaged
                     <CustomButton1 text="JOIN OUR JOURNEY" classes="btn colored-btn center btn-margin"></CustomButton1>
                 </Col>
                 <Col className="img-cont" md={5}>
-                    <img src={assembly} alt='assembly'/>
+                    <img ref = {ref2} src={assembly} alt='assembly'/>
                 </Col>
             </Row>
         </Container>
