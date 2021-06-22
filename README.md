@@ -9,7 +9,7 @@
 - Home page form submission. Email subscription
 - Our Affiliations scrolling
 - Admin Panel
-    - Finalise projects form and table
+    - Finalise projects form and table - backend
     - <span style="color:red">Add delete image to backend</span>
     - Set limit for image uploads
     - Newsletter form - Title input, backend implementation

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Admin } from './admin'
 import { MainNavBar, Footer } from './components'
-import { Home, About, Work, Gallery, News } from './pages'
+import { Home, About, Work, Gallery, News, Network } from './pages'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -26,6 +26,18 @@ function App(props) {
                 <Route path={`${url}/`} exact>
                 <MainNavBar></MainNavBar>
                 <News></News>
+                <Footer></Footer>
+                </Route>
+              </>
+            )}
+          />
+          <Route
+            path="/network"
+            render={({ match: { url } }) => (
+              <>
+                <Route path={`${url}/`} exact>
+                <MainNavBar></MainNavBar>
+                <Network></Network>
                 <Footer></Footer>
                 </Route>
               </>
