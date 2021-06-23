@@ -1,6 +1,9 @@
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
 @import "~bootstrap/scss/bootstrap";
+html {
+  scroll-behavior: unset;
+}
 .App {
   text-align: center;
 }
@@ -52,7 +55,7 @@ body {
 }
 
 .margin-global-top {
-  margin-top: 100px;
+  margin-top: 3.125rem;
 }
 .padding-global-top-page-start {
   padding-top: 200px;
@@ -93,9 +96,65 @@ body {
   font-weight: 800;
   font-size: 1.5rem;
 }
+@media (max-width: 61.99875em) {
+  // .our-story {
+      .global-space-col {
+          flex: 0 0 25% !important;
+          max-width: 25% !important;
+      }
+      .global-text-col {
+          flex: 0 0 66.666667% !important;
+          max-width: 66.666667% !important;
+      }
+  // }
+}
+
+// 884px
+@media (max-width: 55.25em) {
+  // .our-story {
+      .global-space-col {
+          flex: 0 0 0% !important;
+          max-width: 0% !important;
+      }
+      .global-text-col {
+          flex: 0 0 99.666667% !important;
+          max-width: 99.666667% !important;
+          padding: 0 10% !important;
+      }
+  // }
+}
 
 @media (max-width: 61.99em) {
   .global-padding-left {
       padding-left: 2rem !important;
     }
+  }
+
+
+  .page {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+  }
+  
+  .page-enter {
+    opacity: 0;
+    // transform: scale(1.1);
+  }
+  
+  .page-enter-active {
+    opacity: 1;
+    // transform: scale(1);
+    transition: opacity 250ms;
+  }
+  
+  .page-exit {
+    opacity: 1;
+    // transform: scale(1);
+  }
+  
+  .page-exit-active {
+    opacity: 0;
+    // transform: scale(0.9);
+    transition: opacity 250ms;
   }

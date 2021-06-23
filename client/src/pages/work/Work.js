@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import { Projects } from './components';
 import { MenuPlan, Smp, DonateMeal, Children, Covid } from './components'
 import './Work.scss';
 
 function Work(props) {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])
     return (
         <div>
             <div className="padding-global-top-page-start"></div>

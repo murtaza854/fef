@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.scss'
 import {Carousel,FuturePortion,MessageFounder,ThreeImages, OngoingCampaigns,HighlightsPortion,LatestNews,SignUpForm} from './components'
 
 function Home(props) {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])
     return (
         <div>
             <Carousel/>

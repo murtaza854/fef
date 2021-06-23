@@ -19,7 +19,7 @@ function FuturePortion(props) {
                             <p className="content-read">
                                 In Pakistan 40.2% of children under five are currently stunted according to the National Nutrition Survey (a prevalence considered 'critical' by WHO's thresholds)
                             </p>
-                            <CustomButton1 text="Donate Now" classes="btn colored-btn center"></CustomButton1>
+                            <CustomButton1 to="work" text="Donate Now" classes="btn colored-btn center"></CustomButton1>
                         </div>
                     </Col>
                     <Col className="section2">

@@ -10,13 +10,13 @@ function ThreeImages(props) {
         <div className="threeimages">
             <Container fluid>
                 <Row>
-                    <Col>
+                    <Col md = {4}>
                     <ImageTextCenter img={assembly} first="Donate in" second="Support Fund" color="#e3aa58"/>
                     </Col>
-                    <Col>
+                    <Col  md = {4}>
                     <ImageTextCenter img={st_class} first="Support a" second="Classroom" color="#e38454"/>
                     </Col>
-                    <Col>
+                    <Col md = {4} >
                     <ImageTextCenter img={eating} first="Support a Child's" second="Meal" color="#a8ce4c"/>
                     </Col>
                     

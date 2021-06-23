@@ -1,12 +1,15 @@
 import React from 'react';
-import './CustomButton1.scss'
+import {
+    Link
+  } from "react-router-dom";
+import './CustomButton1.scss';
 
 function CustomButton1(props) {
     return (
         <div className="CustomButton1">
-            <a href={props.href} className={props.classes}>
+            <Link to={props.to} className={props.classes}>
                 {props.text}
-            </a>
+            </Link>
         </div>
     );
 }

@@ -46,6 +46,7 @@ function Login(props) {
     const handleSubmit = async e => {
         // console.log(123);
         e.preventDefault();
+        setDarkState(true);
         const token = await loginUser({
             email,
           password

@@ -1,52 +1,119 @@
-.OurStory {
+.our-story {
     color: black;
     // padding-bottom: 50px;
+    position: relative;
+    // overflow: hidden;
+    // max-width: 140ch;
     .short-text {
         font-size: 0.6rem;
         // height: fit-content;
     }
     img {
-
-        width: 90%;
-        // height: 80%;
-        object-fit: cover;
+        // transform: translateX(50%);
+        // transform: scale(2.1) translateX(27%);
+        // position: absolute;
+        width: 100%;
+        // top: -400px;
+        // height: 10%;
+        // white-space: nowrap;
+        // object-fit: cover;
         filter: grayscale(100%);
-        overflow-x: hidden;
     }
-    .img-cont {
-        // height: auto;
-        padding: 0;
-        // min-height: 300px;
-        // background-image: url("../../../../assets/Assembly_cropped.jpg");
-    }
-    .container-fluid {
-        display: table;
-    }
-    .storytext {
-        // padding-right: 0;
-        // width: 70ch;
-        // padding-right: 10rem;
-    }
-    .our-story {
-        max-width: 70ch;
-        padding-right: 1rem;
-        // padding-left: 1rem!important;
-    }
-    .btn-margin {
-        margin-bottom: 2rem;
-        margin-top: 1rem;
-    }
-    @media (max-width: 61.99em) {
-        .our-story {
-            padding-right: 0.5rem;
-            // padding-left: 1rem!important;
-        }
-    }
-    @media (max-width: 35.99em) {
-        .ourjourney-heading {
-            font-size: 2rem;
-        }
-    }
-    
-        
+    // .img-cont {
+    //     // height: auto;
+    //     padding: 0;
+    //     // min-height: 300px;
+    //     // background-image: url("../../../../assets/Assembly_cropped.jpg");
+    // }
+    // .container-fluid {
+    //     display: table;
+    // }
+    // .storytext {
+    //     // padding-right: 0;
+    //     // width: 70ch;
+    //     // padding-right: 10rem;
+    // }
+    // .our-story {
+    //     // max-width: 70ch;
+    //     padding-right: 1rem;
+    //     // padding-left: 1rem!important;
+    // }
+    // @media (max-width: 61.99em) {
+    //     .our-story {
+    //         padding-right: 0.5rem;
+    //         // padding-left: 1rem!important;
+    //     }
+    // }
+    // @media (max-width: 35.99em) {
+    //     .ourjourney-heading {
+    //         font-size: 2rem;
+    //     }
+    // }
 }
+
+
+// 1700px
+@media (max-width: 106.25em) {
+}
+
+//1600px
+@media (max-width: 100em) {
+}
+
+//1500px
+@media (max-width: 93.75em) {
+    
+}
+
+// // X-Large devices (large desktops, less than 1400px)
+@media (max-width: 87.49875em) {
+}
+
+// 1300px
+@media (max-width: 81.25em) {
+    
+}
+
+// // Large devices (desktops, less than 1200px)
+// @media (max-width: 74.99875em) {
+// }
+
+// // Medium devices (tablets, less than 992px)
+@media (max-width: 61.99875em) {
+    // .our-story {
+    //     .global-space-col {
+    //         flex: 0 0 25%;
+    //         max-width: 25%;
+    //     }
+    //     .global-text-col {
+    //         flex: 0 0 66.666667%;
+    //         max-width: 66.666667%;
+    //     }
+    // }
+}
+
+// 884px
+@media (max-width: 55.25em) {
+    // .our-story {
+    //     .global-space-col {
+    //         flex: 0 0 0%;
+    //         max-width: 0%;
+    //     }
+    //     .global-text-col {
+    //         flex: 0 0 99.666667%;
+    //         max-width: 99.666667%;
+    //         padding: 0 10%;
+    //     }
+    // }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 47.99875em) {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 35.99875em) {
+}
+
+
+

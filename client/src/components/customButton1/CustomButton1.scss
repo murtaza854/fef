@@ -1,8 +1,10 @@
 .CustomButton1 {
     a {
         border-radius: 50px;
-        width: fit-content;
+        // width: fit-content;
         padding: 10px 20px;
+        white-space: nowrap;
+        // width: 16rem;
         font-size: 1.4rem;
         transition: ease-in-out .3s;
         font-weight: 800;
@@ -12,7 +14,7 @@
         color: #4c483f ;
         background-color: #e38454;
         border: 1px solid #e38454;
-        width: fit-content;
+        // width: fit-content;
         &:hover {   
            background-color: transparent;
         }
@@ -42,6 +44,10 @@
         transform: translateX(-50%);
         position: relative;
         left: 50%;
+    }
+    .btn-margin {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
     }
 }
 

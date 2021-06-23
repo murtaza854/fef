@@ -7,20 +7,12 @@ import { Heading1, Heading2 } from '../../../../components';
 
 function Smp(props) {
     return (
-        <Container fluid className="smp global-padding-left">
-        <Row>
-            <Col>
-        <Heading1 first="School Meal Program (SMP)" color="#4C483F"></Heading1>
-        </Col>
-        </Row>
-        <Row>
-            <Col>
-        <Heading2 first="What is SMP ?" color="#A8CE4C"> </Heading2>
-        </Col>
-        </Row>
-        <Row>
-        <Col md={7}>
-        <p className="content-read">
+        <Container fluid className="smp">
+        <Row className="justify-content-end">
+            <Col md={6} className="global-text-col">
+                <Heading1 first="School Meal Program (SMP)" color="#4C483F"></Heading1>
+                <Heading2 first="What is SMP ?" color="#A8CE4C"> </Heading2>
+                <p className="content-read">
                     In developing our School Meal Program, we studied Pakistan’s Dietary Guidelines
                     for Better Nutrition which were developed by WHO (World Health Organization)
                     and the Government of Pakistan in May 2018. At the same time, we also looked at
@@ -28,11 +20,11 @@ function Smp(props) {
                     had to consider the local dietary habits of the children in our target ages and
                     of course cost of the meal had a significant impact in deciding what to deliver.
                     As we move forward, we will continue to tweak the meal menus to improve its
-                    nutritional value and the cost of the meal.  
-        </p>
-        </Col>
+                    nutritional value and the cost of the meal.
+                </p>
+            </Col>
+            <Col md={5} className="global-space-col"></Col>
         </Row>
-        
     </Container>
     );
 }

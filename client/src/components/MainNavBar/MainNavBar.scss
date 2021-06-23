@@ -5,13 +5,14 @@
       position: absolute;
       z-index: 999;
       width: 100%;
-    .nav-link {
-        margin-right: 10px;
+    .navbartext {
     }
     .navbartext
     {
+      margin-right: 10px;
       font-size: 1.3rem;
       color: #e38454 !important;
+      text-decoration: none;
       padding: 10px 20px !important;
       transition: ease-in-out .3s;
       &:hover {   
@@ -21,6 +22,7 @@
     .navbardonate
     { font-size: 1.3rem;
      
+      text-decoration: none;
        color: #4c483f !important; 
        background-color: #e38454;
        border-radius: 50px;

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const multer = require('multer');
 const newsletterController = require('../controllers').newsletter;
 const imageController = require('../controllers').image;
-
+const fs = require('fs');
 const storage = multer.diskStorage({
     destination: '../client/public/newsletterImages',
     filename: (req, file, cb) => {
@@ -20,10 +20,19 @@ router.get('/TableData', async (req, res) => {
 
 router.post('/add', async (req, res) => {
     console.log(req.body)
+    console.log("chocolate, making about page now")
     // const newsletters = await newsletterController.getAll();
     // if (!newsletters) res.json({data: []});
     // else res.json({data: newsletters});
-    res.json({data: req.body});
+    fs.writeFile(`../client/public/newsletter/${req.body.title}.html`, req.body.html, function(err) {
+        if(err) {
+            res.json({upload:false})
+            return console.log(err);
+        }
+        console.log("The file was saved!");
+        res.json({upload: true})
+    });
+    // res.json({data: req.body});
 });
 
 

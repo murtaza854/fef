@@ -62,6 +62,7 @@ const imagetDataObj = {
 
         const [isDisabled, setCanSubmit] = useState(true);
         const [pressedBtn, setPressedBtn] = useState(null);
+        console.log(pressedBtn);
 
         useEffect(() => {
             let flag = false;

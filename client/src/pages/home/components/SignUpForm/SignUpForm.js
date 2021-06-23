@@ -19,13 +19,13 @@ function SignUpForm(props) {
                         <Col md = {3}>
                             <Form.Group controlId="formGroupFirstName">
                                 <Form.Label><p className="content-bold">First Name*</p></Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" required/>
+                                <Form.Control type="text" placeholder="First Name" required/>
                             </Form.Group>
                         </Col>
                         <Col md = {3}>
                         <Form.Group controlId="formGroupLastName">
                                 <Form.Label><p className="content-bold">Last Name*</p></Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" required/>
+                                <Form.Control type="text" placeholder="Last Name" required/>
                             </Form.Group>
                         </Col>
                     </Row>

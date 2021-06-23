@@ -4,3 +4,4 @@ export { default as Work } from './work/Work';
 export { default as Gallery } from './gallery/Gallery';
 export { default as News } from './news/News';
 export { default as Network } from './network/Network';
+export { default as Donate } from './donate/Donate';
