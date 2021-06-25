@@ -1,23 +1,17 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Heading1, Heading2 } from '../../components';
-
+import "./Donate.scss"
 function Donate(props) {
     return (
-        <div>
-            <Container className="Projects">
-                <Row>
-                    <Col>
-                        <Heading1 first="Donation" color="#4C483F"></Heading1>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Heading2 first="For Donation via Bank Transfer" color="#A8CE4C"> </Heading2>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={7}>
+        <div className="Projects">
+            <div className="padding-global-top-page-start"></div>
+            <Container fluid>
+
+            <Row className="justify-content-end">
+                <Col md={6} className="global-text-col">
+                    <Heading1 first="Donation" color="#4C483F"></Heading1>
+                    <Heading2 first="For Donation via Bank Transfer" color="#A8CE4C"> </Heading2>
                         <p className="content-read">
                             <b>Habib Metropolitan Bank</b>
                             <br />
@@ -27,21 +21,10 @@ function Donate(props) {
                             <br />
                             IBAN: PK19MPBL0146067140128531.
                         </p>
-                    </Col>
-                </Row>
-                <Row></Row>
 
-            </Container>
+            <div className="leavespace"></div>
 
-            <br /><br /><br /><br />
-            <Container>
-                <Row>
-                    <Col>
                         <Heading2 first="For Donation via Cross Cheque" color="#A8CE4C"> </Heading2>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={7}>
                         <p className="content-read">
                             Kindly make a Cross Cheque in favor of <b> Fortify Education Foundation</b>
                             <br />
@@ -51,19 +34,9 @@ function Donate(props) {
                             <br />
                             Karachi call our helpline at +923089602202.
                         </p>
-                    </Col>
-                </Row>
-                <Row></Row>
-            </Container>
-            <br /><br /><br /><br />
-            <Container>
-                <Row>
-                    <Col>
+                        <div className="leavespace"></div>
                         <Heading2 first="For Cash Donations" color="#A8CE4C"> </Heading2>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={7}>
+
                         <p className="content-read">
                             Call our helpline at +923089602202 and our rider will
                             <br />
@@ -73,19 +46,9 @@ function Donate(props) {
                             <br />
                             Karachi call our helpline at +923089602202.
                         </p>
-                    </Col>
-                </Row>
-                <Row></Row>
-            </Container>
-            <br /><br /><br /><br />
-            <Container>
-                <Row>
-                    <Col>
+            <div className="leavespace"></div>
+
                         <Heading2 first="For Donations Outside Pakistan" color="#A8CE4C"> </Heading2>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={7}>
                         <p className="content-read">
                             Call our WhatsApp helpline +923089602202 and our
                             <br />
@@ -94,8 +57,10 @@ function Donate(props) {
                             reciept will be provided via email.
                         </p>
                     </Col>
+                    
+            <Col md={5} className="global-space-col"></Col>
                 </Row>
-                <Row></Row>
+                
             </Container>
         </div>
     );

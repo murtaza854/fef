@@ -6,6 +6,7 @@ import Tab from '@material-ui/core/Tab';
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { TabPanel } from '../../components'
 import Masonry, {ResponsiveMasonry} from 'react-responsive-masonry'
+import Button from 'react-bootstrap/Button'
 // TabPanel.propTypes = {
 //     children: PropTypes.node,
 //     index: PropTypes.any.isRequired,
@@ -64,7 +65,7 @@ function ScrollableTabsButtonAuto(props) {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
-    const DATA=[
+    const [DATA,SETDATA]=React.useState([
         {image: '/images/background.png', title: ''},
         {image: '/images/background.png', title: ''},
         {image: '/images/background.png', title: ''},
@@ -75,10 +76,13 @@ function ScrollableTabsButtonAuto(props) {
         {image: '/images/background.png', title: ''},
         {image: '/images/background.png', title: ''},
         {image: '/images/background.png', title: ''},
-    ];
+    ]);
 
     const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+  const addImages = (event) => {
+    SETDATA(oldarray => [...oldarray,{image: '/images/background.png', title: ''}])
   };
     
     return (
@@ -120,6 +124,7 @@ function ScrollableTabsButtonAuto(props) {
                     ))}
                 </Masonry>
             </ResponsiveMasonry>
+            <Button variant="primary" onClick={addImages}>Show more</Button>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
