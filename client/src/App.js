@@ -1,13 +1,13 @@
 import React from 'react';
-import { Admin } from './admin'
-import { MainNavBar, Footer } from './components'
-import { Home, About, Work, Gallery, News, Network } from './pages'
+// import { Admin } from './admin'
+// import { MainNavBar, Footer } from './components'
+// import { Home, About, Work, Gallery, News, Network } from './pages'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 import Routes from './Routes';
 

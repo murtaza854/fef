@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -9,12 +9,6 @@ import './Kitchen.scss';
 
 function Kitchen(props) {
 
-    const [show, setShow] = useState(false);
-    const [fullscreen, setFullscreen] = useState(true);
-    function handleShow() {
-        setFullscreen(true);
-        setShow(true);
-    }
 
     return (
         <div className="kitchen-component">
@@ -42,7 +36,7 @@ function Kitchen(props) {
                             <div className="leave-a-line"></div>
                             We still had to construct a kitchen which we did in the next few months. The plan was drawn, and construction started.
                         </p>
-                        <img src={KitchenPic} alt="Our kitchen map" onClick={handleShow} />
+                        <img src={KitchenPic} alt="Our kitchen map" />
 
                         <p className="content-read">
                         <div className="leave-a-line"></div>

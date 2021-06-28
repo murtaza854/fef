@@ -75,7 +75,7 @@ function Newsletter(props) {
   const log = async (event) => {
     event.preventDefault();
     event.stopPropagation();
-    const response = await fetch(`${api}/newsletter/add`, {
+    await fetch(`${api}/newsletter/add`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ function Newsletter(props) {
       body: JSON.stringify({ title : ArticleName ,html: editorRef.current.getContent() }),
     });
 
-    const content = await response.json();
+    // const content = await response.json();
     // console.log(content.data.html);
     //     const formData = new FormData();
     // formData.append(

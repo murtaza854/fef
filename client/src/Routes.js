@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Switch,
   Route,
   useLocation
@@ -52,7 +52,7 @@ function Routes(props) {
                 <Footer />
               </Route>
               <Route path="/news-events">
-                <MainNavBar />
+                {/* <MainNavBar /> */}
                 <News />
                 <Footer />
               </Route>

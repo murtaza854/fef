@@ -10,51 +10,51 @@ function News(props) {
         window.scrollTo(0, 0);
       }, [])
     return (
-        <div>
+        <div  className="news">
             <div className="padding-global-top-page-start"></div>
-            <Container fluid className="news">
-                    <Row>
-                        <Col>
+            <Container fluid>
+                    <Row className="justify-content-left">
+                        <Col md={4}>
                             <div className="card-center">
                                 <InfoCard2/>
                             </div>
                         </Col>
-                        <Col>
+                        <Col md={4}>
                             <div className="card-center">
                                 <InfoCard2/>
                             </div>
                         </Col>
-                        <Col>
+                        <Col md={4}>
                             <div className="card-center">
                                 <InfoCard2/>
                             </div>
                         </Col>
-                        <Col>
+                        <Col md={4}>
                             <div className="card-center">
                                 <InfoCard2/>
                             </div>
                         </Col>
-                        <Col>
+                        <Col md={4}>
                             <div className="card-center">
                                 <InfoCard2/>
                             </div>
                         </Col>
-                        <Col>
+                        <Col md={4}>
                             <div className="card-center">
                                 <InfoCard2/>
                             </div>
                         </Col>
-                        <Col>
+                        <Col md={4}>
                             <div className="card-center">
                                 <InfoCard2/>
                             </div>
                         </Col>
-                        <Col>
+                        <Col md={4}>
                             <div className="card-center">
                                 <InfoCard2/>
                             </div>
                         </Col>
-                        <Col>
+                        <Col md={4}>
                             <div className="card-center">
                                 <InfoCard2/>
                             </div>

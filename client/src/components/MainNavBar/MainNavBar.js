@@ -4,9 +4,9 @@ import logo from '../../logo.png';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   // Switch,
-  Route,
+  // Route,
   Link
 } from "react-router-dom";
 

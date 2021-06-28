@@ -6,7 +6,7 @@ import { CardImg, CustomButton1 } from '../../../../components';
 function InfoCard2(props) {
     return (
         <div className="cont2">
-            <Card style={{width: '25rem'}}>
+            <Card >
   <Card.Body>
     <CardImg image = {st_class}/>
     <Card.Title className="cardTitle"><p className="title-card">Support a Classroom</p></Card.Title>

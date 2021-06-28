@@ -2,14 +2,11 @@ import React from 'react';
 import { CustomButton1, Heading1, Heading2 } from '../../../../components'
 import { Col, Container, Row } from 'react-bootstrap';
 import './Ourstory.scss';
-import assembly from '../../../../assets/background1.jpg';
 // import assembly from '../../../../assets/Assembly_cropped.jpg';
-import { useRef} from 'react';
+// import { useRef} from 'react';
 
 function OurStory(props) {
     
-    const ref = useRef(null);
-    const ref2 = useRef(null);
     
     return (
         <Container fluid className="our-story">
