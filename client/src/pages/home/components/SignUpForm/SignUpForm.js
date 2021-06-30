@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading1,CustomButton1,SmallHeading } from '../../../../components';
+import { Heading1, CustomButton1, SmallHeading } from '../../../../components';
 import "./SignUpForm.scss"
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -11,33 +11,33 @@ import 'react-phone-input-2/lib/style.css'
 function SignUpForm(props) {
     return (
         <Container fluid className="signupform">
-            <div className="global-indented">
+            <div className="some-padding global-padding-left">
                 <SmallHeading text="Want to stay Updated?"></SmallHeading>
-                <Heading1 first="SIGN UP !" />
+                <Heading1 first="SIGN UP!" />
                 <Form>
                     <Row>
-                        <Col md = {3}>
+                        <Col md={3}>
                             <Form.Group controlId="formGroupFirstName">
                                 <Form.Label><p className="content-bold">First Name*</p></Form.Label>
-                                <Form.Control type="text" placeholder="First Name" required/>
+                                <Form.Control type="text" placeholder="First Name" required />
                             </Form.Group>
                         </Col>
-                        <Col md = {3}>
-                        <Form.Group controlId="formGroupLastName">
+                        <Col md={3}>
+                            <Form.Group controlId="formGroupLastName">
                                 <Form.Label><p className="content-bold">Last Name*</p></Form.Label>
-                                <Form.Control type="text" placeholder="Last Name" required/>
+                                <Form.Control type="text" placeholder="Last Name" required />
                             </Form.Group>
                         </Col>
                     </Row>
                     <Row>
-                        <Col   md = {6}>
-                        <Form.Group controlId="formGroupEmail">
+                        <Col md={6}>
+                            <Form.Group controlId="formGroupEmail">
                                 <Form.Label><p className="content-bold">Email address*</p></Form.Label>
                                 <Form.Control type="email" placeholder="Enter email" required />
                             </Form.Group>
                         </Col>
                     </Row>
-                    <Row>
+                    {/* <Row>
                     
                     <Col   md = {6}>
                     <Form.Group controlId="formGroupPhone">
@@ -48,8 +48,12 @@ function SignUpForm(props) {
                     
                         </Col>
                     
+                    </Row> */}
+                    <Row>
+                    <div className="submitButton">
+                        <CustomButton1 text="SUBMIT" classes="btn colored-btn center" />
+                    </div>
                     </Row>
-                    <CustomButton1 text="SUBMIT" classes = "btn colored-btn center"/>
                 </Form>
             </div>
         </Container>

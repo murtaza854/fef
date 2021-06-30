@@ -52,7 +52,7 @@ function Routes(props) {
                 <Footer />
               </Route>
               <Route path="/news-events">
-                {/* <MainNavBar /> */}
+                <MainNavBar />
                 <News />
                 <Footer />
               </Route>

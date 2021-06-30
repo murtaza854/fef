@@ -17,25 +17,61 @@ function OngoingCampaigns(props) {
     autoplay: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    // responsive: [
-    //     {
-    //       breakpoint: 900,
-    //       settings: {
-    //         slidesToShow: 3,
-    //       }
-    //     },
-    //     {
-    //       breakpoint: 550,
-    //       settings: {
-    //         slidesToShow: 2,
-    //       }
-    //     },
-    //   ]
+    responsive: [
+        {
+          breakpoint: 1300,
+          settings: {
+            slidesToShow: 2.5,
+          }
+        },
+        {
+          breakpoint: 1080,
+          settings: {
+            slidesToShow: 2.25,
+          }
+        },
+        {
+          breakpoint: 985,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 872,
+          settings: {
+            slidesToShow: 1.75,
+          }
+        },
+        {
+          breakpoint: 774,
+          settings: {
+            slidesToShow: 1.5,
+          }
+        },
+        {
+          breakpoint: 684,
+          settings: {
+            slidesToShow: 1.375,
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1.2,
+          }
+        },
+        {
+          breakpoint: 534,
+          settings: {
+            slidesToShow: 1,
+          }
+        },
+      ]
   };
 
     return (
       <Container className="ongoingCampaigns" fluid>
-        <div className="global-indented">
+        <div className="some-padding global-padding-left">
           <Heading1 first="Ongoing Campaigns" color="#4c483f"/>
         </div>
         {/* <InfoCard></InfoCard> */}

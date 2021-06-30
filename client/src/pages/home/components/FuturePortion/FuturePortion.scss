@@ -1,29 +1,90 @@
 .futurePortion {
     width: auto;
     height: fit-content;
-    padding: 50px;
-    background-image: url('../../../../assets/client/crumpled-white-paperboard.jpg');
-    background-size: auto auto;
-    // background-position: 100px 0px; 
+    padding: 3.125rem;
+    // .content-read {
+    //     text-align: justify;
+    // }
+    background-image: url("../../../../assets/client/crumpled-white-paperboard.jpg");
+    // background-size: auto auto;
+    // background-position: 100px 0px;
     .rowicons {
-        margin-top: 30px;
-        margin-bottom: 30px;
+        margin-top: 1.875rem;
+        margin-bottom: 1.875rem;
     }
     .col-md-3 {
         padding-right: 0;
-        padding-left: 45px;
     }
-    .basichead{
+    .basichead {
         font-weight: 800;
-        font-size: 1.3em;
+        font-size: 1.3rem;
     }
     .info {
-        width: 310px;
+        width: 80%;
         font-weight: 500;
     }
     .section2 {
         p {
-            width: 290px;
+            // width: 80%;
         }
+    }
+}
+
+@media (max-width: 62em) {
+    .futurePortion {
+        .heading2 {
+            h1 {
+                font-size: 2.97rem;
+            }
+        }
+        .content-read {
+            font-size: 1.1rem;
+        }
+        .Textcol {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+        .CustomButton1 {
+            text-align: left;
+        }
+        .info {
+            // text-align: center;
+            margin: auto;
+        }
+        .section2 {
+            flex-direction: row;
+            text-align: center;
+            // .col-md-3 {
+            //     flex: 0 0 100%;
+            //     max-width: 100%;
+            // }
+            p {
+                margin: auto;
+            }
+        }
+        .top-feature {
+            margin-top: 2.5rem;
+        }
+    }
+}
+
+@media (max-width: 26.5em) {
+    .futurePortion {
+        .heading2 {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+        .content-read {
+            font-size: 0.93rem;
+        }
+    }
+}
+
+
+@media (max-width: 31.25em) {
+    .futurePortion {
+        padding: 2rem 1rem;
     }
 }

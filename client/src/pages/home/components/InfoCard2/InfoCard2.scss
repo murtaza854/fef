@@ -1,4 +1,4 @@
-.cont2 {
+.infocard2 {
     margin: 0px;
     .container_card {
         position: relative;
@@ -31,5 +31,8 @@
         text-align: center;
         font-size: 1.2rem;
         margin-bottom: 4px;
+    }
+    .content-read {
+        text-align: justify;
     }
 }

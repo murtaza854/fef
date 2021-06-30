@@ -17,37 +17,37 @@ function HighlightsPortion(props) {
                         ncididunt ut labore et dolore magna aliqua
                         Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
-                    <div className="row justify-content-between">
-                        <div className="col-4">
+                    <Row className="justify-content-between">
+                        <Col classname="big-info">
                             <p className="big-info-text">40% </p>
                             <p className="big-info-text2">Lorem Ipsum </p>
-                        </div>
-                        <div className="col-4">
+                        </Col>
+                        <Col classname="big-info">
                             <p className="big-info-text">400K </p>
                             <p className="big-info-text2">Lorem Ipsum</p>
-                        </div>
-                        <div className="col-4">
+                        </Col>
+                        <Col classname="big-info">
                             <p className="big-info-text">5M</p>
                             <p className="big-info-text2">Lorem Ipsum</p>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                     <CustomButton1 text="Donate Now" classes = "btn colored-btn center"/>
                     </Col>
                     <Col md={6} className="righthighlights"><iframe className="youtube-video" src="https://www.youtube.com/embed/tsJXoqvmgzM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></Col>
                 </Row>
             </Container>
-            <Container fluid className="threeimages">
+            <Container fluid className="fourimages">
                 <Row>
-                    <Col>
+                    <Col md={3} sm= {6}>
                     <ImageTextCenter img={assembly} />
                     </Col>
-                    <Col>
+                    <Col md={3} sm= {6}>
                     <ImageTextCenter img={assembly} />
                     </Col>
-                    <Col>
+                    <Col md={3} sm= {6}>
                     <ImageTextCenter img={assembly} />
                     </Col>
-                    <Col>
+                    <Col md={3} sm= {6}>
                     <ImageTextCenter img={assembly} />
                     </Col>
                     

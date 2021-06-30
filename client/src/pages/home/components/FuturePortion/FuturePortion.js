@@ -12,8 +12,8 @@ function FuturePortion(props) {
     return (
         <div className="futurePortion">
             <Container>
-                <Row>
-                    <Col md={6}>
+                <Row >
+                    <Col md={6} className="Textcol">
                         <Heading2 first="They are" second="the future" textTransform="uppercase" color="#4c483f"></Heading2>
                         <div className="info">
                             <p className="content-read">
@@ -23,11 +23,11 @@ function FuturePortion(props) {
                         </div>
                     </Col>
                     <Col className="section2">
-                        <Row>
+                        <Row className="top-feature">
                             <Col md = {3}>
                                 <Help  fill = "#e38454" width ="100" height = "100"/>
                             </Col>
-                            <Col>
+                            <Col >
                                 <div className="basichead">
                                     GET INVOLVED
                                 </div>
@@ -49,7 +49,7 @@ function FuturePortion(props) {
                                 </p>
                             </Col>
                         </Row>
-                        <Row>
+                        <Row >
                             <Col md = {3}>
                                 <Calendar  fill = "#e3aa58" width ="100" height = "100"/>
                             </Col>

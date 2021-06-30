@@ -2,5 +2,14 @@
     .bigger-text {
         font-size: 1.4rem;
         margin-bottom: 0;
+        padding-right: 2rem;
     }
+}
+
+@media (max-width: 47.99875em) {
+    .smallHeading {
+        .bigger-text{
+        text-align: center;
+    }
+}
 }

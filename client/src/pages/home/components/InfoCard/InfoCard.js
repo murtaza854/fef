@@ -5,8 +5,8 @@ import st_class from  "../../../../assets/client/Class.jpg"
 import { CardImg, SliderCard } from '../../../../components';
 function InfoCard(props) {
     return (
-        <div className="cont">
-            <Card style={{width: '25rem'}}>
+        <div className="infocard">
+            <Card className="card">
   <Card.Body>
     <CardImg image = {st_class}/>
     <Card.Title className="cardTitle"><p className="title-card">Support a Classroom</p></Card.Title>

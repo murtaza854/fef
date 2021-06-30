@@ -108,7 +108,7 @@ function Newsletter(props) {
           <Col md={3}>
             <Form.Group controlId="formGroupFirstName">
               <Form.Label><p className="content-bold">Article Name*</p></Form.Label>
-              <Form.Control type="text" placeholder="Enter email" required value={ArticleName} onChange={ChangeArticleName} />
+              <Form.Control type="text" placeholder="Enter Article Name" required value={ArticleName} onChange={ChangeArticleName} />
             </Form.Group>
           </Col>
         </Row>

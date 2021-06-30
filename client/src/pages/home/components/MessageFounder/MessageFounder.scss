@@ -11,9 +11,29 @@
     }
     font-weight: 500;
     img {
-        width: 350px;
+        width: 100%;
+        max-width: 350px;
         // left: 50%;
         // transform: translateX(-50%);
         position: relative;
     }
+    .img-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .MessageFounder {
+        .small-heading {
+            text-align: center;
+            padding-bottom: 0.25rem;
+        }
+        .content-read {
+            text-align: justify;
+        }
+    }
+    
 }

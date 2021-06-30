@@ -5,7 +5,7 @@ import st_class from  "../../../../assets/client/Class.jpg"
 import { CardImg, CustomButton1 } from '../../../../components';
 function InfoCard2(props) {
     return (
-        <div className="cont2">
+        <div className="infocard2">
             <Card >
   <Card.Body>
     <CardImg image = {st_class}/>
@@ -17,7 +17,7 @@ ncididunt ut labore et dolore magna aliqua
 Lorem ipsum dolor sit amet, consectetur
 adipiscing elit, sed do eiusmod tempor</p>
     </Card.Text>
-    <CustomButton1 text = "READ MORE" classes = "colored-btn infocard"/>
+    <CustomButton1 text = "READ MORE" classes = "colored-btn infocard-btn"/>
     
       </Card.Body>
 </Card>
