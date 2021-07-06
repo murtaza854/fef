@@ -11,7 +11,7 @@ const PrettoSlider = withStyles({
       height: 24,
       width: 24,
       backgroundColor: '#fff',
-      border: '2px solid currentColor',
+      border: '0.125rem solid currentColor',
       marginTop: -8,
       marginLeft: -12,
       '&:focus, &:hover, &$active': {
@@ -22,7 +22,7 @@ const PrettoSlider = withStyles({
         height: 24,
         width: 24,
         backgroundColor: '#e38454',
-        border: '2px solid currentColor',
+        border: '0.125rem solid currentColor',
         marginTop: -8,
         marginLeft: -12,
       }

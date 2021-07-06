@@ -4,15 +4,16 @@
         font-weight: bolder;
     }
     h2 {
-        margin-top: 10px;
+        margin-top: 0.625rem;
         font-weight: 400;
         font-size: 1.3rem;
-        margin-bottom: -5px;
+        margin-bottom: -0.3125;
     }
     font-weight: 500;
     img {
         width: 100%;
-        max-width: 350px;
+        height: 100%;
+        max-width: 21.875rem;
         // left: 50%;
         // transform: translateX(-50%);
         position: relative;
@@ -24,8 +25,8 @@
     }
 }
 
-
-@media (max-width: 767px) {
+// 767px
+@media (max-width: 47.9375em) {
     .MessageFounder {
         .small-heading {
             text-align: center;

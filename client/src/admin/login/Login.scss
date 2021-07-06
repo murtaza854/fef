@@ -26,29 +26,29 @@
     background-size: cover;
     }
     .MuiFormControl-root {
-        margin: 10px 0;
+        margin: 0.625rem 0;
     }
     .MuiCard-root {
-        padding: 50px 30px;
+        padding: 3.125rem 1.875rem;
     }
     .admin-login-card {
         position: absolute;
         z-index: 2;
-        width: 450px;
+        width: 28.125rem;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
     }
     .login-logo {
-        width: 100px;
+        width: 6.25rem;
         position: relative;
         margin-left: auto;
         margin-right: auto;
     }
     .admin-login-button {
-        top: 20px;
-        padding-left: 30px;
-        padding-right: 30px;
+        top: 1.25rem;
+        padding-left: 1.875rem;
+        padding-right: 1.875rem;
         left: 50%;
         transform: translateX(-50%);
         position: relative;

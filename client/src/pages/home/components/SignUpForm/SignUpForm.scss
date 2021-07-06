@@ -15,22 +15,22 @@
         }
     }
     // padding-left: 100px;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 9.375rem;
+    padding-bottom: 9.375rem;
     background-image: url('../../../../assets/client/crumpled-white-paperboard.jpg');
     // background-size: auto auto;
     overflow-x: hidden;
     input, textarea {
         width: 100%;
-        max-width: 500px;
+        // max-width: 500px;
         // margin: 10px;
-        border: 3px solid #e38454 !important;
+        border: 0.1875rem solid #e38454 !important;
         font-family: 'Jost', sans-serif !important;
         font-weight: 300 !important;
         // font-size: 25px !important;
         background-color: transparent;
         resize: none;
-        border-radius: 10px !important;
+        border-radius: 0.625rem !important;
         &:focus {
             box-shadow: none !important;
             background-color: transparent;
@@ -40,20 +40,20 @@
         .flag-dropdown.open {
             z-index: 2;
             background: transparent  !important;
-            border-radius: 10px 0 0 10px;
+            border-radius: 0.625rem 0 0 0.625rem;
         }
         .flag-dropdown {
             background-color: transparent !important;
-            border: 3px solid #e38454;
+            border: 0.1875rem solid #e38454;
             border-right: 0;
-            border-radius: 10px 0 0 10px;
+            border-radius: 0.625rem 0 0 0.625rem;
         }
         .form-control {
             background: transparent;
         }
         .selected-flag {
             background: transparent !important;
-            border-radius: 10px 0 0 10px;
+            border-radius: 0.625rem 0 0 0.625rem;
         }
     }
     .react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
@@ -64,12 +64,22 @@
     }
 }
 
-
-@media (max-width: 992px) {
+// 992px
+@media (max-width: 62em) {
     .signupform {
     .col-md-3, .col-md-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 }
+}
+
+@media (max-width: 48em) {
+    .signupform {
+        .heading1 {
+            h1 {
+                padding-right: 0;
+            }
+        }
+    }
 }

@@ -1,7 +1,7 @@
 .infocard {
     
-    margin-right: 50px;
-    margin-bottom: 50px;
+    margin-right: 3.125rem;
+    margin-bottom: 3.125rem;
     .container_card {
         position: relative;
         text-align: center;
@@ -10,18 +10,18 @@
     
     .bottom-left {
         position: absolute;
-        bottom: -10px;
-        left: 20px;
+        bottom: -0.625rem;
+        left: 1.25rem;
         color:  black; 
             background-color: #e38454;
             border-radius: 30px;
-            padding: 5px 15px;
+            padding: 0.3125rem 0.9375rem;
             font-weight: 800;
             font-size: 1rem;
       }
       
     .cardTitle {
-        margin-top: 20px;
+        margin-top: 1.25rem;
         // p {
         //     font-weight: 800;
         //     font-size: 1.5rem;
@@ -32,13 +32,14 @@
         font-weight: 800;
         text-align: center;
         font-size: 1rem;
-        margin-bottom: 4px;
+        margin-bottom: 0.25rem;
     }
     .card {
         min-width:25rem;
     }
 }
-@media (max-width: 460px) {
+// 460px
+@media (max-width: 28.75em) {
     .infocard {
         .card {
             min-width: 20rem;
@@ -49,7 +50,8 @@
     }    
 }
 
-@media (max-width: 365px) {
+// 365px
+@media (max-width: 22.8125rem) {
     .infocard {
         .card {
             min-width: 16rem;

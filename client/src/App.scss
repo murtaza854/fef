@@ -2,7 +2,7 @@
 @import "~slick-carousel/slick/slick-theme.css";
 @import "~bootstrap/scss/bootstrap";
 html {
-  scroll-behavior: unset;
+  scroll-behavior: smooth;
 }
 .App {
   text-align: center;
@@ -50,15 +50,12 @@ html {
     transform: rotate(360deg);
   }
 }
-body {
-  // overflow-x: hidden;
-}
 
 .margin-global-top {
   margin-top: 3.125rem;
 }
 .padding-global-top-page-start {
-  padding-top: 200px;
+  padding-top: 12.5rem;
 }
 .some-padding {
   padding-bottom: 1rem;
@@ -112,6 +109,10 @@ body {
   // }
 }
 
+.footer-spacing {
+  margin-top: 5rem;
+}
+
 // 884px
 @media (max-width: 55.25em) {
   // .our-story {
@@ -132,6 +133,12 @@ body {
       padding-left: 2rem !important;
     }
   }
+
+  @media (max-width: 48em) {
+    .global-padding-left {
+        padding-left: 0rem !important;
+      }
+    }
 
 
   .page {

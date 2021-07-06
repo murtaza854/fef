@@ -8,7 +8,7 @@ import api from '../api';
 
 const useStyles = makeStyles((theme) => ({
     image: {
-      width: '400px',
+      width: '25rem',
       marginBottom: 30
     },
     btn: {

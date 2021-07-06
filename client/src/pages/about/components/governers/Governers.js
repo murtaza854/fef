@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Heading1, Heading2 } from '../../../../components'
 import './Governers.scss';
-import boardMember from '../../../../assets/client/NaveedGilani.jpeg';
+import boardMember from '../../../../assets/client/NaveedGilani.jpg';
 
 function Governers(props) {
     return (

@@ -33,7 +33,7 @@ of people was reaffirmed; we got funds and we have friends who have gladly joine
 on this journey that will, in time, take us to all the schools for disadvantaged children.
                     </p>
                     <p className="short-text">*Schools where no furniture exists and children sit on straw mats.</p>
-                    <CustomButton1 text="JOIN OUR JOURNEY" classes="btn colored-btn center btn-margin"></CustomButton1>
+                    <CustomButton1 to="contact-us" text="JOIN OUR JOURNEY" classes="btn colored-btn center btn-margin"></CustomButton1>
                 </Col>
                 <Col md={5} className="global-space-col">
                 {/* <img ref = {ref2} src={assembly} alt='assembly'/> */}

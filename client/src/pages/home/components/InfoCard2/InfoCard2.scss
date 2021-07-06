@@ -8,18 +8,18 @@
     
     .bottom-left {
         position: absolute;
-        bottom: -10px;
-        left: 20px;
+        bottom: -0.625rem;
+        left: 1.25rem;
         color:  black; 
             background-color: #e38454;
             border-radius: 30px;
-            padding: 5px 15px;
+            padding: 0.3125rem 0.9375rem;
             font-weight: 800;
             font-size: 1rem;
       }
       
     .cardTitle {
-        margin-top: 20px;
+        margin-top: 1.25rem;
         // p {
         //     font-weight: 800;
         //     font-size: 1.5rem;
@@ -30,7 +30,7 @@
         font-weight: 800;
         text-align: center;
         font-size: 1.2rem;
-        margin-bottom: 4px;
+        margin-bottom: 0.25rem;
     }
     .content-read {
         text-align: justify;

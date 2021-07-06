@@ -10,7 +10,7 @@ return (
   <Container className="home-main" fluid>
     
       <div className="main-btn">
-      <CustomButton1 text="Learn More" classes="btn transparent-btn center"></CustomButton1>
+      <CustomButton1 to="work" text="Learn More" classes="btn transparent-btn center"></CustomButton1>
       </div>
     
   </Container>

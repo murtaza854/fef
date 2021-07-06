@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import "./MessageFounder.scss";
-import founder from '../../../../assets/client/NaveedGilani.jpeg';
+import founder from '../../../../assets/client/NaveedGilani.jpg';
 import { Heading2 } from '../../../../components'
 
 function MessageFounder(props) {

@@ -13,7 +13,7 @@ function DonateMeal(props) {
                     <Heading1 textTransform="uppercase" first="Donate A Meal," second="Brighten a Future" color="#4C483F"></Heading1>
                 </Col>
                 <Col md={2} className="donate-button-work">
-                    <CustomButton1 classes="btn colored-btn" text="Donate Now"></CustomButton1>
+                    <CustomButton1 to="donate" classes="btn colored-btn" text="Donate Now"></CustomButton1>
                 </Col>
             </Row>
         </Container>

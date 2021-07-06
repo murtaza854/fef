@@ -31,24 +31,24 @@ function HighlightsPortion(props) {
                             <p className="big-info-text2">Lorem Ipsum</p>
                         </Col>
                     </Row>
-                    <CustomButton1 text="Donate Now" classes = "btn colored-btn center"/>
+                    <CustomButton1 to="donate" text="Donate Now" classes = "btn colored-btn center"/>
                     </Col>
-                    <Col md={6} className="righthighlights"><iframe className="youtube-video" src="https://www.youtube.com/embed/tsJXoqvmgzM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></Col>
+                    <Col md={6} className="righthighlights"><iframe className="youtube-video" src="https://www.youtube.com/embed/9fx8XAN2tzQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></Col>
                 </Row>
             </Container>
             <Container fluid className="fourimages">
                 <Row>
                     <Col md={3} sm= {6}>
-                    <ImageTextCenter img={assembly} />
+                    <ImageTextCenter flag={true} img={assembly} />
                     </Col>
                     <Col md={3} sm= {6}>
-                    <ImageTextCenter img={assembly} />
+                    <ImageTextCenter flag={true} img={assembly} />
                     </Col>
                     <Col md={3} sm= {6}>
-                    <ImageTextCenter img={assembly} />
+                    <ImageTextCenter flag={true}img={assembly} />
                     </Col>
                     <Col md={3} sm= {6}>
-                    <ImageTextCenter img={assembly} />
+                    <ImageTextCenter flag={true} img={assembly} />
                     </Col>
                     
                 </Row>

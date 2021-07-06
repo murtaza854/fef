@@ -39,26 +39,31 @@ function Routes(props) {
               <Route path="/about" >
                 <MainNavBar />
                 <About />
+                <div className="footer-spacing" />
                 <Footer />
               </Route>
-              <Route path="/gallery" >
+              {/* <Route path="/gallery" >
                 <MainNavBar />
                 <Gallery />
+                <div className="footer-spacing" />
                 <Footer />
-              </Route>
+              </Route> */}
               <Route path="/work">
                 <MainNavBar />
                 <Work />
+                <div className="footer-spacing" />
                 <Footer />
               </Route>
               <Route path="/news-events">
                 <MainNavBar />
                 <News />
+                <div className="footer-spacing" />
                 <Footer />
               </Route>
               <Route path="/network">
                 <MainNavBar />
                 <Network />
+                <div className="footer-spacing" />
                 <Footer />
               </Route>
               <Route path="/">

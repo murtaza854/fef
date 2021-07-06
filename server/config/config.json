@@ -1,24 +1,23 @@
 {
   "development": {
     "username": "root",
-    "password": "ChickenNoodleSoup123@",
+    "password": "Omzig123_MFS",
     "database": "fef",
     "host": "localhost",
-    "port": "3306",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "",
+    "password": "Omzig123_MFS",
     "database": "fef",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mariadb"
   },
   "production": {
     "username": "root",
-    "password": "",
+    "password": "Omzig123_MFS",
     "database": "fef",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mariadb"
   }
 }

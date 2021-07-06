@@ -26,6 +26,7 @@ import {
   Link,
   Route,
 } from "react-router-dom";
+import api from '../../api';
 // import {
 //   TransitionGroup,
 //   CSSTransition
@@ -144,7 +145,7 @@ export default function AdminLayout(props) {
   const handleLogout = async e => {
     // console.log(123);
     e.preventDefault();
-    await fetch('http://localhost:4000/api/users/logout', {
+    await fetch(`${api}/users/logout`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       credentials: 'include',

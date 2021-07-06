@@ -5,7 +5,8 @@ const Sequelize = require('sequelize');
 const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
-const port = 4000;
+// const port = 4000;
+const port = 3001;
 
 app.use(cookieParser(
   process.env.COOKIE_SECRET
@@ -25,7 +26,8 @@ const donationRoutes = require('./routes/donation');
 
 const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USERNAME, process.env.DATABASE_PASSWORD, {
   host: 'localhost',
-  port: 3306,
+  // port: 3306,
+  // dialect: 'mysql',
   dialect: 'mysql',
 
   pool: {
@@ -50,7 +52,11 @@ app.use('/login123', (req, res) => {
     res.send({
         token: 'test123'
     });
-});
+});app.use(express.static(__dirname + '/build'));
+
+// app.get('/sitemap.xml', function(req, res) {
+//   res.sendFile(__dirname + '/sitemap.xml');
+// });
 
 app.use('/api/users', userRoutes);
 app.use('/api/projects', projectRoutes);
@@ -58,6 +64,10 @@ app.use('/api/images', imageRoutes);
 app.use('/api/image-category', imageCategoryRoutes);
 app.use('/api/newsletter', newsletterRoutes);
 app.use('/api/donation', donationRoutes);
+
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/build/index.html');
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

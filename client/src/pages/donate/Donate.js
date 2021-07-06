@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Heading1, Heading2 } from '../../components';
 import "./Donate.scss"
 function Donate(props) {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])
     return (
         <div className="Projects">
             <div className="padding-global-top-page-start"></div>
