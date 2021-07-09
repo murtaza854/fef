@@ -11,7 +11,7 @@ import {
 } from "react-transition-group";
 import { Admin } from './admin'
 import { MainNavBar, Footer } from './components'
-import { Home, About, Work, Gallery, News, Network, Donate } from './pages'
+import { Home, About, Work, Gallery, News, Network, Donate,ContactUs } from './pages'
 import './App.scss';
 
 function Routes(props) {
@@ -63,6 +63,12 @@ function Routes(props) {
               <Route path="/network">
                 <MainNavBar />
                 <Network />
+                <div className="footer-spacing" />
+                <Footer />
+              </Route>
+              <Route path="/contact-us">
+                <MainNavBar />
+                <ContactUs/>
                 <div className="footer-spacing" />
                 <Footer />
               </Route>

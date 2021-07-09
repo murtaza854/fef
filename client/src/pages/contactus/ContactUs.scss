@@ -1,0 +1,48 @@
+.contactus {
+    .fab, .fa {
+        padding-right: 0.5rem;
+    }
+    position: relative;
+    .row {
+        position: relative;
+        .submitButton {
+            width: fit-content;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    
+    // padding-left: 100px;
+
+    // background-size: auto auto;
+    overflow-x: hidden;
+    input, textarea {
+        width: 100%;
+        // max-width: 500px;
+        // margin: 10px;
+        border: 0.1875rem solid #e38454 !important;
+        font-family: 'Jost', sans-serif !important;
+        font-weight: 300 !important;
+        // font-size: 25px !important;
+        background-color: transparent;
+        resize: none;
+        border-radius: 0.625rem !important;
+        &:focus {
+            box-shadow: none !important;
+            background-color: transparent;
+        }
+    }
+    
+}
+
+@media (max-width: 47.995em) {
+    .contactus {
+        .content-read {
+            text-align: center;
+        }
+        form {
+            padding: 2rem;
+        }
+    }
+}
