@@ -1,8 +1,11 @@
-.Projects {
+.donate-us-page {
     .leavespace {
         height: 2rem;
     }
     p {
-        text-align: justify;
+        text-align: justify !important;
+    }
+    img {
+        width: 17rem;
     }
 }

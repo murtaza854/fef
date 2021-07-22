@@ -10,13 +10,18 @@ function Home(props) {
         <div>
             <Carousel/>
             <FuturePortion/>
+            {/* <div className="margin-global-top"/> */}
+            <HighlightsPortion/>
+            {/* <MessageFounder/> */}
+            {/* <div className="margin-global-top"/> */}
+            {/* <div className="margin-global-top"/>
+            <OngoingCampaigns/> */}
             <div className="margin-global-top"/>
             <MessageFounder/>
             <div className="margin-global-top"/>
             <ThreeImages/>
-            <div className="margin-global-top"/>
-            <OngoingCampaigns/>
-            <HighlightsPortion/>
+
+            {/* <HighlightsPortion/> */}
             <LatestNews/>
             <SignUpForm/>
         </div>

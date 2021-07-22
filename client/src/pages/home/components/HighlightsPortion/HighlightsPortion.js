@@ -11,13 +11,16 @@ function HighlightsPortion(props) {
             <Container fluid>
                 <Row>
                     <Col className="lefthighlights" md={6}>
-                    <Heading1 first="Highlights" color="#4c483f" />
-                    <p className="content-read sixtywidth">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor i
-                        ncididunt ut labore et dolore magna aliqua
-                        Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
-                    <Row className="justify-content-between">
+                        <Heading1 first="Highlights" color="#4c483f" />
+                        <p className="content-read sixtywidth">The School Meal Program (SMP) is the raison d'être for FEF. Everything that we are presently doing or will do in the future under our banner will be built upon the foundation of our SMP. Through this program we provide freshly cooked nutritious meals to children in schools on every school day. Our overarching aim is to improve the cognitive and physical health of the children. Some of the benefits of the SMP are:
+                            <ul style={{ marginTop: '1rem', textAlign: 'left' }}>
+                                <li>Prevention of classroom hunger</li>
+                                <li>Increase in enrolment in schools</li>
+                                <li>Increase in attendance in schools</li>
+                                <li>Reducing malnutrition among children in schools</li>
+                            </ul>
+                        </p>
+                        {/* <Row className="justify-content-between">
                         <Col classname="big-info">
                             <p className="big-info-text">40% </p>
                             <p className="big-info-text2">Lorem Ipsum </p>
@@ -30,27 +33,28 @@ function HighlightsPortion(props) {
                             <p className="big-info-text">5M</p>
                             <p className="big-info-text2">Lorem Ipsum</p>
                         </Col>
-                    </Row>
-                    <CustomButton1 to="donate" text="Donate Now" classes = "btn colored-btn center"/>
+                    </Row> */}
+
+                        <CustomButton1 to="school-meal-program" text="Read More" classes="btn colored-btn center" />
                     </Col>
                     <Col md={6} className="righthighlights"><iframe className="youtube-video" src="https://www.youtube.com/embed/9fx8XAN2tzQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></Col>
                 </Row>
             </Container>
             <Container fluid className="fourimages">
                 <Row>
-                    <Col md={3} sm= {6}>
-                    <ImageTextCenter flag={true} img={assembly} />
+                    <Col md={3} sm={6}>
+                        <ImageTextCenter flag={true} img={'/images/DSC_1623-min.JPG'} />
                     </Col>
-                    <Col md={3} sm= {6}>
-                    <ImageTextCenter flag={true} img={assembly} />
+                    <Col md={3} sm={6}>
+                        <ImageTextCenter flag={true} img={'/images/DSC_1609-min.JPG'} />
                     </Col>
-                    <Col md={3} sm= {6}>
-                    <ImageTextCenter flag={true}img={assembly} />
+                    <Col md={3} sm={6}>
+                        <ImageTextCenter flag={true} img={'/images/DSC_1625-min.JPG'} />
                     </Col>
-                    <Col md={3} sm= {6}>
-                    <ImageTextCenter flag={true} img={assembly} />
+                    <Col md={3} sm={6}>
+                        <ImageTextCenter flag={true} img={'/images/DSC_1631-min.JPG'} />
                     </Col>
-                    
+
                 </Row>
             </Container>
         </div>

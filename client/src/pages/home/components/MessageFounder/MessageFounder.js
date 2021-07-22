@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import "./MessageFounder.scss";
 import founder from '../../../../assets/client/NaveedGilani.jpg';
-import { Heading2 } from '../../../../components'
+import { Heading2, CustomButton1 } from '../../../../components'
 
 function MessageFounder(props) {
     return (
@@ -12,18 +12,20 @@ function MessageFounder(props) {
             <Container>
                 <Row>
                     <Col lg={4} className="img-container">
-                        <img src= {founder} alt='founder'/>
-                    </Col>    
+                        <img src={founder} alt='founder' />
+                    </Col>
                     <Col>
                         <h2 className="small-heading">Message from the Founder</h2>
-                            <Heading2 first="Naveed Gilani" textTransform="uppercase" color="#e3aa58"></Heading2>
+                        <Heading2 first="Naveed Gilani" textTransform="uppercase" color="#e3aa58"></Heading2>
                         <p className="content-read">
-                            Pakistan is one of the countries where we have a significant population of youth – 34% of Pakistanis are under the age of 15. When we look at the various statistics relating to our youth, we find that there is a lot that needs to be done for them that isn’t being done. They are the future of Pakistan, and we believe that it is incumbent upon us to secure this future, howsoever we can. Investing in their health and education is on top of the list of initiatives that we ought to take. In this domain, if we dig deeper, and we don’t need to dig too deep, we find that our children are plagued with hunger and malnutrition that unfortunately begins immediately after childbirth and continues through their youth. This twin menace cuts across both health and education – health because they are never able to reach their full physical potential and education because their mental capacities are never able to fully blossom and reach their full potential.
+                            Pakistan is considered to be the fifth largest young country in the world. Around 34% of Pakistanis are under the age of 15. It is they who have the power to transform the future of Pakistan. Correspondingly, it is us, the older ones, who have the responsibility to ensure that the youth can secure theirs, their families’, and their country’s future.
                         </p>
-                        {/* <CustomButton1 text="Read More" classes="btn transparent-btn"></CustomButton1> */}
+                        <p className="content-read">
+                            <i>What ought to be done?</i> Invest in the <strong> health</strong> and <strong>education</strong> of our youth. It is not an either-or choice, has to be both, emphatically and in tandem. </p>
+                        <CustomButton1 text="Read More" to="founder" classes="btn center-992 transparent-btn"></CustomButton1>
                     </Col>
                 </Row>
-            </Container>   
+            </Container>
         </div>
     );
 }

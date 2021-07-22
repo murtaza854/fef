@@ -1,0 +1,40 @@
+Task: navbar logo more opaque
+Status: Done
+
+
+Task: navbar text color dark grey and on hover black
+Status: Done. 
+
+Task: fix learn more as donate now button from navbar
+Status: Done.
+
+
+Task: fix text heading below message founder
+Status: Done. 
+
+Task: Swap highlights with message from founder
+Status: Done.
+
+Replace highlights donate now button with read more
+Status: Done.
+
+About us break to 4 pages
+Status: Done.
+
+Work break to 3 pages
+Status: Done.
+
+Fix donation page
+Status: Done.
+
+Fix contact page with maryam
+
+Fix Gallery
+Status: Done.
+
+Fix images
+
+Add newsletters
+
+Task: They are the future content add
+Status: What do you mean

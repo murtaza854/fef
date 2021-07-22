@@ -1,5 +1,5 @@
 .news {
-    .col-md-4 {
+    .col-md-3 {
         padding-bottom: 1.25rem;
     }
     .card-center {
@@ -7,8 +7,8 @@
         margin: auto;
     }
     .container-fluid {
-        padding-left: calc(100%/12);
-        padding-right: calc(100%/12);
+        // padding-left: calc(100%/12);
+        // padding-right: calc(100%/12);
     }
 }
 
@@ -33,3 +33,43 @@
     }
         
 }
+// 1300px
+@media (max-width: 81.25em) {
+    .news {
+        .col-md-3 {
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+        }
+    }
+}
+
+// // Large devices (desktops, less than 1200px)
+// @media (max-width: 74.99875em) {
+// }
+
+// // Medium devices (tablets, less than 992px)
+@media (max-width: 61.99875em) {
+    .news {
+        .col-md-3 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 47.99875em) {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 35.99875em) {
+    .news {
+        .col-md-3 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+// XX-Large devices (larger desktops)
+// No media query since the xxl breakpoint has no upper bound on its width

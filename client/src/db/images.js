@@ -99,7 +99,7 @@ const imagetDataObj = {
             }
             xhr.open("POST", `${api}/images/add?category=${state.category}`, true);
             xhr.send(formData);
-            // const response = await fetch(`http://localhost:4000/api/images/add`, {
+            // const response = await fetch(`http://localhost:3001/api/images/add`, {
             //     method: 'POST',
             //     body: formData,
             // });

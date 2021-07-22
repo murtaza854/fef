@@ -8,8 +8,8 @@ function Footer(props) {
           <h3>FEF <span>PAKISTAN</span></h3>
           <p className="footer-links">
             <a href="/" className="link-1">Home</a>
-            <a href="/about">About Us</a>
-            <a href="/work">Our Work</a>
+            {/* <a href="/about">About Us</a> */}
+            {/* <a href="/work">Our Work</a> */}
             <a href="/network">Our Network</a>
             <a href="/news-events">News and Events</a>
             <a href="/gallery">Gallery</a>

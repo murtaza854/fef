@@ -1,23 +1,43 @@
 .infocard2 {
+    height: 100%;
+    .height-max {
+        height: 100%;
+        border-radius: 2rem;
+        -webkit-box-shadow: 8px 8px 10px 0px rgba(0,0,0,0.2);
+        -moz-box-shadow: 8px 8px 10px 0px rgba(0,0,0,0.2);
+        box-shadow: 8px 8px 10px 0px rgba(0,0,0,0.2);
+    }
     margin: 0px;
+    .card-body {
+        position: relative;
+        margin-bottom: 2.1875rem;
+        .info-btn-container {
+            position: absolute;
+            padding-right: 1.25rem;
+            // margin-top: 1rem;
+            width: fit-content;
+            bottom: -1.25rem;
+            right: 0;
+        }
+    }
     .container_card {
         position: relative;
         text-align: center;
         // color: white;
     }
-    
+
     .bottom-left {
         position: absolute;
         bottom: -0.625rem;
         left: 1.25rem;
-        color:  black; 
-            background-color: #e38454;
-            border-radius: 30px;
-            padding: 0.3125rem 0.9375rem;
-            font-weight: 800;
-            font-size: 1rem;
-      }
-      
+        color: black;
+        background-color: #e38454;
+        border-radius: 30px;
+        padding: 0.3125rem 0.9375rem;
+        font-weight: 800;
+        font-size: 1rem;
+    }
+
     .cardTitle {
         margin-top: 1.25rem;
         // p {
@@ -25,7 +45,7 @@
         //     font-size: 1.5rem;
         // }
     }
-    
+
     .content-bold {
         font-weight: 800;
         text-align: center;

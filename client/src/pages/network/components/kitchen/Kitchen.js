@@ -39,8 +39,8 @@ function Kitchen(props) {
                         <img src={KitchenPic} alt="Our kitchen map" />
 
                         <p className="content-read">
-                        <div className="leave-a-line"></div>
-                        The construction was completed in August 2020 and from there on all meals served were cooked in the new kitchen. This kitchen has the capacity to make food for many more schools and will be the hub of our program in Orangi. This is the first of many kitchens that will be made in the coming years as our operations expand. Surely, we will improve our processes for preparing the meals and the logistics needed to provide meals to the many schools in the area.
+                            <div className="leave-a-line"></div>
+                            The construction was completed in August 2020 and from there on all meals served were cooked in the new kitchen. This kitchen has the capacity to make food for many more schools and will be the hub of our program in Orangi. This is the first of many kitchens that will be made in the coming years as our operations expand. Surely, we will improve our processes for preparing the meals and the logistics needed to provide meals to the many schools in the area.
                         </p>
 
 

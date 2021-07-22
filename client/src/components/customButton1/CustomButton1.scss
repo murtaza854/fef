@@ -11,9 +11,10 @@
         
     }
     .colored-btn {
-        color: #4c483f ;
+        color: #1D1E20 ;
         background-color: #e38454;
         border: 0.0625rem solid #e38454;
+        text-decoration: none;
         // width: fit-content;
         &:hover {   
            background-color: transparent;
@@ -97,6 +98,11 @@
     .CustomButton1 {
         a {
             font-size: 1.2rem;
+        }
+        .center-992 {
+            transform: translateX(-50%);
+            position: relative;
+            left: 50%;
         }
     }
 }

@@ -3,7 +3,7 @@ import { Editor } from '@tinymce/tinymce-react';
 import "./Newsletter.scss";
 import { Button, makeStyles } from '@material-ui/core';
 import api from '../../api'
-import { useState} from 'react';
+import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
 //     // xhr.onload = function (e) {
 //     //     //your success code goes here
 //     // }
-//     // xhr.open("POST", `http://localhost:4000/api/images/add?category=${state.category}`, true);
+//     // xhr.open("POST", `http://localhost:3001/api/images/add?category=${state.category}`, true);
 //     // xhr.send(formData);
 //   };
 
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Newsletter(props) {
   const editorRef = useRef(null);
-  
+
   const [ArticleName, setArticleName] = useState(null);
   const classes = useStyles();
   const log = async (event) => {
@@ -80,7 +80,7 @@ function Newsletter(props) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ title : ArticleName ,html: editorRef.current.getContent() }),
+      body: JSON.stringify({ title: ArticleName, html: editorRef.current.getContent() }),
     });
 
     // const content = await response.json();
@@ -96,13 +96,13 @@ function Newsletter(props) {
     // xhr.send(formData);
 
   };
-  const ChangeArticleName = (event) =>{
+  const ChangeArticleName = (event) => {
     const { value } = event.target;
     setArticleName(value);
-    console.log(value);  
+    console.log(value);
   };
   return (
-      <>
+    <>
       <Form>
         <Row>
           <Col md={3}>
@@ -113,36 +113,40 @@ function Newsletter(props) {
           </Col>
         </Row>
         <Row>
-        <Editor
-          // tinymceScriptSrc={'/tinymce/jquery.tinymce.min'}
-          // tinymceScriptSrc={file}
-          apiKey="9sg9tver95ww72xxl6whpogouryih1wb9pfyotfpo1tywv3b"
-          onInit={(evt, editor) => editorRef.current = editor}
-          initialValue="<p>This is the initial content of the editor.</p>"
-          init={{
-            height: 500,
-            menubar: false,
-            image_list: `${api}/newsletter/getImages`,
-            // images_upload_url: `${api}/newsletter/addimages`,
-            plugins: [
-              'advlist autolink lists link image charmap print preview anchor',
-              'searchreplace visualblocks code fullscreen',
-              'insertdatetime media table paste code help wordcount'
-            ],
-            toolbar: 'undo redo | formatselect | ' +
-              'bold italic backcolor | alignleft aligncenter ' +
-              'alignright alignjustify | bullist numlist image outdent indent | ' +
-              'removeformat | help',
-            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:0.875rem }'
-          }}
-        />
+          <Editor
+            // tinymceScriptSrc={'/tinymce/jquery.tinymce.min'}
+            // tinymceScriptSrc={file}
+            apiKey="9sg9tver95ww72xxl6whpogouryih1wb9pfyotfpo1tywv3b"
+            onInit={(evt, editor) => editorRef.current = editor}
+            initialValue="<p>This is the initial content of the editor.</p>"
+            init={{
+              height: 500,
+              menubar: false,
+              image_list: `${api}/newsletter/getImages`,
+              // images_upload_url: `${api}/newsletter/addimages`,
+              plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+              ],
+              image_dimensions: false,
+              image_class_list: [
+                { title: 'Responsive', value: 'img-responsive' }
+              ],
+              toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist image outdent indent | ' +
+                'removeformat | help',
+              content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:0.875rem }'
+            }}
+          />
         </Row>
         <Button className={classes.spacing} onClick={log} type="submit" variant="contained" color="primary">
           Save
         </Button>
-        </Form>
-      </>
-      );
+      </Form>
+    </>
+  );
 }
 
-      export default Newsletter;
+export default Newsletter;

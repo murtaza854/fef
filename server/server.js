@@ -3,6 +3,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const Sequelize = require('sequelize');
 const dotenv = require('dotenv');
+const path = require('path');
 dotenv.config();
 const app = express();
 // const port = 4000;
@@ -14,6 +15,7 @@ app.use(cookieParser(
 app.use(cors({
   credentials: true,
   origin: [process.env.API_URL1, process.env.API_URL2]
+  // origin: [process.env.API_URL3]
 }));
 
 const userRoutes = require('./routes/user');
@@ -52,7 +54,8 @@ app.use('/login123', (req, res) => {
     res.send({
         token: 'test123'
     });
-});app.use(express.static(__dirname + '/build'));
+});
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // app.get('/sitemap.xml', function(req, res) {
 //   res.sendFile(__dirname + '/sitemap.xml');
@@ -65,8 +68,8 @@ app.use('/api/image-category', imageCategoryRoutes);
 app.use('/api/newsletter', newsletterRoutes);
 app.use('/api/donation', donationRoutes);
 
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/build/index.html');
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 app.listen(port, () => {

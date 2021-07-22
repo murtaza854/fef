@@ -4,8 +4,9 @@ const newsletterController = require('../controllers').newsletter;
 const imageController = require('../controllers').image;
 const fs = require('fs');
 const storage = multer.diskStorage({
-    // destination: '../client/public/newsletterImages',
-    destination: '../build/newsletterImages',
+    // destination: '../client/build/public/newsletterImages',
+    destination: '../client/public/newsletterImages',
+    // destination: '../build/newsletterImages',
     filename: (req, file, cb) => {
       cb(null, `${file.originalname}`);
     }
@@ -19,9 +20,29 @@ router.get('/TableData', async (req, res) => {
     else res.json({data: newsletters});
 });
 
+router.get('/download-pdf', async (req, res) => {
+    const file = __dirname + '/file.pdf';
+    res.download(file);
+});
+
+router.get('/get-page', async (req, res) => {
+    // read new.html html contents into a variable
+    if (req.query.page === 'impact-update') {
+        const html = fs.readFileSync('../client/public/newsletter/We are Doing the Best we Can.html', 'utf8');
+        res.json({data: html});
+    } else if (req.query.page === 'new-school-kitchen') {
+        const html = fs.readFileSync('../client/public/newsletter/New School Kitchen.html', 'utf8');
+        res.json({data: html});
+    } else if (req.query.page === 'defeat-classroom-hunger') {
+        const html = fs.readFileSync('../client/public/newsletter/Defeat Hunger in the Classroom.html', 'utf8');
+        res.json({data: html});
+    } else if (req.query.page === 'school-meal-programme') {
+        const html = `<h1 style="text-align: center;"><strong>School Meal Programme</strong></h1><p style="text-align: justify;">According to the National Human Development Report for Pakistan published in 2017 by the UNDP (United Nations Development Programme), Pakistan has the largest population of young people ever recorded in its history. A whopping 64% are under the age of 29, with some 30% between the ages of 15 and 29. For at least the next three decades, Pakistan will continue to be a younger country. This youth bulge, while fraught with challenges, also presents us with a unique opportunity to bring about phenomenal progress in the country. Their ideas and energy can lead the way for social, economic and political progress. However, this opportunity comes with a heightened responsibility of developing this youth to become that powerful force which can bring transformational development to the country. The challenges in capitalizing this opportunity are, conservatively speaking, more than a few, with education and training of the youth sitting at the top.</p>`
+        res.json({data: html});
+    } else res.json({data: '<div></div>'})
+});
+
 router.post('/add', async (req, res) => {
-    console.log(req.body)
-    console.log("chocolate, making about page now")
     // const newsletters = await newsletterController.getAll();
     // if (!newsletters) res.json({data: []});
     // else res.json({data: newsletters});
@@ -30,7 +51,6 @@ router.post('/add', async (req, res) => {
             res.json({upload:false})
             return console.log(err);
         }
-        console.log("The file was saved!");
         res.json({upload: true})
     });
     // res.json({data: req.body});
@@ -67,7 +87,7 @@ router.get('/getImages', async (req, res) => {
 
 // router.post('/addimages', upload.single('file'), async (req, res) => {
 //     const file = req.file;
-//     // if (!file) {http://localhost:4000/api/newsletter/getImages
+//     // if (!file) {http://localhost:3001/api/newsletter/getImages
 //     // const error = new Error('Please upload a file');
 //     // error.httpStatusCode = 400;
 //     // return next(error);

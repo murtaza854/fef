@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 // import { Projects } from './components';
-import { MenuPlan, Smp, DonateMeal, Children, Covid } from './components'
+import { MenuPlan, Smp, DonateMeal, Children, ChildTable } from './components'
 import './Work.scss';
 
 function Work(props) {
@@ -15,8 +15,7 @@ function Work(props) {
             <MenuPlan></MenuPlan>
             <DonateMeal></DonateMeal>
             <Children></Children>
-            <div className="margin-global-top"/>
-            <Covid></Covid>
+            <ChildTable></ChildTable>
         </div>
     );
 }

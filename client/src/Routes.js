@@ -11,7 +11,7 @@ import {
 } from "react-transition-group";
 import { Admin } from './admin'
 import { MainNavBar, Footer } from './components'
-import { Home, About, Work, Gallery, News, Network, Donate,ContactUs } from './pages'
+import { Home, About, Work, Covid, Testimonial, NewsletterPage, Gallery, News, Network, Donate,ContactUs, OurStory, Governers, Founder } from './pages'
 import './App.scss';
 
 function Routes(props) {
@@ -27,13 +27,25 @@ function Routes(props) {
           <div className="page">
 
             <Switch location={location}>
+              <Route path="/news-events/:newsletter">
+                <MainNavBar />
+                <NewsletterPage />
+                <div className="footer-spacing" />
+                <Footer />
+              </Route>
               <Route path="/admin"  >
                 <Admin />
               </Route>
-
               <Route path="/donate" >
                 <MainNavBar />
                 <Donate />
+                <div className="footer-spacing" />
+                <Footer />
+              </Route>
+              <Route path="/founder" >
+                <MainNavBar />
+                <Founder />
+                <div className="footer-spacing" />
                 <Footer />
               </Route>
               <Route path="/about" >
@@ -42,15 +54,39 @@ function Routes(props) {
                 <div className="footer-spacing" />
                 <Footer />
               </Route>
-              {/* <Route path="/gallery" >
+              <Route path="/our-story" >
+                <MainNavBar />
+                <OurStory />
+                <div className="footer-spacing" />
+                <Footer />
+              </Route>
+              <Route path="/governers" >
+                <MainNavBar />
+                <Governers />
+                <div className="footer-spacing" />
+                <Footer />
+              </Route>
+              <Route path="/gallery" >
                 <MainNavBar />
                 <Gallery />
                 <div className="footer-spacing" />
                 <Footer />
-              </Route> */}
-              <Route path="/work">
+              </Route>
+              <Route path="/testimonials">
+                <MainNavBar />
+                <Testimonial />
+                <div className="footer-spacing" />
+                <Footer />
+              </Route>
+              <Route path="/school-meal-program">
                 <MainNavBar />
                 <Work />
+                <div className="footer-spacing" />
+                <Footer />
+              </Route>
+              <Route path="/covid-19-relief-work">
+                <MainNavBar />
+                <Covid />
                 <div className="footer-spacing" />
                 <Footer />
               </Route>

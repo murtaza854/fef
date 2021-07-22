@@ -6,7 +6,7 @@ function CardImg(props) {
         <div className="container_card">
       <Card.Img src= {props.image}/>
       
-    <Card.Text className="bottom-left">Food</Card.Text>
+    <Card.Text className="bottom-left">{props.cat}</Card.Text>
       </div>
     );
 }

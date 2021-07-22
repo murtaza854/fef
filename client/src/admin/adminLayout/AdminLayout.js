@@ -117,7 +117,7 @@ export default function AdminLayout(props) {
     // console.log(!props.darkState)
     props.setDarkState(!props.darkState);
     // console.log(props.darkState)
-    // await fetch('http://localhost:4000/api/set-darktheme', {
+    // await fetch('http://localhost:3001/api/set-darktheme', {
     //   method: 'POST',
     //   headers: {'Content-Type': 'application/json'},
     //   credentials: 'include',
@@ -261,12 +261,12 @@ export default function AdminLayout(props) {
                   <ListItemIcon className={classes.listItemIcon}><BlockIcon /></ListItemIcon>
                   <ListItemText primary='Permission Groups'/>
               </ListItem> */}
-              <Link style={{color: color}} to={'/admin/projects'}>
+              {/* <Link style={{color: color}} to={'/admin/projects'}>
                 <ListItem button key='projects'>
                     <ListItemIcon className={classes.listItemIcon}><AccountTreeIcon /></ListItemIcon>
                     <ListItemText primary='Projects'/>
                 </ListItem>
-              </Link>
+              </Link> */}
               <Link style={{color: color}} to={'/admin/images'}>
                 <ListItem button key='gallery'>
                     <ListItemIcon className={classes.listItemIcon}><PhotoLibraryIcon /></ListItemIcon>
@@ -279,12 +279,12 @@ export default function AdminLayout(props) {
                     <ListItemText primary='Image Category'/>
                 </ListItem>
               </Link>
-              <Link style={{color: color}} to={'/admin/donations'}>
+              {/* <Link style={{color: color}} to={'/admin/donations'}>
                 <ListItem button key='donations'>
                     <ListItemIcon className={classes.listItemIcon}><AttachMoneyIcon /></ListItemIcon>
                     <ListItemText primary='Donations'/>
                 </ListItem>
-              </Link>
+              </Link> */}
               <Link style={{color: color}} to={'/admin/newsletter'}>
                 <ListItem button key='newsletter'>
                     <ListItemIcon className={classes.listItemIcon}><AssignmentIcon /></ListItemIcon>

@@ -4,8 +4,9 @@ const path = require("path");
 const imageController = require('../controllers').image;
 
 const storage = multer.diskStorage({
-  // destination: '../client/public/images',
-  destination: '../build/images',
+  // destination: '../client/build/public/images',
+  destination: '../client/public/images',
+  // destination: '../build/images',
   filename: (req, file, cb) => {
     cb(null, `${file.originalname}`);
   }
@@ -29,6 +30,7 @@ router.get('/TableData', async (req, res) => {
 
 router.post('/add', upload.single('file'), async (req, res) => {
   const file = req.file;
+  console.log(123)
   if (!file) {
   const error = new Error('Please upload a file');
   error.httpStatusCode = 400;
