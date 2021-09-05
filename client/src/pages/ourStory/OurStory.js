@@ -15,6 +15,15 @@ function OurStory(props) {
                             <Heading1 first="Our Story" color="#4c483f" ></Heading1>
                             <Heading2 first="The Beginning of Our Journey" color="#a8ce4c"></Heading2>
                             <p className="text-justify content-read">
+                                It began with a casual reading of an old Harvard Business School’s case study on combatting hunger in classrooms in India. The combater: Akshay Patra Foundation. Their weapon: mid-day meals for children in schools. It triggered a thought chain that flashed images of <i>taat schools*</i> in Pakistan, malnourished children, poverty, squalid living, little promise, overall haplessness. Having been brought up as a relatively privileged child over half a century ago I somehow felt guilty. Could we, the haves, do something about it? And, that was the kernel which sprouted Fortify Education Foundation (FEF).
+                            </p>
+                            <p className="text-justify content-read">
+                                Commodore Rashidullah Sheikh and I discussed and agreed that now was the best time to start. Pasban-e-millat school in Orangi town, Karachi serves the truly disadvantaged children of this metropolis where we lived; it had upwards of 260 children on their roll; Rashidullah already supported it; that’s where we started our School Meal Program in February 2020. We knew that we would not be able to sustain it without external funds, so we reached out to family and friends. Lo and behold our faith in the goodness of people was reaffirmed; we got funds and we have friends who have gladly joined us on this journey that will, in time, take us to all the schools for disadvantaged children in the country.
+                            </p>
+                            <p className="text-justify content-read">
+                                * Schools where no furniture exists and children sit on straw mats
+                            </p>
+                            {/* <p className="text-justify content-read">
                                 It was an old Harvard Business School’s case study, from 2007 that brought to fore the menace of hunger in classroom. It was an illustration of the remarkable work that was being done by Akshay Patra Foundation in India to combat this threatening issue. The reason I even read the article was because I was aware in the back of my mind that this issue of hunger and malnutrition is also pervasive among children in Pakistan; and how it affected their health and consequently their ability to learn when or if they are in school. Since the article was an old one, I looked up Akshay Patra’s performance, it was 2018 then, and was super impressed – they were providing school lunches to 1.7 million children in the country.
                             </p>
                             <p className="text-justify content-read">
@@ -25,7 +34,7 @@ function OurStory(props) {
                             </p>
                             <p className="text-justify content-read">
                                 <i>Karachi, June 25, 2020</i>
-                            </p>
+                            </p> */}
                             {/* <p className="short-text">*Schools where no furniture exists and children sit on straw mats.</p> */}
                             <CustomButton1 to="contact-us" text="JOIN OUR JOURNEY" classes="btn colored-btn center btn-margin"></CustomButton1>
                         </div>
