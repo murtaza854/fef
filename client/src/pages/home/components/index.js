@@ -8,3 +8,4 @@ export {default as OngoingCampaigns} from './OngoingCampaigns/OngoingCampaigns';
 export {default as HighlightsPortion} from './HighlightsPortion/HighlightsPortion';
 export {default as LatestNews} from './LatestNews/LatestNews';
 export {default as SignUpForm} from './SignUpForm/SignUpForm';
+export {default as AboutLittle} from './aboutLittle/AboutLittle';
