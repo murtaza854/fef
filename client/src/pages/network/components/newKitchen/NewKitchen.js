@@ -1,39 +1,41 @@
 import React from 'react';
-import { CustomButton1, Heading1, Heading2 } from '../../components'
+import { Heading1 } from '../../../../components'
 import { Col, Container, Row } from 'react-bootstrap';
-import './Ourstory.scss';
-import assembly from '../../assets/client/Assembly.jpg';
+import './NewKitchen.scss';
+import assembly from '../../../../assets/client/kitchenNew.jpeg';
 
-function OurStory(props) {
+function NewKitchen(props) {
     return (
         <div>
             <div className="padding-global-top-page-start"></div>
-            <Container fluid className="our-story">
+            <Container fluid className="new-kitchen">
                 <Row className="justify-content-end">
                     <Col lg={6}>
                         <div>
-                            <Heading1 first="Our Story" color="#4c483f" ></Heading1>
-                            <Heading2 first="The Beginning of Our Journey" color="#a8ce4c"></Heading2>
+                            <Heading1 first="Our Kitchen" color="#4c483f" ></Heading1>
+                            {/* <Heading2 first="The Beginning of Our Journeys" color="#a8ce4c"></Heading2> */}
                             <p className="text-justify content-read">
-                                It began with a casual reading of an old Harvard Business School’s case study on combatting
-                                hunger in classrooms in India. The combater: Akshay Patra Foundation. Their weapon: mid-day
-                                meals for children in schools. It triggered a thought chain that flashed images of taat schools* in
-                                Pakistan, malnourished children, poverty, squalid living, little promise, overall haplessness.
-                                Having been brought up as a relatively privileged child over half a century ago I somehow felt
-                                guilty. Could we, the haves, do something about it? And, that was the kernel which sprouted
-                                Fortify Education Foundation (FEF).
+                                The mission for FEF is to provide school meals for children to fortify education, which means they should be nutritious to ensure
+                                physical health and mental growth. The only way to have a control over the meals, was to make them in our own kitchen. Using the
+                                minimum investment model, we started preparing meals in a makeshift kitchen in the house of the school administrator in Pasban-e-
+                                Millat School, Orangi Town, so that we could start feeding the children
+                                while our formal kitchen was being constructed.
                             </p>
                             <p className="text-justify content-read">
-                                Realizing that now was the best time to start we started our School Meal Program in February
-                                2020 at Pasban-e-Millat school in Orangi town, Karachi. The school supported by Commodore
-                                Rashidullah serves the truly disadvantaged children of this metropolis where we lived. The
-                                school had upwards of 260 children on their roll when we started. We knew that we would not
-                                be able to sustain it without external support, so we reached out to family and friends, who not
-                                only chipped in for the necessary funds to begin, but also gladly joined us on this journey that
-                                will, in time, take us to all the schools for disadvantaged children in the country.
+                                Our first meal was served on 4 th February 2020 cooked in this
+                                makeshift kitchen.
                             </p>
                             <p className="text-justify content-read">
-                                * Schools where no furniture exists and children sit on straw mats.
+                                Seeing the food on the plate of a child actualized the thought of
+                                providing nutritious meals to the disadvantaged school children. It was
+                                indeed a happy moment for all of us involved.
+                            </p>
+                            <p className="text-justify content-read">
+                                The construction of our formal kitchen was completed in August 2020
+                                and from there on all meals served were cooked. This kitchen has the
+                                capacity to make food for eight more schools and will be the hub of
+                                our program in Orangi. This is the first of many kitchens that will be
+                                made in the coming years as our operations expand.
                             </p>
                             {/* <p className="text-justify content-read">
                                 It was an old Harvard Business School’s case study, from 2007 that brought to fore the menace of hunger in classroom. It was an illustration of the remarkable work that was being done by Akshay Patra Foundation in India to combat this threatening issue. The reason I even read the article was because I was aware in the back of my mind that this issue of hunger and malnutrition is also pervasive among children in Pakistan; and how it affected their health and consequently their ability to learn when or if they are in school. Since the article was an old one, I looked up Akshay Patra’s performance, it was 2018 then, and was super impressed – they were providing school lunches to 1.7 million children in the country.
@@ -48,7 +50,7 @@ function OurStory(props) {
                                 <i>Karachi, June 25, 2020</i>
                             </p> */}
                             {/* <p className="short-text">*Schools where no furniture exists and children sit on straw mats.</p> */}
-                            <CustomButton1 to="contact-us" text="JOIN OUR JOURNEY" classes="btn colored-btn center btn-margin"></CustomButton1>
+                            {/* <CustomButton1 to="contact-us" text="JOIN OUR JOURNEY" classes="btn colored-btn center btn-margin"></CustomButton1> */}
                         </div>
                     </Col>
                     <Col lg={5}>
@@ -60,4 +62,4 @@ function OurStory(props) {
     );
 }
 
-export default OurStory;
+export default NewKitchen;

@@ -48,7 +48,7 @@ function Routes(props) {
                 <div className="footer-spacing" />
                 <Footer />
               </Route>
-              <Route path="/about" >
+              <Route path="/profile" >
                 <MainNavBar />
                 <About />
                 <div className="footer-spacing" />

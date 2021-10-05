@@ -74,11 +74,14 @@ function MainNavBar(props) {
         <ListItem onClick={_ => history.push(`/`)} disableRipple={true} button>
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem style={{paddingBottom: 0}} onClick={_ => history.push(`/about`)} disableRipple={true} button>
+        <ListItem style={{paddingBottom: 0}} onClick={event => event.preventDefault()} disableRipple={true} button>
           <ListItemText primary="About Us" />
         </ListItem>
         <ListItem style={{paddingBottom: 0, paddingTop: 0}}>
           <List>
+            <ListItem onClick={_ => history.push(`/profile`)} disableRipple={true} button>
+              <ListItemText primary="Profile" />
+            </ListItem>
             <ListItem onClick={_ => history.push(`/our-story`)} disableRipple={true} button>
               <ListItemText primary="Our Story" />
             </ListItem>
@@ -138,9 +141,10 @@ function MainNavBar(props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto spacing-right">
             <Link to="/" className="navbartext">Home</Link>
-            <Link to="/about" className="navbartext about-hover">
+            <Link to="/" className="navbartext about-hover">
               About Us
               <div className="about-dropdown">
+                <Link to="/profile" className="navbartext"><li>Profile</li></Link>
                 <Link to="/our-story" className="navbartext"><li>Our Story</li></Link>
                 <Link to="/founder" className="navbartext"><li>Message from Founder</li></Link>
                 <Link to="/governers" className="navbartext"><li>Founding Members</li></Link>

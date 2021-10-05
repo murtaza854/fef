@@ -17,7 +17,10 @@ function Founder(props) {
                         <div>
                             <Heading1 first="Message from Founder" color="#4c483f" ></Heading1>
                             <p className="text-justify content-read">
-                                Pakistan is considered to be the fifth largest young country in the world. Around 34% of Pakistanis are under the age of 15. It is they who have the power to transform the future of Pakistan. Correspondingly, it is us, the older ones, who have the responsibility to ensure that the youth can secure theirs, their families’, and their country’s future.
+                                Pakistan is considered to be the fifth largest young country in the world. Around 34% of
+                                Pakistanis are under the age of 15. It is they who have the power to transform the future of
+                                Pakistan. Correspondingly, it is us, the older ones, who have the responsibility to ensure that
+                                the youth can secure theirs, their families’, and their country’s future.
                             </p>
                             <p className="text-justify content-read">
                                 <i>What ought to be done?</i> Invest in the <strong>health</strong> and <strong>education</strong> of our youth. It is not an either-or choice, has to be both, emphatically and in tandem.
@@ -26,7 +29,10 @@ function Founder(props) {
                                 <i>What could we do to help?</i> Well, we decided to invest our time, resources, and energies to try and eradicate the much-neglected hunger and malnutrition among children in schools.
                             </p>
                             <p className="text-justify content-read">
-                                <i>Why this?</i> Because Pakistan has been reported to have one of the highest levels of prevalence of child malnutrition compared to other developing counties. And because malnutrition, particularly during the formative years of the young ones, inhibits their potential to develop physically and cognitively.
+                                <i>Why this?</i> Because Pakistan has been reported to have one of the highest levels of prevalence
+                                of child malnutrition compared to other developing counties. And because malnutrition,
+                                particularly during the formative years of the young ones, inhibits their potential to develop
+                                physically and cognitively.
                             </p>
                             <p className="text-justify content-read">
                                 Like they say, to go a thousand miles you have to take the first step. Our proverbial first step has been taken; we have started the <strong>School Meal Program (SMP)</strong> that sets out to provide nutrition sensitive meals in schools where disadvantaged children come to study. We are doing this at Pasban-e-millat school in Orangi town, Karachi from where we want to fan out to other schools in Orangi continuing to cover the city first and later spreading the program across all schools in the country.

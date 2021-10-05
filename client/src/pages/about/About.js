@@ -15,7 +15,7 @@ function About(props) {
                 <Row className="justify-content-end">
                     <Col lg={6}>
                         <div>
-                            <Heading1 first="About Us" color="#4c483f" ></Heading1>
+                            <Heading1 first="Profile" color="#4c483f" ></Heading1>
                             <Heading2 first="Fortify Education Foundation" color="#a8ce4c"></Heading2>
                             <p className="text-justify content-read">
                                 The <strong>Fortify Education Foundation (FEF)*</strong> is a not-for-profit organization based in Karachi. We, at FEF, have set out to work for the economically disadvantaged Children in Pakistan. It is our goal to contribute towards ensuring mental and physical growth of our children in schools to enable them to protect their own and their family’s future. Through our <strong>School Meal Program (SMP)</strong>, we have set out to provide nutrition sensitive meals for the children who are in school to learn and achieve.

@@ -3,7 +3,7 @@
     "username": "root",
     "password": "Omzig123_MFS",
     "database": "fef",
-    "host": "localhost",
+    "host": "root",
     "dialect": "mysql"
   },
   "test": {

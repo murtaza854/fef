@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Heading1, Heading2 } from '../../components'
 import './Governers.scss';
 import boardMember from '../../assets/client/NaveedGilani.jpg';
-import boardMember1 from '../../assets/client/Syed Iftikhar.jpg';
+import boardMember1 from '../../assets/client/Syed Iftikhar.jpeg';
 import boardMember2 from '../../assets/client/Asif Yasin Malik.jpeg';
 import boardMember3 from '../../assets/client/Rashidullah Shaikh.jpeg';
 import boardMember4 from '../../assets/client/Shehryar Saeed.jpeg';

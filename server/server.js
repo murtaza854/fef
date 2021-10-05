@@ -4,6 +4,8 @@ const cookieParser = require('cookie-parser');
 const Sequelize = require('sequelize');
 const dotenv = require('dotenv');
 const path = require('path');
+const nodemailer = require("nodemailer");
+const { google } = require("googleapis");
 dotenv.config();
 const app = express();
 // const port = 4000;
@@ -56,6 +58,45 @@ app.use('/login123', (req, res) => {
     });
 });
 app.use(express.static(path.join(__dirname, '../client/build')));
+
+const OAuth2 = google.auth.OAuth2;
+
+const oauth2Client = new OAuth2(
+  "340322946694-qf5a65ne8rbbam60r6tspti88sfd5aef.apps.googleusercontent.com", // ClientID
+  "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", // Client Secret
+  "https://developers.google.com/oauthplayground" // Redirect URL
+);
+
+oauth2Client.setCredentials({
+  refresh_token: "1//04GNgytJGoTfbCgYIARAAGAQSNwF-L9IrDX1hv9S4TaJNBQ8DjB9bgfwtE00LW86I2DgBOxzpYMAwAKiaEq_KZrtFY1pU_qpHdY8"
+});
+const accessToken = oauth2Client.getAccessToken();
+
+const smtpTransport = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+       type: "OAuth2",
+       user: "fortifyeducation79@gmail.com", 
+       pass: "fortify2020",
+       clientId: "340322946694-qf5a65ne8rbbam60r6tspti88sfd5aef.apps.googleusercontent.com",
+       clientSecret: "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",
+       refreshToken: "1//04GNgytJGoTfbCgYIARAAGAQSNwF-L9IrDX1hv9S4TaJNBQ8DjB9bgfwtE00LW86I2DgBOxzpYMAwAKiaEq_KZrtFY1pU_qpHdY8",
+       accessToken: accessToken
+  }
+});
+
+const mailOptions = {
+  from: "fortifyeducation79@gmail.com",
+  to: "murtazashafi11@gmail.com",
+  subject: "Node.js Email with Secure OAuth",
+  generateTextFromHTML: true,
+  html: "<b>test</b>"
+};
+
+smtpTransport.sendMail(mailOptions, (error, response) => {
+  error ? console.log(error) : console.log(response);
+  smtpTransport.close();
+});
 
 // app.get('/sitemap.xml', function(req, res) {
 //   res.sendFile(__dirname + '/sitemap.xml');
