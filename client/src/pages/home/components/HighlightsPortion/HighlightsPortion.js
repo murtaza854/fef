@@ -2,7 +2,6 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import assembly from '../../../../assets/background1.jpg';
 import "./HighlightsPortion.scss";
 import { Heading1, CustomButton1, ImageTextCenter } from '../../../../components';
 function HighlightsPortion(props) {
