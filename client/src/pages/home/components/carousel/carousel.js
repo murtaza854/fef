@@ -13,13 +13,13 @@ function carousel(props) {
         <div className="meal-counter meal-counter-first">
           <div className="meal-count">
             <Row className="meals-number">
-              <CountUp delay={0.75} separator="," end={51143} />
+              <CountUp delay={0.75} separator="," end={68848} />
             </Row>
             <Row className="meals-message-1">
               Meals Served Since Inception
             </Row>
             <Row className="meals-message-2">
-              As of 21 September 2021
+              As of 23 November 2021
             </Row>
           </div>
         </div>
@@ -34,13 +34,13 @@ function carousel(props) {
         <div className="meal-counter meal-counter-second">
           <div className="meal-count">
             <Row className="meals-number">
-              <CountUp delay={0.75} separator="," end={51143} />
+              <CountUp delay={0.75} separator="," end={68848} />
             </Row>
             <Row className="meals-message-1">
               Meals Served Since Inception
             </Row>
             <Row className="meals-message-2">
-              As of 21 September 2021
+              As of 23 November 2021
             </Row>
           </div>
         </div>

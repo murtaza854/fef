@@ -14,9 +14,9 @@ app.use(cookieParser(
 ));
 app.use(cors({
   credentials: true,
-  // origin: [process.env.API_URL1, process.env.API_URL2]
+  origin: [process.env.API_URL1, process.env.API_URL2]
   // origin: [process.env.API_URL3]
-  origin: '*'
+  // origin: '*'
 }));
 
 const userRoutes = require('./routes/user');

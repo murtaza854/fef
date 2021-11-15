@@ -7,6 +7,7 @@ import { ReactComponent as Gallery } from '../../../../assets/client/gallery.svg
 import { ReactComponent as Help } from '../../../../assets/client/help.svg';
 import { CustomButton1, Heading1 } from '../../../../components'
 import './FuturePortion.scss'
+import { Link } from 'react-router-dom';
 
 function FuturePortion(props) {
     return (
@@ -25,7 +26,9 @@ function FuturePortion(props) {
                     <Col className="section2">
                         <Row className="top-feature">
                             <Col md={3}>
-                                <Help fill="#e38454" width="100" height="100" />
+                                <Link to="/school-meal-program">
+                                    <Help fill="#e38454" width="100" height="100" />
+                                </Link>
                             </Col>
                             <Col >
                                 <div className="basichead">
@@ -38,7 +41,9 @@ function FuturePortion(props) {
                         </Row>
                         <Row className="rowicons">
                             <Col md={3}>
-                                <Gallery fill="#a8ce4c" width="100" height="100" />
+                                <Link to="/gallery">
+                                    <Gallery fill="#a8ce4c" width="100" height="100" />
+                                </Link>
                             </Col>
                             <Col>
                                 <div className="basichead">
@@ -51,7 +56,9 @@ function FuturePortion(props) {
                         </Row>
                         <Row >
                             <Col md={3}>
-                                <Calendar fill="#e3aa58" width="100" height="100" />
+                                <Link to="/news-events">
+                                    <Calendar fill="#e3aa58" width="100" height="100" />
+                                </Link>
                             </Col>
                             <Col>
                                 <div className="basichead">
