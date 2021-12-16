@@ -19,7 +19,7 @@ function carousel(props) {
               Meals Served Since Inception
             </Row>
             <Row className="meals-message-2">
-              As of 23 November 2021
+              As of 13 November 2021
             </Row>
           </div>
         </div>
@@ -40,7 +40,7 @@ function carousel(props) {
               Meals Served Since Inception
             </Row>
             <Row className="meals-message-2">
-              As of 23 November 2021
+              As of 13 November 2021
             </Row>
           </div>
         </div>
