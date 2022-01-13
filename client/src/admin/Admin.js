@@ -1,77 +1,103 @@
 import React, { useEffect, useState } from 'react';
-import { Login, AdminLayout } from '../admin';
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import api from '../api';
-// import {
-//     BrowserRouter as Router,
-//     Switch,
-//     Route
-//   } from "react-router-dom";
+import { AdminLayout } from '../admin';
+import { ThemeProvider } from '@mui/styles';
+import { createTheme } from '@mui/material/styles';
+import './Admin.scss';
+// import AdminContext from '../contexts/adminContext';
+// import api from '../api';
+
 
 function Admin(props) {
-    const [token, setToken] = useState("loading");
     const [darkState, setDarkState] = useState(false);
-    const palletType = darkState ? "dark" : "light";
-    const darkTheme = createMuiTheme({
+    // const [adminState, setAdminState] = useState(null);
+    const [loading, setLoading] = useState(true);
+    // const admin = useContext(AdminContext);
+    const darkTheme = createTheme({
         palette: {
-        type: palletType,
-        primary: {
-            main: '#a8ce4c',
-        },
-        secondary: {
-            main: '#e38454',
-        },
-        // background: {
-        //   default: '#ededed',
-        // },
-        error: {
-            main: '#c31200',
-        },
+            type: 'dark',
+            primary: {
+                main: '#90bede',
+                contrastText: 'rgba(255,255,255,0.87)',
+            },
+            secondary: {
+                main: '#f7d43e',
+            },
+            background: {
+                //   default: '#ffffff',
+                //   paper: '#ededed',
+            },
+            error: {
+                main: '#c31200',
+            },
         },
         typography: {
-        fontFamily: 'Raleway',
+            fontFamily: 'Raleway',
         },
     });
+    const lightTheme = createTheme({
+        palette: {
+            type: 'light',
+            primary: {
+                main: '#90bede',
+                contrastText: 'rgba(255,255,255,0.87)',
+            },
+            secondary: {
+                main: '#f7d43e',
+            },
+            background: {
+                //   default: '#ffffff',
+                //   paper: '#ededed',
+            },
+            error: {
+                main: '#c31200',
+            },
+        },
+        typography: {
+            fontFamily: 'Raleway',
+        },
+    });
+    const currentTheme = darkState ? darkTheme : lightTheme;
 
-    useEffect(() => {(
-        async () => {
-            if (token !== true) {
-                const response = await fetch(`${api}/users/loggedIn`, {
-                  headers: {'Content-Type': 'application/json'},
-                  credentials: 'include',
-                  withCredentials: true,
-                });
-                const content = await response.json();
-                setToken(content.loggedIn);
-            }
-          // setDarkState(content.darkState);
-          // const response1 = await fetch('http://localhost:3001/api/get-darktheme', {
-          //   method: 'GET',
-          //   headers: {'Content-Type': 'application/json'},
-          //   credentials: 'include',
-          //   withCredentials: true,
-          // });
-          // const content1 = await response1.json();
-          // console.log(Boolean(content1.darktheme))
-          // setDarkState(Boolean(content1.darktheme));
-        })();
-      });
 
-    const pathArray = window.location.pathname.split('/');
-    
-    if (token === 'loading') return <div></div>;
-    if (pathArray.length >= 2 && pathArray[1] === 'admin' && !token) {
-        return (<Login setToken={setToken} title="Fortify Education Foundation: Admin Login" /> );
-    }
+
+    useEffect(() => {
+        (
+            async () => {
+                try {
+                    // const response = await fetch(`${api}/logged-in-admin`, {
+                    //     method: 'GET',
+                    //     headers: {
+                    //         'Content-Type': 'application/json',
+                    //     },
+                    //     credentials: 'include',
+                    //     withCredentials: true,
+                    // });
+                    // const content = await response.json();
+                    // const user = content.data;
+                    // const { displayName, email, emailVerified, admin } = user;
+                    // setAdminState({ displayName, email, emailVerified, admin });
+                    setLoading(false);
+                } catch (error) {
+                    // setAdminState(null);
+                    setLoading(false);
+                }
+            })();
+    }, []);
+
+    if (loading) return <div></div>;
 
     return (
-        <ThemeProvider theme={darkTheme}>
-              {!token ? (
-                <Login setToken={setToken} title="Fortify Education Foundation: Admin Login" />
-                ) : (
-                <AdminLayout darkState={darkState} setDarkState={setDarkState} setToken={setToken} title="Fortify Education Foundation: Dashboard" />
-              )}
-        </ThemeProvider>
+        // <AdminContext.Provider value={{ adminState: adminState, setAdminState: setAdminState }}>
+            <ThemeProvider theme={currentTheme}>
+                {/* <Login setToken={setToken} title="Mzushi: Admin Login" /> */}
+                {/* {adminState ? (
+                    <Login user={admin} title="The Sew Story: Admin Login" />
+                ) : ( */}
+                <></>
+                    {/* <AdminLayout darkState={darkState} setDarkState={setDarkState} title="Mzushi: Dashboard" /> */}
+                {/* // )} */}
+            </ThemeProvider>
+        // </AdminContext.Provider >
     );
 }
 

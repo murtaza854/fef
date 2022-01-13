@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './Home.scss'
-import { Carousel, FuturePortion, MessageFounder, ThreeImages, AboutLittle, OngoingCampaigns, HighlightsPortion, LatestNews, SignUpForm } from './components'
+import { Carousel, FuturePortion, MessageFounder, ThreeImages, AboutLittle, HighlightsPortion, LatestNews, SignUpForm } from './components'
 
 function Home(props) {
     useEffect(() => {

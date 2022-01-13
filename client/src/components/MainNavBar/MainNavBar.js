@@ -2,25 +2,27 @@ import React from 'react';
 import "./MainNavBar.scss";
 import logo from '../../logo.png';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import clsx from 'clsx';
 import Nav from 'react-bootstrap/Nav';
-import MenuIcon from '@material-ui/icons/Menu';
-import TreeView from '@material-ui/lab/TreeView';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import TreeItem from '@material-ui/lab/TreeItem';
+import MenuIcon from '@mui/icons-material/Menu';
+// import TreeView from '@material-ui/lab/TreeView';
+// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+// import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+// import TreeItem from '@material-ui/lab/TreeItem';
 import {
   // BrowserRouter as Router,
   // Switch,
   // Route,
   Link, useHistory
 } from "react-router-dom";
-import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import { makeStyles } from '@mui/styles';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+// import ListItemButton from '@mui/material/ListItemButton';
+// import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 
 
 const useStyles = makeStyles({

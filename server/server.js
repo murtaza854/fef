@@ -14,7 +14,7 @@ app.use(cookieParser(
 ));
 app.use(cors({
   credentials: true,
-  origin: [process.env.API_URL1, process.env.API_URL2]
+  origin: ['http://localhost:3001', 'http://localhost:3000']
   // origin: [process.env.API_URL3]
   // origin: '*'
 }));
@@ -25,7 +25,7 @@ const imageRoutes = require('./routes/images');
 const imageCategoryRoutes = require('./routes/imageCategory');
 const newsletterRoutes = require('./routes/newsletter');
 const donationRoutes = require('./routes/donation');
-
+const adminRoutes = require('./routes/admin');
 
 const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USERNAME, process.env.DATABASE_PASSWORD, {
   host: 'localhost',
@@ -68,6 +68,7 @@ app.use('/api/images', imageRoutes);
 app.use('/api/image-category', imageCategoryRoutes);
 app.use('/api/newsletter', newsletterRoutes);
 app.use('/api/donation', donationRoutes);
+app.use('/api/admin', adminRoutes);
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));

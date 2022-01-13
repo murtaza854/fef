@@ -1,228 +1,146 @@
 import React, { useState } from 'react';
-import fefLogo from '../../assets/logo.png'
-import './Login.scss'
-import { Col, Container, Row } from 'react-bootstrap';
-import { Card, IconButton, CardContent, Button, CardMedia, InputAdornment, InputLabel , Input, FormControl, createMuiTheme, ThemeProvider } from '@material-ui/core';
-import { Email, Visibility, VisibilityOff, Lock } from '@material-ui/icons';
-import PropTypes from 'prop-types';
-import loginUser from '../../serverRequests/loginUser';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Input from '@mui/material/Input';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
+import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
+import { Col, Container, Row, Form } from 'react-bootstrap';
+// import { Heading } from '../../components';
+import { useHistory } from 'react-router';
+// import UserContext from '../../contexts/userContext';
+import api from '../../api';
+import EmailIcon from '@mui/icons-material/Email';
+import LockIcon from '@mui/icons-material/Lock';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import './Login.scss';
 
 function Login(props) {
-    document.title = props.title
-    const [darkState, setDarkState] = useState(false);
-    const palletType = darkState ? "dark" : "light";
-    const darkTheme = createMuiTheme({
-        palette: {
-        type: palletType,
-        primary: {
-            main: '#a8ce4c',
-        },
-        secondary: {
-            main: '#e38454',
-        },
-        // background: {
-        //   default: '#ededed',
-        // },
-        error: {
-            main: '#c31200',
-        },
-        },
-        typography: {
-        fontFamily: 'Raleway',
-        },
-    });
+    const [email, setEmail] = useState({ name: '', errorText: '', error: false });
+    const [password, setPassword] = useState({ name: '', errorText: '', error: false, showPassword: false });
 
+    // const [disable, setDisable] = useState(false);
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
+    const history = useHistory();
+
+    // const user = useContext(UserContext);
 
     const handleClickShowPassword = _ => {
-        setShowPassword(!showPassword);
+        setPassword(prevState => ({ ...prevState, showPassword: !password.showPassword }));
     }
     const handleMouseDownPassword = event => {
         event.preventDefault();
     }
+    const changePassword = event => {
+        setPassword(prevState => ({ ...prevState, name: event.target.value }));
+    }
+
+    const changeEmail = event => {
+        setEmail(prevState => ({ ...prevState, name: event.target.value }));
+    }
+
     const handleSubmit = async e => {
-        // console.log(123);
         e.preventDefault();
-        setDarkState(true);
-        const token = await loginUser({
-            email,
-          password
-        });
-        console.log(token);
-        props.setToken(token.loggedIn);
-      }
+        // setDisable(true);
+        try {
+            const response = await fetch(`${api}/user/login-admin`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                withCredentials: true,
+                body: JSON.stringify({ email, password })
+            });
+            const content = await response.json();
+            if (content.error === "Email not verified") {
+                history.push("/__/auth/action?mode=emailNotVerified");
+            } else if (content.error) {
+                setEmail(prevState => ({ ...prevState, name: '', errorText: 'Invalid Credentials!', error: true }));
+                setPassword(prevState => ({ ...prevState, name: '', errorText: 'Invalid Credentials!', error: true, showPassword: false }));
+                // setDisable(false);
+            } else {
+                // const { displayName, email, emailVerified, admin } = content.data;
+                // user.setUserState({ displayName, email, emailVerified, admin });
+            }
+        } catch (error) {
+            // setDisable(false);
+        }
+    }
 
     return (
-        <ThemeProvider theme={darkTheme}>
-            <Container fluid className="admin-login-container">
-                <Row>
-                    <Col className="admin-login-card">
-                        <Card>
-                            <CardMedia
-                                className="login-logo"
-                                component="img"
-                                image= {fefLogo}
-                                title="FEF"
-                            />
-                            <CardContent>
-                                <form onSubmit={handleSubmit} autocomplete="off" noValidate>
-                                    <FormControl>
-                                        <InputLabel htmlFor="email-admin">Email</InputLabel>
-                                        <Input
-                                            autoComplete="off"
-                                            autoFocus
-                                            type="email"
-                                            value={email}
-                                            onChange={e => setEmail(e.target.value)}
-                                            id="email-admin"
-                                            startAdornment={
-                                                <InputAdornment position="start">
-                                                    <Email/>
-                                                </InputAdornment>
-                                            }
-                                        />
-                                    </FormControl>
-                                    <FormControl>
-                                        <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-                                        <Input
-                                            autoComplete="off"
-                                            id="standard-adornment-password"
-                                            type={showPassword ? 'text' : 'password'}
-                                            value={password}
-                                            onChange={e => setPassword(e.target.value)}
-                                            startAdornment={
-                                                <InputAdornment position="start">
-                                                    <Lock/>
-                                                </InputAdornment>
-                                            }
-                                            endAdornment={
+        <Container className="admin-login-container" fluid>
+            <Row>
+                <Col className="admin-login-card" md={4}>
+                    <Card className="admin-login-base">
+                        {/* <Heading
+                            text="theSewStory"
+                            className="text-center"
+                        /> */}
+                        <CardContent className="admin-card-formcontrol">
+                            <Form onSubmit={handleSubmit} autoComplete="off" noValidate>
+                                <FormControl className="admin-card-formcontrol">
+                                    <InputLabel htmlFor="email-admin">Email</InputLabel>
+                                    <Input
+                                        autoComplete="off"
+                                        autoFocus
+                                        type="email"
+                                        value={email.name}
+                                        onChange={changeEmail}
+                                        id="email-admin"
+                                        startAdornment={
+                                            <InputAdornment position="start">
+                                                <EmailIcon />
+                                            </InputAdornment>
+                                        }
+                                    />
+                                </FormControl>
+                                <FormControl className="admin-card-formcontrol">
+                                    <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                                    <Input
+                                        autoComplete="off"
+                                        id="standard-adornment-password"
+                                        type={password.showPassword ? 'text' : 'password'}
+                                        value={password.name}
+                                        onChange={changePassword}
+                                        startAdornment={
+                                            <InputAdornment position="start">
+                                                <LockIcon />
+                                            </InputAdornment>
+                                        }
+                                        endAdornment={
                                             <InputAdornment position="end">
                                                 <IconButton
-                                                aria-label="toggle password visibility"
-                                                onClick={handleClickShowPassword}
-                                                onMouseDown={handleMouseDownPassword}
+                                                    aria-label="toggle password visibility"
+                                                    onClick={handleClickShowPassword}
+                                                    onMouseDown={handleMouseDownPassword}
                                                 >
-                                                {showPassword ? <Visibility /> : <VisibilityOff />}
+                                                    {password.showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
                                                 </IconButton>
                                             </InputAdornment>
-                                            }
-                                        />
-                                    </FormControl>
-                                    <input 
-                                        type="text" 
-                                        autoComplete="on" 
-                                        value="" 
-                                        style={{display: 'none'}} 
-                                        readOnly={true}
+                                        }
                                     />
-                                    <Button type="submit" variant="contained" color="primary" className="admin-login-button">
-                                        Login
-                                    </Button>
-                                </form>
-                            </CardContent>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
-        </ThemeProvider>
+                                </FormControl>
+                                <input
+                                    type="text"
+                                    autoComplete="on"
+                                    value=""
+                                    style={{ display: 'none' }}
+                                    readOnly={true}
+                                />
+                                <Button type="submit" variant="contained" color="primary" className="admin-login-button">
+                                    Login
+                                </Button>
+                            </Form>
+                        </CardContent>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
     );
-}
-Login.propTypes = {
-    setToken: PropTypes.func.isRequired
 }
 
 export default Login;
-
-// class Login extends Component {
-//     constructor(props) {
-//         super(props);
-//         document.title = this.props.title;
-//         this.state = {
-//             showPassword: false,
-//             password: "",
-//         };
-//     }
-//     handleChange = (prop) => (event) => {
-//         // setValues({ ...values, [prop]: event.target.value });
-//         this.setState({ password:  event.target.value})
-//       };
-
-//     handleClickShowPassword = () => {
-//         // setValues({ ...values, showPassword: !values.showPassword });
-//         this.setState({ showPassword: !this.state.showPassword })
-//     };
-//     handleMouseDownPassword = (event) => {
-//     event.preventDefault();
-//     };
-
-//     render() {
-//         return (
-//             <Container fluid className="admin-login-container">
-//                 <Row>
-//                     <Col className="admin-login-card">
-//                         <Card>
-//                             <CardMedia
-//                                 className="login-logo"
-//                                 component="img"
-//                                 image= {fefLogo}
-//                                 title="FEF"
-//                             />
-//                             <CardContent>
-//                                 <form noValidate>
-//                                     <FormControl>
-//                                         <InputLabel htmlFor="email-admin">Email</InputLabel>
-//                                         <Input
-//                                             autoComplete="new-password"
-//                                             autoFocus
-//                                             type="email"
-//                                             id="email-admin"
-//                                             startAdornment={
-//                                                 <InputAdornment position="start">
-//                                                     <Email/>
-//                                                 </InputAdornment>
-//                                             }
-//                                         />
-//                                     </FormControl>
-//                                     <FormControl>
-//                                         <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-//                                         <Input
-//                                             autoComplete="new-password"
-//                                             id="standard-adornment-password"
-//                                             type={this.state.showPassword ? 'text' : 'password'}
-//                                             value={this.state.password}
-//                                             onChange={this.handleChange('password')}
-//                                             startAdornment={
-//                                                 <InputAdornment position="start">
-//                                                     <Lock/>
-//                                                 </InputAdornment>
-//                                             }
-//                                             endAdornment={
-//                                             <InputAdornment position="end">
-//                                                 <IconButton
-//                                                 aria-label="toggle password visibility"
-//                                                 onClick={this.handleClickShowPassword}
-//                                                 onMouseDown={this.handleMouseDownPassword}
-//                                                 >
-//                                                 {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
-//                                                 </IconButton>
-//                                             </InputAdornment>
-//                                             }
-//                                         />
-//                                     </FormControl>
-//                                     <Button variant="contained" color="primary" className="admin-login-button">
-//                                         Login
-//                                     </Button>
-//                                 </form>
-//                             </CardContent>
-//                         </Card>
-//                     </Col>
-//                 </Row>
-//             </Container>
-//         );
-//     }
-// }
-
-// export default Login;

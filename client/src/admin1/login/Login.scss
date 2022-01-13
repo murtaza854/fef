@@ -1,0 +1,56 @@
+.admin-login-container {
+    padding: 0;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    height: 100vh;
+    &::before {
+      content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    // opacity: 0.3;
+    filter: blur(0px)
+    grayscale(100%);
+    background-image: url(/assets/background1.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    }
+    .MuiFormControl-root {
+        margin: 0.625rem 0;
+    }
+    .MuiCard-root {
+        padding: 3.125rem 1.875rem;
+    }
+    .admin-login-card {
+        position: absolute;
+        z-index: 2;
+        width: 28.125rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .login-logo {
+        width: 6.25rem;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .admin-login-button {
+        top: 1.25rem;
+        padding-left: 1.875rem;
+        padding-right: 1.875rem;
+        left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+    }
+  }

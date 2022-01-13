@@ -26,7 +26,7 @@ function CustomButton1(props) {
                 if (props.firstName === '') flag = false;
                 else if (props.lastName === '') flag = false;
                 else if (props.email === '') flag = false;
-                else if (!(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(props.email))) flag = false;
+                else if (!(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(props.email))) flag = false;
                 // TODO: Add whether email is actually correct whether it's a valid email or not
                 // see if props.email is a valid email
                 if (flag) {
