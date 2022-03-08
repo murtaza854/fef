@@ -3,7 +3,7 @@
     "username": "root",
     "password": "Omzig123_MFS",
     "database": "fef",
-    "host": "root",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
@@ -11,13 +11,13 @@
     "password": "Omzig123_MFS",
     "database": "fef",
     "host": "127.0.0.1",
-    "dialect": "mariadb"
+    "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": "Omzig123_MFS",
     "database": "fef",
     "host": "127.0.0.1",
-    "dialect": "mariadb"
+    "dialect": "mysql"
   }
 }

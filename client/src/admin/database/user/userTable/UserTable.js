@@ -20,7 +20,8 @@ export default function UserTable(props) {
     const {
         rows,
         filteredRows,
-        setFilteredRows
+        setFilteredRows,
+        setRows
     } = props;
     
     const [order, setOrder] = React.useState('asc');
@@ -93,7 +94,7 @@ export default function UserTable(props) {
     return (
         <Box sx={{ width: '100%' }}>
             <Paper sx={{ width: '100%', mb: 2 }}>
-                <TableToolbar handleSearch={handleSearch} searchText={searchText} numSelected={selected.length} />
+                <TableToolbar rows={rows} selected={selected} setRows={setRows} handleSearch={handleSearch} searchText={searchText} numSelected={selected.length} />
                 <TableContainer>
                     <Table
                         sx={{ minWidth: 750 }}
@@ -152,6 +153,20 @@ export default function UserTable(props) {
                                             </TableCell>
                                             <TableCell>
                                                 {row.emailVerified ? (
+                                                    <CheckIcon />
+                                                ) : (
+                                                    <CloseIcon />
+                                                )}
+                                            </TableCell>
+                                            <TableCell>
+                                                {row.subscribed ? (
+                                                    <CheckIcon />
+                                                ) : (
+                                                    <CloseIcon />
+                                                )}
+                                            </TableCell>
+                                            <TableCell>
+                                                {row.active ? (
                                                     <CheckIcon />
                                                 ) : (
                                                     <CloseIcon />

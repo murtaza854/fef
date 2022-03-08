@@ -1053,10 +1053,6 @@ function ProductForm(props) {
                         <Button disabled={disabled} type="submit" variant="contained" color="secondary">
                             Save
                         </Button>
-                        <div className="margin-global-05" />
-                        <Button disabled={disabled} type="button" variant="contained" color="secondary">
-                            Save and Add Another
-                        </Button>
                     </Col>
                 </Row>
             </Form>

@@ -7,7 +7,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { Link } from "react-router-dom";
 
 export const TableToolbar = (props) => {
-    const { numSelected } = props;
+    const { numSelected, selected } = props;
 
     return (
         <Toolbar
@@ -42,11 +42,13 @@ export const TableToolbar = (props) => {
 
             {numSelected > 0 ? (
                 <>
-                    <Tooltip title="Delete">
-                        <IconButton>
-                            <DeleteIcon />
-                        </IconButton>
-                    </Tooltip>
+                    <Link to={`/admin/gallery/delete?selected=${JSON.stringify(selected)}`}>
+                        <Tooltip title="Delete">
+                            <IconButton>
+                                <DeleteIcon />
+                            </IconButton>
+                        </Tooltip>
+                    </Link>
                 </>
             ) : (
                 <div className="search-bar-toolbr">

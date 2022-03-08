@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import Slider from "react-slick";
 // import Carousel from 'react-bootstrap/Carousel'
 import "./carousel.scss"
@@ -6,20 +6,47 @@ import { Container } from 'react-bootstrap';
 import { CustomButton1 } from '../../../../components';
 import Row from 'react-bootstrap/Row';
 import CountUp from 'react-countup';
-function carousel(props) {
+import api from '../../../../api';
+
+function Carousel(props) {
+  const [mealCounter, setMealCounter] = React.useState(0);
+  const [mealCounterDate, setMealCounterDate] = React.useState('31 December 2021');
+
+  useEffect(() => {
+    async function getMealCounter() {
+      try {
+        const response = await fetch(`${api}/admin/get-meal-counter`, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-store'
+          },
+        });
+        const data = await response.json();
+        setMealCounter(data.mealCounter);
+        const date = new Date(data.mealCounterDate);
+        const month = date.toLocaleString('default', { month: 'long' });
+        const day = date.getDate();
+        const year = date.getFullYear();
+        setMealCounterDate(`${day} ${month} ${year}`);
+      } catch (error) {
+      }
+    }
+    getMealCounter();
+  }, []);
+
   return (
     <div>
       <Container className="home-main" fluid>
         <div className="meal-counter meal-counter-first">
           <div className="meal-count">
             <Row className="meals-number">
-              <CountUp delay={0.75} separator="," end={85336} />
+              <CountUp delay={0.75} separator="," end={mealCounter} />
             </Row>
             <Row className="meals-message-1">
               Meals Served Since Inception
             </Row>
             <Row className="meals-message-2">
-              As of 31 December 2021
+              As of {mealCounterDate}
             </Row>
           </div>
         </div>
@@ -31,19 +58,19 @@ function carousel(props) {
         </div>
 
       </Container>
-        <div className="meal-counter meal-counter-second">
-          <div className="meal-count">
-            <Row className="meals-number">
-              <CountUp delay={0.75} separator="," end={85336} />
-            </Row>
-            <Row className="meals-message-1">
-              Meals Served Since Inception
-            </Row>
-            <Row className="meals-message-2">
-              As of 31 December 2021
-            </Row>
-          </div>
+      <div className="meal-counter meal-counter-second">
+        <div className="meal-count">
+          <Row className="meals-number">
+            <CountUp delay={0.75} separator="," end={mealCounter} />
+          </Row>
+          <Row className="meals-message-1">
+            Meals Served Since Inception
+          </Row>
+          <Row className="meals-message-2">
+            As of {mealCounterDate}
+          </Row>
         </div>
+      </div>
     </div>
     //   <Carousel fade>
     //   <Carousel.Item>
@@ -86,4 +113,4 @@ function carousel(props) {
   );
 }
 
-export default carousel;
+export default Carousel;

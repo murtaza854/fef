@@ -30,7 +30,8 @@ export default function ProductTable(props) {
         filteredRows,
         setFilteredRows,
         tableOrder,
-        searchField
+        searchField,
+        setRows,
     } = props;
 
     const [order, setOrder] = React.useState('asc');
@@ -106,7 +107,7 @@ export default function ProductTable(props) {
     return (
         <Box sx={{ width: '100%' }}>
             <Paper sx={{ width: '100%', mb: 2 }}>
-                <TableToolbar selected={selected} handleSearch={handleSearch} searchText={searchText} numSelected={selected.length} />
+                <TableToolbar setRows={setRows} rows={rows} selected={selected} handleSearch={handleSearch} searchText={searchText} numSelected={selected.length} />
                 <TableContainer>
                     <Table
                         sx={{ minWidth: 750 }}

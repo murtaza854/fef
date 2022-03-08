@@ -5,6 +5,8 @@ export function CreateUserData(obj) {
         email: obj.email,
         admin: obj.admin,
         emailVerified: obj.emailVerified,
+        active: obj.active,
+        subscribed: obj.subscribed,
     };
     return data;
 }

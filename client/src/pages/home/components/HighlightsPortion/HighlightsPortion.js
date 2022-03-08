@@ -4,19 +4,56 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "./HighlightsPortion.scss";
 import { Heading1, CustomButton1, ImageTextCenter } from '../../../../components';
+import api from '../../../../api';
+
 function HighlightsPortion(props) {
+    const [highlights, setHighlights] = React.useState([]);
+    const [bullets, setBullets] = React.useState([]);
+
+    React.useEffect(() => {
+        async function getHighlights() {
+            try {
+                const response = await fetch(`${api}/admin/get-highlights`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Cache-Control': 'no-store'
+                    },
+                });
+                const data = await response.json();
+                const high = data.highlights.split('\n');
+                const bullet = data.bullets.split('\n');
+                setHighlights(high);
+                setBullets(bullet);
+            } catch (error) {
+            }
+        }
+        getHighlights();
+    }, []);
+
     return (
         <div className="HighlightsPortion">
             <Container fluid>
                 <Row>
                     <Col className="lefthighlights" md={6}>
                         <Heading1 first="Highlights" color="#4c483f" />
-                        <p className="content-read sixtywidth">The School Meal Program (SMP) is the raison d'être for FEF. Everything that we are presently doing or will do in the future under our banner will be built upon the foundation of our SMP. Through this program we provide freshly cooked nutritious meals to children in schools on every school day. Our overarching aim is to improve the cognitive and physical health of the children. Some of the benefits of the SMP are:
+                        <p className="content-read sixtywidth">
+                            {/* The School Meal Program (SMP) is the raison d'être for FEF. Everything that we are presently doing or will do in the future under our banner will be built upon the foundation of our SMP. Through this program we provide freshly cooked nutritious meals to children in schools on every school day. Our overarching aim is to improve the cognitive and physical health of the children. Some of the benefits of the SMP are: */}
+                        {
+                            highlights.map((text, index) => {
+                                return <span key={index}>{text}<br /></span>
+                            }
+                            )
+                        }
                             <ul style={{ marginTop: '1rem', textAlign: 'left' }}>
-                                <li>Prevention of classroom hunger</li>
+                                {
+                                    bullets.map((text, index) => {
+                                        return <li key={index}>{text}</li>
+                                    })
+                                }
+                                {/* <li>Prevention of classroom hunger</li>
                                 <li>Increase in enrolment in schools</li>
                                 <li>Increase in attendance in schools</li>
-                                <li>Reducing malnutrition among children in schools</li>
+                                <li>Reducing malnutrition among children in schools</li> */}
                             </ul>
                         </p>
                         {/* <Row className="justify-content-between">

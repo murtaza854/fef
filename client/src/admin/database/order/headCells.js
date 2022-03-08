@@ -1,44 +1,26 @@
 export const headCells = [
     {
-      id: 'name',
-      numeric: false,
-      disablePadding: true,
-      label: 'Name',
-    },
-    {
-      id: 'productCode',
+      id: 'orderNumber',
       numeric: false,
       disablePadding: false,
-      label: 'Product Code',
+      label: 'Order Number',
     },
     {
-      id: 'category',
+      id: 'orderDate',
       numeric: false,
       disablePadding: false,
-      label: 'Category',
+      label: 'Order Date',
     },
     {
-      id: 'price',
+      id: 'orderStatusDisplay',
       numeric: false,
       disablePadding: false,
-      label: 'Price',
+      label: 'Order Status',
     },
     {
-      id: 'taxBehavior',
+      id: 'amountTotal',
       numeric: false,
       disablePadding: false,
-      label: 'Tax Behavior',
-    },
-    {
-      id: 'quantity',
-      numeric: false,
-      disablePadding: false,
-      label: 'In Stock',
-    },
-    {
-      id: 'active',
-      numeric: false,
-      disablePadding: false,
-      label: 'Active',
+      label: 'Amount Total',
     },
   ];

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Input from '@mui/material/Input';
@@ -8,25 +8,27 @@ import FormControl from '@mui/material/FormControl';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import { Col, Container, Row, Form } from 'react-bootstrap';
-// import { Heading } from '../../components';
 import { useHistory } from 'react-router';
-// import UserContext from '../../contexts/userContext';
+import UserContext from '../../contexts/userContext';
 import api from '../../api';
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import './Login.scss';
+import { FormHelperText, Typography } from '@mui/material';
 
 function Login(props) {
     const [email, setEmail] = useState({ name: '', errorText: '', error: false });
     const [password, setPassword] = useState({ name: '', errorText: '', error: false, showPassword: false });
 
+    const [disable, setDisable] = useState(false);
+
     // const [disable, setDisable] = useState(false);
 
     const history = useHistory();
 
-    // const user = useContext(UserContext);
+    const user = useContext(UserContext);
 
     const handleClickShowPassword = _ => {
         setPassword(prevState => ({ ...prevState, showPassword: !password.showPassword }));
@@ -35,16 +37,20 @@ function Login(props) {
         event.preventDefault();
     }
     const changePassword = event => {
-        setPassword(prevState => ({ ...prevState, name: event.target.value }));
+        setPassword(prevState => ({ ...prevState, name: event.target.value, error: false, errorText: '' }));
     }
 
     const changeEmail = event => {
-        setEmail(prevState => ({ ...prevState, name: event.target.value }));
+        setEmail(prevState => ({ ...prevState, name: event.target.value, error: false, errorText: '' }));
     }
+
+    useEffect(() => {
+        document.title = props.title;
+    }, [props.title]);
 
     const handleSubmit = async e => {
         e.preventDefault();
-        // setDisable(true);
+        setDisable(true);
         try {
             const response = await fetch(`${api}/user/login-admin`, {
                 method: 'POST',
@@ -61,10 +67,10 @@ function Login(props) {
             } else if (content.error) {
                 setEmail(prevState => ({ ...prevState, name: '', errorText: 'Invalid Credentials!', error: true }));
                 setPassword(prevState => ({ ...prevState, name: '', errorText: 'Invalid Credentials!', error: true, showPassword: false }));
-                // setDisable(false);
+                setDisable(false);
             } else {
-                // const { displayName, email, emailVerified, admin } = content.data;
-                // user.setUserState({ displayName, email, emailVerified, admin });
+                const { displayName, email, emailVerified, admin } = content.data;
+                user.setUserState({ displayName, email, emailVerified, admin });
             }
         } catch (error) {
             // setDisable(false);
@@ -76,14 +82,13 @@ function Login(props) {
             <Row>
                 <Col className="admin-login-card" md={4}>
                     <Card className="admin-login-base">
-                        {/* <Heading
-                            text="theSewStory"
-                            className="text-center"
-                        /> */}
+                        <Typography style={{textAlign: 'center'}} variant="h4" component="h2">
+                            FEF Admin Login
+                        </Typography>
                         <CardContent className="admin-card-formcontrol">
                             <Form onSubmit={handleSubmit} autoComplete="off" noValidate>
                                 <FormControl className="admin-card-formcontrol">
-                                    <InputLabel htmlFor="email-admin">Email</InputLabel>
+                                    <InputLabel error={email.error} htmlFor="email-admin">Email</InputLabel>
                                     <Input
                                         autoComplete="off"
                                         autoFocus
@@ -91,20 +96,23 @@ function Login(props) {
                                         value={email.name}
                                         onChange={changeEmail}
                                         id="email-admin"
+                                        error={email.error}
                                         startAdornment={
                                             <InputAdornment position="start">
                                                 <EmailIcon />
                                             </InputAdornment>
                                         }
                                     />
+                                    <FormHelperText error={email.error}>{email.errorText}</FormHelperText>
                                 </FormControl>
                                 <FormControl className="admin-card-formcontrol">
-                                    <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                                    <InputLabel error={password.error} htmlFor="standard-adornment-password">Password</InputLabel>
                                     <Input
                                         autoComplete="off"
                                         id="standard-adornment-password"
                                         type={password.showPassword ? 'text' : 'password'}
                                         value={password.name}
+                                        error={password.error}
                                         onChange={changePassword}
                                         startAdornment={
                                             <InputAdornment position="start">
@@ -123,6 +131,7 @@ function Login(props) {
                                             </InputAdornment>
                                         }
                                     />
+                                    <FormHelperText error={password.error}>{password.errorText}</FormHelperText>
                                 </FormControl>
                                 <input
                                     type="text"
@@ -131,7 +140,7 @@ function Login(props) {
                                     style={{ display: 'none' }}
                                     readOnly={true}
                                 />
-                                <Button type="submit" variant="contained" color="primary" className="admin-login-button">
+                                <Button disabled={disable} type="submit" variant="contained" color="primary" className="admin-login-button">
                                     Login
                                 </Button>
                             </Form>

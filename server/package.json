@@ -1,35 +1,31 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "server.js",
-  "devDependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "sequelize-cli": "^6.3.0"
-  },
+  "description": "",
+  "main": "fef.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon fef.js"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.5",
-    "dotenv": "^10.0.0",
-    "express-jwt": "^6.0.0",
-    "firebase": "^9.6.1",
-    "firebase-admin": "^10.0.1",
-    "googleapis": "^88.2.0",
+    "body-parser": "^1.19.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "express-jwt": "^6.1.0",
+    "firebase": "^9.6.4",
+    "firebase-admin": "^10.0.2",
+    "googleapis": "^92.0.0",
     "jsonwebtoken": "^8.5.1",
-    "multer": "^1.4.2",
-    "mysql2": "^2.2.5",
-    "nodemailer": "^6.6.5",
-    "nodemon": "^2.0.7",
+    "multer": "^1.4.4",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.2",
+    "nodemon": "^2.0.15",
     "prompt-sync": "^4.2.0",
-    "rootpath": "^0.1.2",
-    "sequelize": "^6.12.0",
-    "webpack-dev-server": "^4.6.0"
+    "sequelize": "^6.14.1",
+    "sequelize-cli": "^6.4.1"
   }
 }

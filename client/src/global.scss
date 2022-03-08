@@ -347,6 +347,10 @@
     }
 }
 
+.ml-auto, .mx-auto {
+    margin-left: auto !important;
+  }
+
 .login-with-google-btn {
     width: 15rem;
     transition: background-color 0.3s, box-shadow 0.3s;

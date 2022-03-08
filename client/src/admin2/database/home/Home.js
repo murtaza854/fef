@@ -77,7 +77,7 @@ function Home(props) {
             }
         }
         getMealCounter();
-    }, [])
+    }, []);
 
     const handleEditMealCounter = (e, flag) => {
         setMealCounter(prevState => ({ ...prevState, readOnly: !flag }));

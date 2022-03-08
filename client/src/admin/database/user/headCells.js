@@ -23,4 +23,16 @@ export const headCells = [
       disablePadding: false,
       label: 'Email Verified',
     },
+    {
+      id: 'subscribed',
+      numeric: false,
+      disablePadding: false,
+      label: 'Subscribed',
+    },
+    {
+      id: 'active',
+      numeric: false,
+      disablePadding: false,
+      label: 'Active',
+    },
   ];

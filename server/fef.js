@@ -28,9 +28,7 @@ const donationRoutes = require('./routes/donation');
 const adminRoutes = require('./routes/admin');
 
 const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USERNAME, process.env.DATABASE_PASSWORD, {
-  host: 'localhost',
-  // port: 3306,
-  // dialect: 'mysql',
+  host: process.env.DATABASE_HOST,
   dialect: 'mysql',
 
   pool: {
@@ -70,9 +68,9 @@ app.use('/api/newsletter', newsletterRoutes);
 app.use('/api/donation', donationRoutes);
 app.use('/api/admin', adminRoutes);
 
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+// app.get('*', function (req, res) {
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
